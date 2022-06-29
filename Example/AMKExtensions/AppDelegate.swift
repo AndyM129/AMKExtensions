@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  AMKExtensions
 //
-//  Created by mengxinxin on 06/29/2022.
-//  Copyright (c) 2022 mengxinxin. All rights reserved.
+//  Created by Andy Meng on 06/29/2022.
+//  Copyright (c) 2022 Andy Meng. All rights reserved.
 //
 
 import UIKit

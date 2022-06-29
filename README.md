@@ -1,6 +1,6 @@
 # AMKExtensions
 
-[![CI Status](https://img.shields.io/travis/mengxinxin/AMKExtensions.svg?style=flat)](https://travis-ci.org/mengxinxin/AMKExtensions)
+[![CI Status](https://img.shields.io/travis/Andy Meng/AMKExtensions.svg?style=flat)](https://travis-ci.org/Andy Meng/AMKExtensions)
 [![Version](https://img.shields.io/cocoapods/v/AMKExtensions.svg?style=flat)](https://cocoapods.org/pods/AMKExtensions)
 [![License](https://img.shields.io/cocoapods/l/AMKExtensions.svg?style=flat)](https://cocoapods.org/pods/AMKExtensions)
 [![Platform](https://img.shields.io/cocoapods/p/AMKExtensions.svg?style=flat)](https://cocoapods.org/pods/AMKExtensions)
@@ -22,7 +22,7 @@ pod 'AMKExtensions'
 
 ## Author
 
-mengxinxin, mengxinxin@baidu.com
+Andy Meng, andy_m129@163.com
 
 ## License
 
