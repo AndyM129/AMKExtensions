@@ -3,11 +3,11 @@ use_frameworks!
 platform :ios, '10.0'
 
 target 'AMKExtensions_Example' do
-  pod 'AMKExtensions', :path => '../'
+    pod 'AMKExtensions', :path => '../'
+    pod 'SnapKit'
+    pod 'FLEX'
 
-  target 'AMKExtensions_Tests' do
-    inherit! :search_paths
-
-    
-  end
+    target 'AMKExtensions_Tests' do
+        inherit! :search_paths
+    end
 end

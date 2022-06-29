@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import SnapKit
+import AMKExtensions
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "AMKExtensions"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.pushViewController(AMTempViewController.init(), animated: true)
     }
 
 }

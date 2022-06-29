@@ -33,6 +33,14 @@ Pod::Spec.new do |s|
     
     # Foundation 通用扩展
     s.subspec 'Foundation' do |foundation|
+        # NSAttributedString 相关扩展
+        foundation.subspec 'NSAttributedString' do |attributedString|
+            # 易用封装 相关
+            attributedString.subspec 'Handy' do |handy|
+                handy.source_files = 'AMKExtensions/Classes/Foundation/NSAttributedString/Handy/*.swift'
+            end
+        end
+        
         # NSString 相关扩展
         foundation.subspec 'String' do |string|
             # 易用封装 相关

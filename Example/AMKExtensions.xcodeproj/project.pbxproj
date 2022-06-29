@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51546286C2AD80056813A /* AMTempViewController.swift */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
 		DD24B3956808C7F3365DBC7F /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE80C895C91B68EBF172325D /* Pods_AMKExtensions_Example.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		718511108D40DBC61243E30B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8404DD4FA284C9179899B7D1 /* Pods-AMKExtensions_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Example.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Example/Pods-AMKExtensions_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		88E51546286C2AD80056813A /* AMTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMTempViewController.swift; path = Temp/AMTempViewController.swift; sourceTree = "<group>"; };
 		DC3B593863B76026CCD7E49C /* Pods-AMKExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Tests/Pods-AMKExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E79B7270D1C6A97826FB1D35 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E9E325FC9D8F8CAC0FAC4B6D /* AMKExtensions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AMKExtensions.podspec; path = ../AMKExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -95,6 +97,8 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				88E51544286C2A7F0056813A /* Foundation */,
+				88E51545286C2A980056813A /* Temp */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -148,6 +152,21 @@
 				13008F6196F099D2EA08ED4C /* Pods-AMKExtensions_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		88E51544286C2A7F0056813A /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		88E51545286C2A980056813A /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				88E51546286C2AD80056813A /* AMTempViewController.swift */,
+			);
+			name = Temp;
 			sourceTree = "<group>";
 		};
 		B9BF1DBA8BDDA1D627580F95 /* Frameworks */ = {
@@ -272,10 +291,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AMKExtensions_Example/Pods-AMKExtensions_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMKExtensions/AMKExtensions.framework",
+				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMKExtensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -334,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

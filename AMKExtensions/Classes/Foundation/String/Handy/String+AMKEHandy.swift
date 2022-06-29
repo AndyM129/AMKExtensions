@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
 
     /// 整个字符串的 NSRange
     var amke_range: NSRange {
