@@ -7,6 +7,8 @@ target 'AMKExtensions_Example' do
     pod 'SnapKit'
     pod 'AMKStackView'
     pod 'FLEX'
+    pod 'JSONKit'
+    pod 'HandyJSON'
 
     target 'AMKExtensions_Tests' do
         inherit! :search_paths

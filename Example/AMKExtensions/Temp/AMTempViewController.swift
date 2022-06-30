@@ -30,6 +30,9 @@ class AMTempViewController: UIViewController, UITextFieldDelegate {
         
         //test_01()
         test_TextField()
+        test_CAGradientLayer()
+        test_CAReplicatorLayer()
+        test_CAShapeLayer()
     }
     
     // MARK: - test_01
@@ -188,6 +191,66 @@ class AMTempViewController: UIViewController, UITextFieldDelegate {
         UIApplication.shared.delegate?.window??.rootViewController?.present(alertController, animated: true)
     }
     
-   
+    // MARK: -
+
+    func test_CAGradientLayer() {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 50))
+        stackView.addArrangedSubview(view)
+        stackView.layoutSubviews()
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+        gradientLayer.colors = [UIColor.red.cgColor, UIColor.orange.cgColor]
+        view.layer.addSublayer(gradientLayer)
+    }
+    
+    func test_CAReplicatorLayer() {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 50))
+        view.backgroundColor = UIColor(white: 0, alpha: 0.1)
+        stackView.addArrangedSubview(view)
+        stackView.layoutSubviews()
+        
+        let replicatorSublayer = CALayer()
+        replicatorSublayer.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        replicatorSublayer.backgroundColor = UIColor.orange.cgColor
+        
+        let replicatorLayer = CAReplicatorLayer()
+        replicatorLayer.position = CGPoint.zero
+        replicatorLayer.addSublayer(replicatorSublayer)
+        replicatorLayer.instanceTransform = CATransform3DMakeTranslation(50, 0, 0)
+        replicatorLayer.instanceCount = 5
+        view.layer.addSublayer(replicatorLayer)
+    }
+    
+    func test_CAShapeLayer() {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 50))
+        view.backgroundColor = UIColor(white: 0, alpha: 0.1)
+        stackView.addArrangedSubview(view)
+        stackView.layoutSubviews()
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.lineWidth = 3
+        shapeLayer.lineCap = kCALineCapRound
+        shapeLayer.lineJoin = kCALineJoinRound
+        shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.fillColor = UIColor.orange.cgColor
+        shapeLayer.fillRule = kCAFillRuleEvenOdd
+        shapeLayer.path = {
+            let path = CGMutablePath()
+            path.move(to: CGPoint(x: 0, y: 0))
+            path.addLine(to: CGPoint(x: 100, y: 0))
+            path.addLine(to: CGPoint(x: 50, y: 30))
+            path.addLine(to: CGPoint(x: 0, y: 0))
+            return path
+        }()
+        view.layer.addSublayer(shapeLayer)
+    }
+    
+    func test_() {
+
+    }
+    
 }
 

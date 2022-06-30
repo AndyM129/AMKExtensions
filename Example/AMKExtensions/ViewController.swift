@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.pushViewController(AMDemoCollectionViewController.init(), animated: true)
+        self.navigationController?.pushViewController(AMTempViewController.init(), animated: true)
     }
 
 }
