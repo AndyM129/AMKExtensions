@@ -22,7 +22,7 @@ class AMDemoCollectionViewController: UIViewController, UICollectionViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Title"
+        title = "CollectionView"
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? UIColor.white
         

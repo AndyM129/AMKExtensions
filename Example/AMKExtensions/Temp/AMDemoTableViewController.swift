@@ -22,7 +22,7 @@ class AMDemoTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Title"
+        title = "TableView"
         view.backgroundColor = view.backgroundColor ?? UIColor.white
         tableView.reloadData()
     }

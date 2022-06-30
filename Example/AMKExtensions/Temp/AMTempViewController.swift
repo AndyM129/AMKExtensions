@@ -25,7 +25,7 @@ class AMTempViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "AMTempViewController"
+        title = "Temp"
         view.backgroundColor = view.backgroundColor ?? UIColor.white
         
         //test_01()
@@ -248,8 +248,8 @@ class AMTempViewController: UIViewController, UITextFieldDelegate {
         view.layer.addSublayer(shapeLayer)
     }
     
-    func test_() {
-
+    func test_xxx() {
+        fatalError("func() has not been implemented !")
     }
     
 }
