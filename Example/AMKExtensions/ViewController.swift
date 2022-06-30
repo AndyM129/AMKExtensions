@@ -25,7 +25,7 @@ class Example: NSObject {
 }
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     // MARK: - Deinit
     
     deinit {
@@ -42,6 +42,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? UIColor.white
         tableView.reloadData()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 1)) { [unowned self] in
+            navigationController?.pushViewController(WXRootViewController(), animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +91,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         examples.append(Example(title: "AMDemoCollectionViewController", subtitle: "", clickedBlock: { [unowned self] example in
             navigationController?.pushViewController(AMDemoCollectionViewController(), animated: true)
         }))
+        examples.append(Example(title: "仿微信", subtitle: "", clickedBlock: { [unowned self] example in
+            navigationController?.pushViewController(WXRootViewController(), animated: true)
+        }))
         return examples
     }()
     
@@ -113,7 +120,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - Protocols
     
     // MARK: UITableViewDataSource
-        
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return examples.count
     }
@@ -138,9 +145,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.deselectRow(at: indexPath, animated: true)
         example.clickedBlock?(example)
     }
-        
+    
     // MARK: - Helper Methods
-
-
+    
 }
 

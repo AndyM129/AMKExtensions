@@ -16,6 +16,12 @@
 		88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51546286C2AD80056813A /* AMTempViewController.swift */; };
 		88E51549286C673E0056813A /* AMDemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51548286C673E0056813A /* AMDemoTableViewController.swift */; };
 		88E5154B286C7D7C0056813A /* AMDemoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */; };
+		88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156C286DC8CF0056813A /* WXRootViewController.swift */; };
+		88E5156F286DCA0B0056813A /* WXMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */; };
+		88E51571286DCA210056813A /* WXContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51570286DCA210056813A /* WXContactsViewController.swift */; };
+		88E51573286DCA340056813A /* WXDiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51572286DCA340056813A /* WXDiscoveryViewController.swift */; };
+		88E51575286DCA400056813A /* WXMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51574286DCA400056813A /* WXMeViewController.swift */; };
+		88E51578286DCCC50056813A /* WXAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51577286DCCC50056813A /* WXAppearance.swift */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
 		DD24B3956808C7F3365DBC7F /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE80C895C91B68EBF172325D /* Pods_AMKExtensions_Example.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +54,12 @@
 		88E51546286C2AD80056813A /* AMTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMTempViewController.swift; path = Temp/AMTempViewController.swift; sourceTree = "<group>"; };
 		88E51548286C673E0056813A /* AMDemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoTableViewController.swift; path = Temp/AMDemoTableViewController.swift; sourceTree = "<group>"; };
 		88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoCollectionViewController.swift; path = Temp/AMDemoCollectionViewController.swift; sourceTree = "<group>"; };
+		88E5156C286DC8CF0056813A /* WXRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXRootViewController.swift; sourceTree = "<group>"; };
+		88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMessagesViewController.swift; sourceTree = "<group>"; };
+		88E51570286DCA210056813A /* WXContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXContactsViewController.swift; sourceTree = "<group>"; };
+		88E51572286DCA340056813A /* WXDiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXDiscoveryViewController.swift; sourceTree = "<group>"; };
+		88E51574286DCA400056813A /* WXMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMeViewController.swift; sourceTree = "<group>"; };
+		88E51577286DCCC50056813A /* WXAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXAppearance.swift; sourceTree = "<group>"; };
 		DC3B593863B76026CCD7E49C /* Pods-AMKExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Tests/Pods-AMKExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E79B7270D1C6A97826FB1D35 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E9E325FC9D8F8CAC0FAC4B6D /* AMKExtensions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AMKExtensions.podspec; path = ../AMKExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -102,6 +114,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				88E51544286C2A7F0056813A /* Foundation */,
+				88E5154D286DC79A0056813A /* Weixin */,
 				88E51545286C2A980056813A /* Temp */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -173,6 +186,267 @@
 				88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */,
 			);
 			name = Temp;
+			sourceTree = "<group>";
+		};
+		88E5154D286DC79A0056813A /* Weixin */ = {
+			isa = PBXGroup;
+			children = (
+				88E51552286DC8950056813A /* Modules */,
+				88E5154E286DC8950056813A /* Services */,
+				88E5154F286DC8950056813A /* Utilities */,
+			);
+			path = Weixin;
+			sourceTree = "<group>";
+		};
+		88E5154E286DC8950056813A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		88E5154F286DC8950056813A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				88E51576286DCC480056813A /* Constants */,
+				88E51550286DC8950056813A /* Extensions */,
+				88E51551286DC8950056813A /* Views */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		88E51550286DC8950056813A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		88E51551286DC8950056813A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88E51552286DC8950056813A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				88E51567286DC8950056813A /* Root */,
+				88E51553286DC8950056813A /* Messages */,
+				88E51558286DC8950056813A /* Contacts */,
+				88E5155D286DC8950056813A /* Discovery */,
+				88E51562286DC8950056813A /* Me */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		88E51553286DC8950056813A /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				88E51556286DC8950056813A /* ViewControllers */,
+				88E51554286DC8950056813A /* ViewModels */,
+				88E51557286DC8950056813A /* Views */,
+				88E51555286DC8950056813A /* Models */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		88E51554286DC8950056813A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		88E51555286DC8950056813A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88E51556286DC8950056813A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88E51557286DC8950056813A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88E51558286DC8950056813A /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				88E5155B286DC8950056813A /* ViewControllers */,
+				88E51559286DC8950056813A /* ViewModels */,
+				88E5155C286DC8950056813A /* Views */,
+				88E5155A286DC8950056813A /* Models */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		88E51559286DC8950056813A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		88E5155A286DC8950056813A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88E5155B286DC8950056813A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88E51570286DCA210056813A /* WXContactsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88E5155C286DC8950056813A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88E5155D286DC8950056813A /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				88E51560286DC8950056813A /* ViewControllers */,
+				88E5155E286DC8950056813A /* ViewModels */,
+				88E51561286DC8950056813A /* Views */,
+				88E5155F286DC8950056813A /* Models */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		88E5155E286DC8950056813A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		88E5155F286DC8950056813A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88E51560286DC8950056813A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88E51572286DCA340056813A /* WXDiscoveryViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88E51561286DC8950056813A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88E51562286DC8950056813A /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				88E51565286DC8950056813A /* ViewControllers */,
+				88E51563286DC8950056813A /* ViewModels */,
+				88E51566286DC8950056813A /* Views */,
+				88E51564286DC8950056813A /* Models */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		88E51563286DC8950056813A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		88E51564286DC8950056813A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88E51565286DC8950056813A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88E51574286DCA400056813A /* WXMeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88E51566286DC8950056813A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88E51567286DC8950056813A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				88E5156A286DC8950056813A /* ViewControllers */,
+				88E51568286DC8950056813A /* ViewModels */,
+				88E5156B286DC8950056813A /* Views */,
+				88E51569286DC8950056813A /* Models */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		88E51568286DC8950056813A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		88E51569286DC8950056813A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88E5156A286DC8950056813A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88E5156C286DC8CF0056813A /* WXRootViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		88E5156B286DC8950056813A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		88E51576286DCC480056813A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				88E51577286DCCC50056813A /* WXAppearance.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		B9BF1DBA8BDDA1D627580F95 /* Frameworks */ = {
@@ -371,10 +645,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				88E51549286C673E0056813A /* AMDemoTableViewController.swift in Sources */,
+				88E51571286DCA210056813A /* WXContactsViewController.swift in Sources */,
+				88E51573286DCA340056813A /* WXDiscoveryViewController.swift in Sources */,
 				88E5154B286C7D7C0056813A /* AMDemoCollectionViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				88E51575286DCA400056813A /* WXMeViewController.swift in Sources */,
+				88E51578286DCCC50056813A /* WXAppearance.swift in Sources */,
 				88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */,
+				88E5156F286DCA0B0056813A /* WXMessagesViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
