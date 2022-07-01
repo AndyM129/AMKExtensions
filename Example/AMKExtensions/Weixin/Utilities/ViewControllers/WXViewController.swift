@@ -1,5 +1,5 @@
 //
-//  WXContactsViewController.swift
+//  WXViewController.swift
 //  AMKExtensions_Example
 //
 //  Created by 孟昕欣 on 2022/6/30.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WXContactsViewController: WXViewController {
+class WXViewController: UIViewController {
 
     // MARK: - Deinit
     
@@ -18,21 +18,13 @@ class WXContactsViewController: WXViewController {
     
     // MARK: - Init Methods
     
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        tabBarItem.title = "通讯录"
-        tabBarItem.image = UIImage(color: UIColor.clear, size: WXAppearance.tabBarItemSize)?.byRoundCornerRadius(WXAppearance.tabBarItemCornerRadius, borderWidth: 2, borderColor: WXAppearance.normalTintColor)
-        tabBarItem.selectedImage = UIImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)?.byRoundCornerRadius(5)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // MARK: - Life Circle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = title ?? tabBarItem.title
+        automaticallyAdjustsScrollViewInsets = false;
+        view.backgroundColor = view.backgroundColor ?? WXAppearance.viewBackgroundColor
         
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WXMessagesViewController: UIViewController {
+class WXMessagesViewController: WXViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Deinit
     
@@ -33,9 +33,6 @@ class WXMessagesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = tabBarItem.title
-        automaticallyAdjustsScrollViewInsets = false;
-        view.backgroundColor = view.backgroundColor ?? UIColor.white
         
     }
     
@@ -46,7 +43,7 @@ class WXMessagesViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,6 +57,21 @@ class WXMessagesViewController: UIViewController {
     }
     
     // MARK: - Getters & Setters
+    
+    lazy var tableView: UITableView = { [unowned self] in
+        let tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.separatorColor = WXAppearance.viewBackgroundColor
+        tableView.backgroundColor = view.backgroundColor
+        tableView.estimatedSectionHeaderHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+        tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: NSStringFromClass(UITableViewHeaderFooterView.self))
+        view.addSubview(tableView)
+        return tableView
+    }()
     
     // MARK: - Data & Networking
     
@@ -82,6 +94,29 @@ class WXMessagesViewController: UIViewController {
     // MARK: - KVO
     
     // MARK: - Protocols
+    
+    // MARK: UITableViewDataSource
+        
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+        cell.contentView.backgroundColor = UIColor(red: CGFloat(arc4random()%255)/255.0, green: CGFloat(arc4random()%255)/255.0, blue: CGFloat(arc4random()%255)/255.0, alpha: 0.2)
+        return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 66
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print("tableViewDidSelectRow: \(tableView), \(indexPath)")
+    }
     
     // MARK: - Helper Methods
 

@@ -26,14 +26,22 @@ class WXRootViewController: UITabBarController {
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? UIColor.white
         
+        tabBar.isTranslucent = false
+        tabBar.barTintColor = UIColor.white
         tabBar.tintColor = WXAppearance.selectedTintColor
         tabBar.unselectedItemTintColor = WXAppearance.normalTintColor
         
+        if #available(iOS 13.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.backgroundColor = UIColor.white
+            tabBar.standardAppearance = appearance
+        }
+                
         viewControllers = [
-            UINavigationController.init(rootViewController: WXMessagesViewController()),
-            UINavigationController.init(rootViewController: WXContactsViewController()),
-            UINavigationController.init(rootViewController: WXDiscoveryViewController()),
-            UINavigationController.init(rootViewController: WXMeViewController()),
+            WXNavigationController.init(rootViewController: WXMessagesViewController()),
+            WXNavigationController.init(rootViewController: WXContactsViewController()),
+            WXNavigationController.init(rootViewController: WXDiscoveryViewController()),
+            WXNavigationController.init(rootViewController: WXMeViewController()),
         ]
     }
     

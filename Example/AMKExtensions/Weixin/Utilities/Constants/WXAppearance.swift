@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 主题风格
 class WXAppearance {
     
     /// 主题色 - 默认状态
@@ -22,4 +23,10 @@ class WXAppearance {
     /// TabBarItem 图标圆角大小
     static let tabBarItemCornerRadius: CGFloat = 4
     
+    /// 页面背景色
+    static let viewBackgroundColor :UIColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.00)
+
+    /// 图片背景色
+    static let imageBackgroundColor :UIColor = UIColor.lightGray
+
 }

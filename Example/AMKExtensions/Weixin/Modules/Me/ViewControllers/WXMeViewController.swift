@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WXMeViewController: UIViewController {
+class WXMeViewController: WXViewController {
 
     // MARK: - Deinit
     
