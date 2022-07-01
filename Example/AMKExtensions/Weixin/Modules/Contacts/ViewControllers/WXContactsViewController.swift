@@ -27,13 +27,14 @@ class WXContactsViewController: WXViewController, UITableViewDataSource, UITable
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     // MARK: - Life Circle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = addContactBarButtonItem
         tableView.reloadData()
     }
     
@@ -44,9 +45,7 @@ class WXContactsViewController: WXViewController, UITableViewDataSource, UITable
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.reloadData { [unowned self] responseObject, error in
-            tableView.reloadData()
-        }
+        reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,6 +60,21 @@ class WXContactsViewController: WXViewController, UITableViewDataSource, UITable
     
     // MARK: - Getters & Setters
     
+    lazy var addContactBarButtonItem: UIBarButtonItem = {
+        let image = UIImage.wx_iconImage(size: 30)?.withRenderingMode(.alwaysOriginal)
+        let addContactBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(addContactBarButtonItemClicked))
+        return addContactBarButtonItem
+    }()
+    
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: view.width, height: 50))
+        searchBar.placeholder = "搜索"
+        searchBar.searchBarStyle = .minimal
+        searchBar.isTranslucent = false
+        searchBar.backgroundColor = WXAppearance.viewBackgroundColor
+        return searchBar
+    }()
+    
     lazy var tableView: UITableView = { [unowned self] in
         let tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.delegate = self
@@ -69,12 +83,13 @@ class WXContactsViewController: WXViewController, UITableViewDataSource, UITable
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
-        tableView.tableHeaderView = {
-            let tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.width, height: view.height))
+        tableView.addSubview({
+            let tableHeaderView = UIView(frame: CGRect(x: 0, y: -view.height, width: tableView.width, height: view.height))
             tableHeaderView.backgroundColor = WXAppearance.viewBackgroundColor
             return tableHeaderView
-        }()
-        tableView.contentInset = UIEdgeInsets(top: -tableView.tableHeaderView!.height, left: 0, bottom: 0, right: 0)
+        }())
+        tableView.tableHeaderView = searchBar
+        tableView.tableFooterView = WXContactsTableFooterView(frame: CGRect(x: 0, y: 0, width: tableView.width, height: 50))
         tableView.backgroundColor = .white
         tableView.separatorColor = WXAppearance.viewBackgroundColor
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 62, bottom: 0, right: 0)
@@ -84,7 +99,7 @@ class WXContactsViewController: WXViewController, UITableViewDataSource, UITable
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         tableView.register(WXContactsTableViewHeaderView.self, forHeaderFooterViewReuseIdentifier: NSStringFromClass(WXContactsTableViewHeaderView.self))
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: NSStringFromClass(UITableViewHeaderFooterView.self))
-        view.addSubview(tableView)
+        view.addSubview(tableView)        
         return tableView
     }()
     
@@ -94,11 +109,24 @@ class WXContactsViewController: WXViewController, UITableViewDataSource, UITable
     
     // MARK: - Data & Networking
     
+    func reloadData() {
+        reloadData(completion: nil)
+    }
+    
+    func reloadData(completion: WXNetworkingCompletionBlock?) {
+        viewModel.reloadData { [unowned self] responseObject, error in
+            let tableFooterView = tableView.tableFooterView as! WXContactsTableFooterView
+            tableFooterView.titleLabel.text = "\(viewModel.totalCount)个朋友及联系人"
+            tableView.reloadData()
+            completion?(responseObject, error)
+        }
+    }
+    
     // MARK: - Layout Subviews
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
+
     }
     
     override func viewDidLayoutSubviews() {
@@ -107,6 +135,10 @@ class WXContactsViewController: WXViewController, UITableViewDataSource, UITable
     }
     
     // MARK: - Action Methods
+    
+    @objc func addContactBarButtonItemClicked(sender: Any?) {
+        print("addContactBarButtonItemClicked: \(sender ?? "")")
+    }
     
     // MARK: - Notifications
     
@@ -136,11 +168,11 @@ class WXContactsViewController: WXViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 1 {
-            return 30
+            return WXContactsTableViewHeaderView.tableView(tableView, heightForHeaderInSection: section, withData: nil)
         }
         return 1
     }
-    
+        
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return WXContactsTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: nil)
     }
@@ -150,7 +182,7 @@ class WXContactsViewController: WXViewController, UITableViewDataSource, UITable
         headerView.titleLabel.text = section == 1 ? "⭐️ 星标朋友" : nil
         return headerView
     }
-        
+            
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print("tableViewDidSelectRow: \(tableView), \(indexPath)")

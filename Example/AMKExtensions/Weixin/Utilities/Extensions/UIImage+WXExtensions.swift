@@ -70,8 +70,8 @@ extension UIImage {
             imageSize = CGSize(width: 1, height: 1)
         }
         let imageCornerRadius = cornerRadius ?? (max(imageSize.width, imageSize.height) >= 20 ? 5 : 3)
-        let imageBorderWidth = borderWidth ?? (max(imageSize.width, imageSize.height) >= 20 ? 1.5 : 1)
-        let imageBorderColor = borderColor
+        let imageBorderWidth = borderWidth ?? 1 //(max(imageSize.width, imageSize.height) >= 20 ? 1.5 : 1)
+        let imageBorderColor = borderColor ?? imageColor
         
         return UIImage(color: imageColor, size: imageSize)?.byRoundCornerRadius(imageCornerRadius, borderWidth: imageBorderWidth, borderColor: imageBorderColor)
     }

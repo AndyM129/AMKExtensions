@@ -54,6 +54,8 @@ class WXContactsViewModel: NSObject {
     // MARK: - Getters & Setters
     
     var sections: [WXContactsSection] = []
+    
+    var totalCount: Int = 0
         
     // MARK: - Data & Networking
     
@@ -68,11 +70,11 @@ class WXContactsViewModel: NSObject {
             
             // 随机组成人名 & 头像，并加入列表
             var contacts: WXContactsSection = []
-            let count = Int.random(in: 10...20)
+            let count = Int.random(in: 10...200)
             for _ in 0...count {
                 let surname = surnames[Int(arc4random()) % surnames.count]
                 let name = names[Int(arc4random()) % names.count]
-                let iconImage = UIImage.wx_image(color: UIColor.wx_randomColor(), size: 100)
+                let iconImage = UIImage.wx_image(color: UIColor.wx_randomColor(), size: WXAppearance.menuItemIconImageSize)
                 contacts.append(WXContactsItemViewModel(title: "\(surname)\(name)", iconImage: iconImage, clickedBlock: { viewModel in
                     
                 }))
@@ -80,6 +82,7 @@ class WXContactsViewModel: NSObject {
             
             // 更新列表
             sections[1] = contacts
+            totalCount = count
             
             // 执行回调 以刷新列表
             completion?(nil, nil)
