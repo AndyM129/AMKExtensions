@@ -23,14 +23,20 @@ class WXAppearance {
     /// TabBarItem 图标圆角大小
     static let tabBarItemCornerRadius: CGFloat = 4
     
+    /// TabBarItem 角标颜色
+    static let tabBarItemBadgeColor: UIColor = UIColor(red:0.91, green:0.36, blue:0.35, alpha:1.00)
+    
     /// 页面背景色
-    static let viewBackgroundColor :UIColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.00)
+    static let viewBackgroundColor: UIColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.00)
 
     /// 图片背景色
-    static let imageBackgroundColor :UIColor = UIColor.lightGray
+    static let imageBackgroundColor: UIColor = UIColor.lightGray
 
     /// TableView - section 间隔高度
-    static let tableViewSectionIntervalHeight :CGFloat = 8
+    static let tableViewSectionIntervalHeight: CGFloat = 8
+    
+    /// TableViewCell - 选中时的背景色
+    static let tableViewCellSelectedBackgroundColor: UIColor = UIColor(white: 0, alpha: 0.1)
     
     /// 列表左侧的图标 尺寸
     static let menuItemIconImageSize = CGSize(width: 20, height: 20)

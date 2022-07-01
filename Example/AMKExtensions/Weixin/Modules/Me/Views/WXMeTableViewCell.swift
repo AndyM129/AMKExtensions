@@ -22,7 +22,7 @@ class WXMeTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = UIColor.white
         selectedBackgroundView = UIView(frame: bounds)
-        selectedBackgroundView?.backgroundColor = UIColor(white: 0, alpha: 0.1)
+        selectedBackgroundView?.backgroundColor = WXAppearance.tableViewCellSelectedBackgroundColor
 
     }
     

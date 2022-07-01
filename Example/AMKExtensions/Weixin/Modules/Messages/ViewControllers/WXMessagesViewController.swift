@@ -23,6 +23,7 @@ class WXMessagesViewController: WXViewController, UITableViewDataSource, UITable
         tabBarItem.title = "微信"
         tabBarItem.image = UIImage.wx_iconImage(color: WXAppearance.normalTintColor, size: WXAppearance.tabBarItemSize)
         tabBarItem.selectedImage = UIImage.wx_selectedIconImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)
+        tabBarItem.badgeColor = WXAppearance.tabBarItemBadgeColor
     }
     
     required init?(coder: NSCoder) {
@@ -33,7 +34,7 @@ class WXMessagesViewController: WXViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -23,17 +23,19 @@ class WXDiscoveryViewController: WXViewController, UITableViewDataSource, UITabl
         tabBarItem.title = "发现"
         tabBarItem.image = UIImage.wx_iconImage(color: WXAppearance.normalTintColor, size: WXAppearance.tabBarItemSize)
         tabBarItem.selectedImage = UIImage.wx_selectedIconImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)
+        tabBarItem.badgeColor = WXAppearance.tabBarItemBadgeColor
+        tabBarItem.badgeValue = "1"
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     // MARK: - Life Circle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +66,7 @@ class WXDiscoveryViewController: WXViewController, UITableViewDataSource, UITabl
         tableView.dataSource = self
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.separatorColor = WXAppearance.viewBackgroundColor
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 45, bottom: 0, right: 0)
         tableView.backgroundColor = view.backgroundColor
         tableView.estimatedSectionHeaderHeight = 0
         tableView.estimatedSectionFooterHeight = 0
@@ -115,8 +118,9 @@ class WXDiscoveryViewController: WXViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(WXDiscoveryTableViewCell.self), for: indexPath) as! WXDiscoveryTableViewCell
         cell.iconImageView.image = itemViewModel.iconImage
         cell.titleLabel.text = itemViewModel.title
-        cell.profileImageView.image = UIImage.wx_image(color: UIColor(red:0.93, green:0.33, blue:0.27, alpha:1.00), size: 17)
+        cell.profileImageView.image = UIImage.wx_image(color: UIColor(red:0.56, green:0.73, blue:0.96, alpha:1.00), size: 100)
         cell.profileImageView.isHidden = indexPath.section==0 && indexPath.row==0 ? false : true
+        cell.profileImageView.badgeView?.isHidden = cell.profileImageView.isHidden
         return cell
     }
     

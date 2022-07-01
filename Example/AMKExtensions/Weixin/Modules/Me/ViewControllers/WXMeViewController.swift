@@ -24,6 +24,7 @@ class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDe
         tabBarItem.title = "我"
         tabBarItem.image = UIImage.wx_iconImage(color: WXAppearance.normalTintColor, size: WXAppearance.tabBarItemSize)
         tabBarItem.selectedImage = UIImage.wx_selectedIconImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)
+        tabBarItem.badgeColor = WXAppearance.tabBarItemBadgeColor
     }
     
     required init?(coder: NSCoder) {
@@ -35,6 +36,7 @@ class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         fd_prefersNavigationBarHidden = true
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +77,7 @@ class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDe
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.backgroundColor = view.backgroundColor
         tableView.separatorColor = WXAppearance.viewBackgroundColor
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 45, bottom: 0, right: 0)
         tableView.estimatedSectionHeaderHeight = 0
         tableView.estimatedSectionFooterHeight = 0
         tableView.register(WXMeTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(WXMeTableViewCell.self))
@@ -130,6 +133,8 @@ class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDe
             cell.profileImageView.image = UIImage.wx_image(color: UIColor(red:0.22, green:0.52, blue:0.97, alpha:1.00), size: 100)
             cell.usernameLabel.text = "Andy"
             cell.userIdLabel.text = "微信号：Andy_129"
+            cell.friendsStateButton.setImage(UIImage.wx_image(color: UIColor(red:0.56, green:0.73, blue:0.96, alpha:1.00), size: 12, cornerRadius: 6, borderWidth: 0, borderColor: nil), for: .normal)
+            cell.friendsStateButton.setTitle("1个朋友", for: .normal)
             return cell
         }
 

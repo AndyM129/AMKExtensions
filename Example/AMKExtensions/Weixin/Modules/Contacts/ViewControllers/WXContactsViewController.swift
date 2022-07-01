@@ -23,6 +23,7 @@ class WXContactsViewController: WXViewController {
         tabBarItem.title = "通讯录"
         tabBarItem.image = UIImage.wx_iconImage(color: WXAppearance.normalTintColor, size: WXAppearance.tabBarItemSize)
         tabBarItem.selectedImage = UIImage.wx_selectedIconImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)
+        tabBarItem.badgeColor = WXAppearance.tabBarItemBadgeColor
     }
     
     required init?(coder: NSCoder) {

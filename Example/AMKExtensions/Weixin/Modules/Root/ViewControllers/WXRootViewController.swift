@@ -25,6 +25,7 @@ class WXRootViewController: UITabBarController {
         title = "Title"
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? UIColor.white
+        fd_prefersNavigationBarHidden = true
         
         tabBar.isTranslucent = false
         tabBar.barTintColor = UIColor.white
@@ -47,7 +48,7 @@ class WXRootViewController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

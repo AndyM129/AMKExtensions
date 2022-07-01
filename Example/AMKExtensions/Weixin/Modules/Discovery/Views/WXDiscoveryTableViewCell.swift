@@ -9,6 +9,10 @@
 import UIKit
 import SnapKit
 
+class WXDiscoveryProfileImageView: UIImageView {
+    var badgeView: UIView?
+}
+
 class WXDiscoveryTableViewCell: UITableViewCell {
 
     // MARK: - Deinit
@@ -23,7 +27,7 @@ class WXDiscoveryTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = UIColor.white
         selectedBackgroundView = UIView(frame: bounds)
-        selectedBackgroundView?.backgroundColor = UIColor(white: 0, alpha: 0.1)
+        selectedBackgroundView?.backgroundColor = WXAppearance.tableViewCellSelectedBackgroundColor
     }
     
     required init?(coder: NSCoder) {
@@ -51,13 +55,19 @@ class WXDiscoveryTableViewCell: UITableViewCell {
         return titleLabel
     }()
     
-    lazy var profileImageView: UIImageView = {
-        let profileImageView = UIImageView.init()
-        profileImageView.layer.cornerRadius = 3
+    lazy var profileImageView: WXDiscoveryProfileImageView = {
+        let profileImageView = WXDiscoveryProfileImageView.init()
+        profileImageView.layer.cornerRadius = 5
         profileImageView.layer.masksToBounds = true
         profileImageView.image = UIImage.wx_image(size: 17)
         profileImageView.contentMode = .scaleAspectFit
         contentView.addSubview(profileImageView)
+        
+        profileImageView.badgeView = UIView()
+        profileImageView.badgeView!.layer.cornerRadius = 3.5
+        profileImageView.badgeView!.layer.backgroundColor = WXAppearance.tabBarItemBadgeColor.cgColor
+        profileImageView.badgeView!.isHidden = true
+        contentView.addSubview(profileImageView.badgeView!)
         return profileImageView
     }()
     
@@ -98,6 +108,12 @@ class WXDiscoveryTableViewCell: UITableViewCell {
             make.width.height.equalTo(30)
             make.centerY.equalTo(contentView)
         }
+        profileImageView.badgeView!.snp.makeConstraints { make in
+            make.width.height.equalTo(7)
+            make.centerX.equalTo(profileImageView.snp.right)
+            make.centerY.equalTo(profileImageView.snp.top)
+        }
+
         arrowImageView.snp.makeConstraints { make in
             make.size.equalTo(WXAppearance.menuItemArrowImageSize)
             make.right.equalTo(contentView).inset(15)
