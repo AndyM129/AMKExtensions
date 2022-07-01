@@ -34,6 +34,12 @@
 		88E5158D286EA4E40056813A /* WXMeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5158C286EA4E40056813A /* WXMeInfoTableViewCell.swift */; };
 		88E5158F286EA5730056813A /* WXMeInfoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5158E286EA5730056813A /* WXMeInfoItemViewModel.swift */; };
 		88E51591286EC7BE0056813A /* WXConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51590286EC7BE0056813A /* WXConstants.swift */; };
+		88E51593286EF4D10056813A /* WXContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51592286EF4D10056813A /* WXContactsTableViewCell.swift */; };
+		88E51596286EF6930056813A /* WXContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51594286EF6930056813A /* WXContactsViewModel.swift */; };
+		88E51597286EF6930056813A /* WXContactsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51595286EF6930056813A /* WXContactsItemViewModel.swift */; };
+		88E5159A286EF8A50056813A /* WXNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51599286EF8A50056813A /* WXNetworking.swift */; };
+		88E5159C286F00320056813A /* UIColor+WXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5159B286F00320056813A /* UIColor+WXExtensions.swift */; };
+		88E5159E286F052B0056813A /* WXContactsTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5159D286F052B0056813A /* WXContactsTableViewHeaderView.swift */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
 		DD24B3956808C7F3365DBC7F /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE80C895C91B68EBF172325D /* Pods_AMKExtensions_Example.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +90,12 @@
 		88E5158C286EA4E40056813A /* WXMeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		88E5158E286EA5730056813A /* WXMeInfoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMeInfoItemViewModel.swift; sourceTree = "<group>"; };
 		88E51590286EC7BE0056813A /* WXConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXConstants.swift; sourceTree = "<group>"; };
+		88E51592286EF4D10056813A /* WXContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXContactsTableViewCell.swift; sourceTree = "<group>"; };
+		88E51594286EF6930056813A /* WXContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXContactsViewModel.swift; sourceTree = "<group>"; };
+		88E51595286EF6930056813A /* WXContactsItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXContactsItemViewModel.swift; sourceTree = "<group>"; };
+		88E51599286EF8A50056813A /* WXNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXNetworking.swift; sourceTree = "<group>"; };
+		88E5159B286F00320056813A /* UIColor+WXExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+WXExtensions.swift"; sourceTree = "<group>"; };
+		88E5159D286F052B0056813A /* WXContactsTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXContactsTableViewHeaderView.swift; sourceTree = "<group>"; };
 		DC3B593863B76026CCD7E49C /* Pods-AMKExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Tests/Pods-AMKExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E79B7270D1C6A97826FB1D35 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E9E325FC9D8F8CAC0FAC4B6D /* AMKExtensions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AMKExtensions.podspec; path = ../AMKExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -225,6 +237,7 @@
 		88E5154E286DC8950056813A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				88E51598286EF88D0056813A /* Networking */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				88E51584286E90F50056813A /* UIImage+WXExtensions.swift */,
+				88E5159B286F00320056813A /* UIColor+WXExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,6 +335,8 @@
 		88E51559286DC8950056813A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				88E51594286EF6930056813A /* WXContactsViewModel.swift */,
+				88E51595286EF6930056813A /* WXContactsItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -343,6 +359,8 @@
 		88E5155C286DC8950056813A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88E51592286EF4D10056813A /* WXContactsTableViewCell.swift */,
+				88E5159D286F052B0056813A /* WXContactsTableViewHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -493,6 +511,14 @@
 			name = ViewControllers;
 			path = AMKExtensions/Weixin/Utilities/ViewControllers;
 			sourceTree = SOURCE_ROOT;
+		};
+		88E51598286EF88D0056813A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				88E51599286EF8A50056813A /* WXNetworking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
 		};
 		B9BF1DBA8BDDA1D627580F95 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -691,6 +717,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E5159E286F052B0056813A /* WXContactsTableViewHeaderView.swift in Sources */,
 				88E51549286C673E0056813A /* AMDemoTableViewController.swift in Sources */,
 				88E5157D286DE94C0056813A /* WXViewController.swift in Sources */,
 				88E5158B286E9E210056813A /* WXMeItemViewModel.swift in Sources */,
@@ -699,7 +726,9 @@
 				88E51573286DCA340056813A /* WXDiscoveryViewController.swift in Sources */,
 				88E5154B286C7D7C0056813A /* AMDemoCollectionViewController.swift in Sources */,
 				88E51587286E9D220056813A /* WXMeTableViewCell.swift in Sources */,
+				88E5159C286F00320056813A /* UIColor+WXExtensions.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				88E51593286EF4D10056813A /* WXContactsTableViewCell.swift in Sources */,
 				88E51575286DCA400056813A /* WXMeViewController.swift in Sources */,
 				88E5158F286EA5730056813A /* WXMeInfoItemViewModel.swift in Sources */,
 				88E51585286E90F50056813A /* UIImage+WXExtensions.swift in Sources */,
@@ -708,11 +737,14 @@
 				88E51578286DCCC50056813A /* WXAppearance.swift in Sources */,
 				88E5157F286DEBCC0056813A /* WXDiscoveryItemViewModel.swift in Sources */,
 				88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */,
+				88E51597286EF6930056813A /* WXContactsItemViewModel.swift in Sources */,
 				88E5156F286DCA0B0056813A /* WXMessagesViewController.swift in Sources */,
+				88E5159A286EF8A50056813A /* WXNetworking.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				88E51591286EC7BE0056813A /* WXConstants.swift in Sources */,
 				88E5158D286EA4E40056813A /* WXMeInfoTableViewCell.swift in Sources */,
 				88E5158A286E9E210056813A /* WXMeViewModel.swift in Sources */,
+				88E51596286EF6930056813A /* WXContactsViewModel.swift in Sources */,
 				88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
