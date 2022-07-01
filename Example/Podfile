@@ -9,7 +9,8 @@ target 'AMKExtensions_Example' do
     pod 'FLEX'
     #pod 'JSONKit'
     pod 'HandyJSON'
-
+    pod 'FDFullscreenPopGesture'
+    
     target 'AMKExtensions_Tests' do
         inherit! :search_paths
     end

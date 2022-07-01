@@ -29,4 +29,7 @@ class WXAppearance {
     /// 图片背景色
     static let imageBackgroundColor :UIColor = UIColor.lightGray
 
+    /// TableView - section 间隔高度
+    static let tableViewSectionIntervalHeight :CGFloat = 8
+    
 }

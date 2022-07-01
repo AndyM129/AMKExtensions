@@ -28,6 +28,9 @@
 		88E51581286DECB90056813A /* WXDiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51580286DECB90056813A /* WXDiscoveryViewModel.swift */; };
 		88E51583286E8B430056813A /* WXDiscoveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51582286E8B430056813A /* WXDiscoveryTableViewCell.swift */; };
 		88E51585286E90F50056813A /* UIImage+WXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51584286E90F50056813A /* UIImage+WXExtensions.swift */; };
+		88E51587286E9D220056813A /* WXMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51586286E9D220056813A /* WXMeTableViewCell.swift */; };
+		88E5158A286E9E210056813A /* WXMeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51588286E9E210056813A /* WXMeViewModel.swift */; };
+		88E5158B286E9E210056813A /* WXMeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51589286E9E210056813A /* WXMeItemViewModel.swift */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
 		DD24B3956808C7F3365DBC7F /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE80C895C91B68EBF172325D /* Pods_AMKExtensions_Example.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,9 @@
 		88E51580286DECB90056813A /* WXDiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXDiscoveryViewModel.swift; sourceTree = "<group>"; };
 		88E51582286E8B430056813A /* WXDiscoveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXDiscoveryTableViewCell.swift; sourceTree = "<group>"; };
 		88E51584286E90F50056813A /* UIImage+WXExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+WXExtensions.swift"; sourceTree = "<group>"; };
+		88E51586286E9D220056813A /* WXMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMeTableViewCell.swift; sourceTree = "<group>"; };
+		88E51588286E9E210056813A /* WXMeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXMeViewModel.swift; sourceTree = "<group>"; };
+		88E51589286E9E210056813A /* WXMeItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXMeItemViewModel.swift; sourceTree = "<group>"; };
 		DC3B593863B76026CCD7E49C /* Pods-AMKExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Tests/Pods-AMKExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E79B7270D1C6A97826FB1D35 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E9E325FC9D8F8CAC0FAC4B6D /* AMKExtensions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AMKExtensions.podspec; path = ../AMKExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -392,6 +398,8 @@
 		88E51563286DC8950056813A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				88E51588286E9E210056813A /* WXMeViewModel.swift */,
+				88E51589286E9E210056813A /* WXMeItemViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -414,6 +422,7 @@
 		88E51566286DC8950056813A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88E51586286E9D220056813A /* WXMeTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -599,6 +608,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-AMKExtensions_Example/Pods-AMKExtensions_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AMKExtensions/AMKExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/AMKStackView/AMKStackView.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -609,6 +619,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMKExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMKStackView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -673,10 +684,12 @@
 			files = (
 				88E51549286C673E0056813A /* AMDemoTableViewController.swift in Sources */,
 				88E5157D286DE94C0056813A /* WXViewController.swift in Sources */,
+				88E5158B286E9E210056813A /* WXMeItemViewModel.swift in Sources */,
 				88E51571286DCA210056813A /* WXContactsViewController.swift in Sources */,
 				88E51583286E8B430056813A /* WXDiscoveryTableViewCell.swift in Sources */,
 				88E51573286DCA340056813A /* WXDiscoveryViewController.swift in Sources */,
 				88E5154B286C7D7C0056813A /* AMDemoCollectionViewController.swift in Sources */,
+				88E51587286E9D220056813A /* WXMeTableViewCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				88E51575286DCA400056813A /* WXMeViewController.swift in Sources */,
 				88E51585286E90F50056813A /* UIImage+WXExtensions.swift in Sources */,
@@ -687,6 +700,7 @@
 				88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */,
 				88E5156F286DCA0B0056813A /* WXMessagesViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				88E5158A286E9E210056813A /* WXMeViewModel.swift in Sources */,
 				88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

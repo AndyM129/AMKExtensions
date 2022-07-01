@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import FDFullscreenPopGesture
 
-class WXMeViewController: WXViewController {
+class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Deinit
     
@@ -26,17 +27,14 @@ class WXMeViewController: WXViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
     // MARK: - Life Circle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = tabBarItem.title
-        automaticallyAdjustsScrollViewInsets = false;
-        view.backgroundColor = view.backgroundColor ?? UIColor.white
-        
+        fd_prefersNavigationBarHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +44,7 @@ class WXMeViewController: WXViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,6 +58,28 @@ class WXMeViewController: WXViewController {
     }
     
     // MARK: - Getters & Setters
+    
+    lazy var tableView: UITableView = { [unowned self] in
+        let tableView = UITableView(frame: view.bounds, style: .grouped)
+        tableView.delegate = self
+        tableView.dataSource = self
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.backgroundColor = view.backgroundColor
+        tableView.estimatedSectionHeaderHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
+        tableView.register(WXMeTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(WXMeTableViewCell.self))
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+        tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: NSStringFromClass(UITableViewHeaderFooterView.self))
+        view.addSubview(tableView)
+        return tableView
+    }()
+    
+    lazy var viewModel: WXMeViewModel = {
+        return WXMeViewModel.defaults()
+    }()
     
     // MARK: - Data & Networking
     
@@ -82,6 +102,43 @@ class WXMeViewController: WXViewController {
     // MARK: - KVO
     
     // MARK: - Protocols
+    
+    // MARK: UITableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.sections[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let itemViewModel = viewModel.sections[indexPath.section][indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(WXMeTableViewCell.self), for: indexPath) as! WXMeTableViewCell
+        cell.iconImageView.image = itemViewModel.iconImage
+        cell.titleLabel.text = itemViewModel.title
+        return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return WXAppearance.tableViewSectionIntervalHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return WXMeTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print("tableViewDidSelectRow: \(tableView), \(indexPath)")
+    }
     
     // MARK: - Helper Methods
     

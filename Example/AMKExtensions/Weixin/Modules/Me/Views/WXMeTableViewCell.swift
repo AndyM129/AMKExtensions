@@ -1,5 +1,5 @@
 //
-//  WXDiscoveryTableViewCell.swift
+//  WXMeTableViewCell.swift
 //  AMKExtensions_Example
 //
 //  Created by 孟昕欣 on 2022/7/1.
@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import SnapKit
 
-class WXDiscoveryTableViewCell: UITableViewCell {
+class WXMeTableViewCell: UITableViewCell {
 
     // MARK: - Deinit
     
@@ -21,9 +20,8 @@ class WXDiscoveryTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = UIColor.white
-        selectedBackgroundView = UIView(frame: bounds)
-        selectedBackgroundView?.backgroundColor = UIColor(white: 0, alpha: 0.1)
+        contentView.backgroundColor = UIColor.white
+
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +32,7 @@ class WXDiscoveryTableViewCell: UITableViewCell {
     
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView.init()
-        iconImageView.image = UIImage(color: .clear, size: CGSize(width: 30, height: 30))?.byRoundCornerRadius(3, borderWidth: 2, borderColor: WXAppearance.imageBackgroundColor)
+        iconImageView.image = UIImage(color: UIColor.lightGray, size: CGSize(width: 30, height: 30))
         iconImageView.contentMode = .scaleAspectFit
         contentView.addSubview(iconImageView)
         return iconImageView
@@ -51,24 +49,14 @@ class WXDiscoveryTableViewCell: UITableViewCell {
         return titleLabel
     }()
     
-    lazy var profileImageView: UIImageView = {
-        let profileImageView = UIImageView.init()
-        profileImageView.layer.cornerRadius = 3
-        profileImageView.layer.masksToBounds = true
-        profileImageView.image = UIImage(color: WXAppearance.imageBackgroundColor, size: CGSize(width: 17, height: 17))
-        profileImageView.contentMode = .scaleAspectFit
-        contentView.addSubview(profileImageView)
-        return profileImageView
-    }()
-    
     lazy var arrowImageView: UIImageView = {
         let arrowImageView = UIImageView.init()
-        arrowImageView.image = UIImage(color: .clear, size: CGSize(width: 17, height: 17))?.byRoundCornerRadius(3, borderWidth: 1, borderColor: WXAppearance.imageBackgroundColor)
+        arrowImageView.image = UIImage(color: UIColor.lightGray, size: CGSize(width: 17, height: 17))
         arrowImageView.contentMode = .scaleAspectFit
         contentView.addSubview(arrowImageView)
         return arrowImageView
     }()
-        
+    
     // MARK: - Data & Networking
     
     // MARK: - Layout Subviews
@@ -90,13 +78,8 @@ class WXDiscoveryTableViewCell: UITableViewCell {
             make.centerY.equalTo(contentView)
         }
         titleLabel.snp.makeConstraints { make in
+            make.right.lessThanOrEqualTo(arrowImageView).inset(10)
             make.left.equalTo(iconImageView.snp.right).offset(10)
-            make.right.lessThanOrEqualTo(profileImageView.snp.left).inset(10)
-            make.centerY.equalTo(contentView)
-        }
-        profileImageView.snp.makeConstraints { make in
-            make.right.equalTo(arrowImageView.snp.left).offset(-10)
-            make.width.height.equalTo(30)
             make.centerY.equalTo(contentView)
         }
         arrowImageView.snp.makeConstraints { make in
@@ -120,4 +103,5 @@ class WXDiscoveryTableViewCell: UITableViewCell {
     
     // MARK: - Helper Methods
 
+    
 }

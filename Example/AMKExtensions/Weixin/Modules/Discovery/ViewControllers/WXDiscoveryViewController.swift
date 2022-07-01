@@ -75,31 +75,7 @@ class WXDiscoveryViewController: WXViewController, UITableViewDataSource, UITabl
     }()
     
     lazy var viewModel: WXDiscoveryViewModel = {
-        let viewModel = WXDiscoveryViewModel(sections: nil)
-        viewModel.sections.append([
-            WXDiscoveryItemViewModel(title: "朋友圈", iconImage: UIImage(color: UIColor.clear, size: CGSize(width: 20, height: 20))?.byRoundCornerRadius(3, borderWidth: 1.5, borderColor: UIColor(red:0.52, green:0.81, blue:0.00, alpha:1.00)), clickedBlock: { viewModel in
-                
-            }),
-        ])
-        viewModel.sections.append([
-            WXDiscoveryItemViewModel(title: "扫一扫", iconImage: UIImage(color: UIColor.clear, size: CGSize(width: 20, height: 20))?.byRoundCornerRadius(3, borderWidth: 1.5, borderColor: UIColor(red:0.22, green:0.43, blue:0.90, alpha:1.00)), clickedBlock: { viewModel in
-                
-            }),
-        ])
-        viewModel.sections.append([
-            WXDiscoveryItemViewModel(title: "看一看", iconImage: UIImage(color: UIColor.clear, size: CGSize(width: 20, height: 20))?.byRoundCornerRadius(3, borderWidth: 1.5, borderColor: UIColor(red:0.94, green:0.73, blue:0.00, alpha:1.00)), clickedBlock: { viewModel in
-                
-            }),
-            WXDiscoveryItemViewModel(title: "搜一搜", iconImage: UIImage(color: UIColor.clear, size: CGSize(width: 20, height: 20))?.byRoundCornerRadius(3, borderWidth: 1.5, borderColor: UIColor(red:0.89, green:0.27, blue:0.22, alpha:1.00)), clickedBlock: { viewModel in
-                
-            }),
-        ])
-        viewModel.sections.append([
-            WXDiscoveryItemViewModel(title: "小程序", iconImage: UIImage(color: UIColor.clear, size: CGSize(width: 20, height: 20))?.byRoundCornerRadius(3, borderWidth: 1.5, borderColor: UIColor(red:0.36, green:0.22, blue:0.91, alpha:1.00)), clickedBlock: { viewModel in
-                
-            }),
-        ])
-        return viewModel
+        return WXDiscoveryViewModel.defaults()
     }()
     
     // MARK: - Data & Networking
@@ -137,9 +113,6 @@ class WXDiscoveryViewController: WXViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let itemViewModel = viewModel.sections[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(WXDiscoveryTableViewCell.self), for: indexPath) as! WXDiscoveryTableViewCell
-        cell.backgroundColor = UIColor.white
-        cell.selectedBackgroundView = UIView(frame: cell.bounds)
-        cell.selectedBackgroundView?.backgroundColor = UIColor(white: 0, alpha: 0.1)
         cell.iconImageView.image = itemViewModel.iconImage
         cell.titleLabel.text = itemViewModel.title
         cell.profileImageView.image = UIImage(color: UIColor(red:0.93, green:0.33, blue:0.27, alpha:1.00), size: CGSize(width: 17, height: 17))
@@ -154,11 +127,11 @@ class WXDiscoveryViewController: WXViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 8
+        return WXAppearance.tableViewSectionIntervalHeight
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 52
+        return WXDiscoveryTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: nil)
     }
             
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
