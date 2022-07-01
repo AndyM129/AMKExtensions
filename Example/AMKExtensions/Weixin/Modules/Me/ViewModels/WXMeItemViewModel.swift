@@ -25,7 +25,7 @@ class WXMeItemViewModel: NSObject {
     
     init(title: String?, iconImage: UIImage?, clickedBlock: WXMeItemViewModelClickedBlock?) {
         self.title = title
-        self.iconImage = iconImage ?? WXAppearance.menuItemIconImage(color: WXAppearance.imageBackgroundColor)
+        self.iconImage = iconImage ?? UIImage.wx_menuItemIconImage()
         self.clickedBlock = clickedBlock
     }
     

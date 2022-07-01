@@ -12,12 +12,68 @@ extension UIImage {
 
     // MARK: - Init Methods
     
-    static func wx_image(color: UIColor, size: CGSize?, cornerRadius: CGFloat?, borderWidth: CGFloat?) -> UIImage? {
-        let filledColor = borderWidth == nil ? color : UIColor.clear
-        let borderColor = borderWidth == nil ? nil : color
-        var image = UIImage(color: filledColor, size: size ?? CGSize(width: 1, height: 1))
-        image = image?.byRoundCornerRadius(cornerRadius ?? 0, borderWidth: borderWidth ?? 0, borderColor: borderColor)
-        return image
+    /// 占位图标：空心描边 圆角矩形
+    static func wx_iconImage(size: Any?) -> UIImage? {
+        return wx_image(color: .clear, size: size, cornerRadius: nil, borderWidth: nil, borderColor: WXAppearance.imageBackgroundColor)
+    }
+    
+    /// 占位图标：空心描边 圆角矩形
+    static func wx_iconImage(color: UIColor?, size: Any?) -> UIImage? {
+        return wx_image(color: .clear, size: size, cornerRadius: nil, borderWidth: nil, borderColor: color)
+    }
+    
+    /// 占位图标 - 选中态：带颜色的 描边圆角矩形
+    static func wx_selectedIconImage(color: UIColor?, size: Any?) -> UIImage? {
+        return wx_image(color: (color ?? WXAppearance.imageBackgroundColor).withAlphaComponent(0.2), size: size, cornerRadius: nil, borderWidth: nil, borderColor: color)
+    }
+    
+    /// 占位图标 - 列表项：空心描边 圆角矩形
+    static func wx_menuItemIconImage() -> UIImage? {
+        return wx_image(color: .clear, size: WXAppearance.menuItemIconImageSize, cornerRadius: nil, borderWidth: nil, borderColor: WXAppearance.imageBackgroundColor)
+    }
+    
+    /// 占位图标 - 列表项：空心描边 圆角矩形
+    static func wx_menuItemIconImage(color: UIColor?) -> UIImage? {
+        return wx_image(color: .clear, size: WXAppearance.menuItemIconImageSize, cornerRadius: nil, borderWidth: nil, borderColor: color)
+    }
+    
+    /// 占位图标 - 列表项 - 右侧箭头：空心描边 圆角矩形
+    static func wx_menuItemArrowImage() -> UIImage? {
+        return wx_image(color: .clear, size: WXAppearance.menuItemArrowImageSize, cornerRadius: nil, borderWidth: nil, borderColor: WXAppearance.imageBackgroundColor)
+    }
+
+    /// 占位图片：实心圆角矩形
+    static func wx_image(size: Any?) -> UIImage? {
+        return wx_image(color: WXAppearance.imageBackgroundColor, size: size, cornerRadius: nil, borderWidth: nil, borderColor: nil)
+    }
+    
+    /// 占位图片：实心圆角矩形
+    static func wx_image(color: UIColor?, size: Any?) -> UIImage? {
+        return wx_image(color: color, size: size, cornerRadius: nil, borderWidth: nil, borderColor: nil)
+    }
+    
+    /// 占位图
+    static func wx_image(color: UIColor?, size: Any?, cornerRadius: CGFloat?, borderWidth: CGFloat?, borderColor: UIColor?) -> UIImage? {
+        let imageColor = color ?? WXAppearance.imageBackgroundColor
+        let imageSize: CGSize
+        if size is CGSize {
+            imageSize = size as! CGSize
+        } else if size is CGFloat {
+            imageSize = CGSize(width: size as! CGFloat, height: size as! CGFloat)
+        } else if size is Double {
+            imageSize = CGSize(width: size as! Double, height: size as! Double)
+        } else if size is NSInteger || size is Int {
+            imageSize = CGSize(width: size as! NSInteger, height: size as! NSInteger)
+        } else if size is Int {
+            imageSize = CGSize(width: size as! Int, height: size as! Int)
+        } else {
+            imageSize = CGSize(width: 1, height: 1)
+        }
+        let imageCornerRadius = cornerRadius ?? (max(imageSize.width, imageSize.height) >= 20 ? 5 : 3)
+        let imageBorderWidth = borderWidth ?? (max(imageSize.width, imageSize.height) >= 20 ? 1.5 : 1)
+        let imageBorderColor = borderColor
+        
+        return UIImage(color: imageColor, size: imageSize)?.byRoundCornerRadius(imageCornerRadius, borderWidth: imageBorderWidth, borderColor: imageBorderColor)
     }
     
     // MARK: - Getters & Setters
@@ -33,6 +89,5 @@ extension UIImage {
     // MARK: - Protocol
     
     // MARK: - Helper Methods
-
     
 }

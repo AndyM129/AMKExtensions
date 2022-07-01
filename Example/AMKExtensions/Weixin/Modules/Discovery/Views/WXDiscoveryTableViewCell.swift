@@ -34,7 +34,7 @@ class WXDiscoveryTableViewCell: UITableViewCell {
     
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView.init()
-        iconImageView.image = WXAppearance.menuItemIconImage(color: WXAppearance.imageBackgroundColor)
+        iconImageView.image = UIImage.wx_menuItemIconImage()
         iconImageView.contentMode = .scaleAspectFit
         contentView.addSubview(iconImageView)
         return iconImageView
@@ -55,7 +55,7 @@ class WXDiscoveryTableViewCell: UITableViewCell {
         let profileImageView = UIImageView.init()
         profileImageView.layer.cornerRadius = 3
         profileImageView.layer.masksToBounds = true
-        profileImageView.image = UIImage(color: WXAppearance.imageBackgroundColor, size: CGSize(width: 17, height: 17))
+        profileImageView.image = UIImage.wx_image(size: 17)
         profileImageView.contentMode = .scaleAspectFit
         contentView.addSubview(profileImageView)
         return profileImageView
@@ -63,7 +63,7 @@ class WXDiscoveryTableViewCell: UITableViewCell {
     
     lazy var arrowImageView: UIImageView = {
         let arrowImageView = UIImageView.init()
-        arrowImageView.image = WXAppearance.menuItemArrowImage
+        arrowImageView.image = UIImage.wx_menuItemArrowImage()
         arrowImageView.contentMode = .scaleAspectFit
         contentView.addSubview(arrowImageView)
         return arrowImageView

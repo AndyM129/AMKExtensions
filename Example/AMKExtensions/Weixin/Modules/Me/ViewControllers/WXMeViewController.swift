@@ -22,8 +22,8 @@ class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDe
     init() {
         super.init(nibName: nil, bundle: nil)
         tabBarItem.title = "我"
-        tabBarItem.image = UIImage(color: UIColor.clear, size: WXAppearance.tabBarItemSize)?.byRoundCornerRadius(WXAppearance.tabBarItemCornerRadius, borderWidth: 2, borderColor: WXAppearance.normalTintColor)
-        tabBarItem.selectedImage = UIImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)?.byRoundCornerRadius(5)
+        tabBarItem.image = UIImage.wx_iconImage(color: WXAppearance.normalTintColor, size: WXAppearance.tabBarItemSize)
+        tabBarItem.selectedImage = UIImage.wx_selectedIconImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)
     }
     
     required init?(coder: NSCoder) {
@@ -127,7 +127,7 @@ class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDe
         // 信息 cell
         if itemViewModel is WXMeInfoItemViewModel {
             let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(WXMeInfoTableViewCell.self), for: indexPath) as! WXMeInfoTableViewCell
-            cell.profileImageView.image = UIImage(color: UIColor(red:0.22, green:0.52, blue:0.97, alpha:1.00), size: CGSize(width: 100, height: 100))
+            cell.profileImageView.image = UIImage.wx_image(color: UIColor(red:0.22, green:0.52, blue:0.97, alpha:1.00), size: 100)
             cell.usernameLabel.text = "Andy"
             cell.userIdLabel.text = "微信号：Andy_129"
             return cell

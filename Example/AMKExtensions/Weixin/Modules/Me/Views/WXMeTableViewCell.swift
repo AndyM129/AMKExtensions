@@ -34,7 +34,7 @@ class WXMeTableViewCell: UITableViewCell {
     
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView.init()
-        iconImageView.image = WXAppearance.menuItemIconImage(color: WXAppearance.imageBackgroundColor)
+        iconImageView.image = UIImage.wx_menuItemIconImage()
         iconImageView.contentMode = .scaleAspectFit
         contentView.addSubview(iconImageView)
         return iconImageView
@@ -53,7 +53,7 @@ class WXMeTableViewCell: UITableViewCell {
     
     lazy var arrowImageView: UIImageView = {
         let arrowImageView = UIImageView.init()
-        arrowImageView.image = WXAppearance.menuItemArrowImage
+        arrowImageView.image = UIImage.wx_menuItemArrowImage()
         arrowImageView.contentMode = .scaleAspectFit
         contentView.addSubview(arrowImageView)
         return arrowImageView

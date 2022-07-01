@@ -21,8 +21,8 @@ class WXContactsViewController: WXViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         tabBarItem.title = "通讯录"
-        tabBarItem.image = UIImage(color: UIColor.clear, size: WXAppearance.tabBarItemSize)?.byRoundCornerRadius(WXAppearance.tabBarItemCornerRadius, borderWidth: 2, borderColor: WXAppearance.normalTintColor)
-        tabBarItem.selectedImage = UIImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)?.byRoundCornerRadius(5)
+        tabBarItem.image = UIImage.wx_iconImage(color: WXAppearance.normalTintColor, size: WXAppearance.tabBarItemSize)
+        tabBarItem.selectedImage = UIImage.wx_selectedIconImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)
     }
     
     required init?(coder: NSCoder) {

@@ -27,26 +27,26 @@ class WXMeViewModel: NSObject {
             }),
         ])
         sections.append([
-            WXMeItemViewModel(title: "服务", iconImage: WXAppearance.menuItemIconImage(color: UIColor(red:0.31, green:0.77, blue:0.49, alpha:1.00)), clickedBlock: { viewModel in
+            WXMeItemViewModel(title: "服务", iconImage: UIImage.wx_menuItemIconImage(color: UIColor(red:0.31, green:0.77, blue:0.49, alpha:1.00)), clickedBlock: { viewModel in
                 
             }),
         ])
         sections.append([
-            WXMeItemViewModel(title: "收藏", iconImage: WXAppearance.menuItemIconImage(color: UIColor(red:0.89, green:0.36, blue:0.35, alpha:1.00)), clickedBlock: { viewModel in
+            WXMeItemViewModel(title: "收藏", iconImage: UIImage.wx_menuItemIconImage(color: UIColor(red:0.89, green:0.36, blue:0.35, alpha:1.00)), clickedBlock: { viewModel in
                 
             }),
-            WXMeItemViewModel(title: "朋友圈", iconImage: WXAppearance.menuItemIconImage(color: UIColor(red:0.39, green:0.51, blue:0.91, alpha:1.00)), clickedBlock: { viewModel in
+            WXMeItemViewModel(title: "朋友圈", iconImage: UIImage.wx_menuItemIconImage(color: UIColor(red:0.39, green:0.51, blue:0.91, alpha:1.00)), clickedBlock: { viewModel in
                 
             }),
-            WXMeItemViewModel(title: "卡包", iconImage: WXAppearance.menuItemIconImage(color: UIColor(red:0.36, green:0.22, blue:0.91, alpha:1.00)), clickedBlock: { viewModel in
+            WXMeItemViewModel(title: "卡包", iconImage: UIImage.wx_menuItemIconImage(color: UIColor(red:0.36, green:0.22, blue:0.91, alpha:1.00)), clickedBlock: { viewModel in
                 
             }),
-            WXMeItemViewModel(title: "表情", iconImage: WXAppearance.menuItemIconImage(color: UIColor(red:0.95, green:0.78, blue:0.29, alpha:1.00)), clickedBlock: { viewModel in
+            WXMeItemViewModel(title: "表情", iconImage: UIImage.wx_menuItemIconImage(color: UIColor(red:0.95, green:0.78, blue:0.29, alpha:1.00)), clickedBlock: { viewModel in
                 
             }),
         ])
         sections.append([
-            WXMeItemViewModel(title: "设置", iconImage: WXAppearance.menuItemIconImage(color: UIColor(red:0.16, green:0.40, blue:0.90, alpha:1.00)), clickedBlock: { viewModel in
+            WXMeItemViewModel(title: "设置", iconImage: UIImage.wx_menuItemIconImage(color: UIColor(red:0.16, green:0.40, blue:0.90, alpha:1.00)), clickedBlock: { viewModel in
                 
             }),
         ])

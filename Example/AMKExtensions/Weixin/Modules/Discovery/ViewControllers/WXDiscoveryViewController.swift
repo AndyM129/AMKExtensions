@@ -21,8 +21,8 @@ class WXDiscoveryViewController: WXViewController, UITableViewDataSource, UITabl
     init() {
         super.init(nibName: nil, bundle: nil)
         tabBarItem.title = "发现"
-        tabBarItem.image = UIImage(color: UIColor.clear, size: WXAppearance.tabBarItemSize)?.byRoundCornerRadius(WXAppearance.tabBarItemCornerRadius, borderWidth: 2, borderColor: WXAppearance.normalTintColor)
-        tabBarItem.selectedImage = UIImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)?.byRoundCornerRadius(5)
+        tabBarItem.image = UIImage.wx_iconImage(color: WXAppearance.normalTintColor, size: WXAppearance.tabBarItemSize)
+        tabBarItem.selectedImage = UIImage.wx_selectedIconImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)
     }
     
     required init?(coder: NSCoder) {
@@ -115,7 +115,7 @@ class WXDiscoveryViewController: WXViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(WXDiscoveryTableViewCell.self), for: indexPath) as! WXDiscoveryTableViewCell
         cell.iconImageView.image = itemViewModel.iconImage
         cell.titleLabel.text = itemViewModel.title
-        cell.profileImageView.image = UIImage(color: UIColor(red:0.93, green:0.33, blue:0.27, alpha:1.00), size: CGSize(width: 17, height: 17))
+        cell.profileImageView.image = UIImage.wx_image(color: UIColor(red:0.93, green:0.33, blue:0.27, alpha:1.00), size: 17)
         cell.profileImageView.isHidden = indexPath.section==0 && indexPath.row==0 ? false : true
         return cell
     }
