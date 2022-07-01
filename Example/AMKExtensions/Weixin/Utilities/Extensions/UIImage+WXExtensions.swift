@@ -14,32 +14,32 @@ extension UIImage {
     
     /// 占位图标：空心描边 圆角矩形
     static func wx_iconImage(size: Any?) -> UIImage? {
-        return wx_image(color: .clear, size: size, cornerRadius: nil, borderWidth: nil, borderColor: WXAppearance.imageBackgroundColor)
+        return wx_image(color: WXAppearance.imageBackgroundColor.withAlphaComponent(0.1), size: size, cornerRadius: nil, borderWidth: nil, borderColor: WXAppearance.imageBackgroundColor)
     }
     
     /// 占位图标：空心描边 圆角矩形
     static func wx_iconImage(color: UIColor?, size: Any?) -> UIImage? {
-        return wx_image(color: .clear, size: size, cornerRadius: nil, borderWidth: nil, borderColor: color)
+        return wx_image(color: WXAppearance.imageBackgroundColor.withAlphaComponent(0.1), size: size, cornerRadius: nil, borderWidth: nil, borderColor: color)
     }
     
     /// 占位图标 - 选中态：带颜色的 描边圆角矩形
     static func wx_selectedIconImage(color: UIColor?, size: Any?) -> UIImage? {
-        return wx_image(color: (color ?? WXAppearance.imageBackgroundColor).withAlphaComponent(0.2), size: size, cornerRadius: nil, borderWidth: nil, borderColor: color)
+        return wx_image(color: (color ?? WXAppearance.imageBackgroundColor).withAlphaComponent(0.1), size: size, cornerRadius: nil, borderWidth: nil, borderColor: color)
     }
     
     /// 占位图标 - 列表项：空心描边 圆角矩形
     static func wx_menuItemIconImage() -> UIImage? {
-        return wx_image(color: .clear, size: WXAppearance.menuItemIconImageSize, cornerRadius: nil, borderWidth: nil, borderColor: WXAppearance.imageBackgroundColor)
+        return wx_image(color: WXAppearance.imageBackgroundColor.withAlphaComponent(0.1), size: WXAppearance.menuItemIconImageSize, cornerRadius: nil, borderWidth: nil, borderColor: WXAppearance.imageBackgroundColor)
     }
     
     /// 占位图标 - 列表项：空心描边 圆角矩形
     static func wx_menuItemIconImage(color: UIColor?) -> UIImage? {
-        return wx_image(color: .clear, size: WXAppearance.menuItemIconImageSize, cornerRadius: nil, borderWidth: nil, borderColor: color)
+        return wx_image(color: (color ?? WXAppearance.imageBackgroundColor).withAlphaComponent(0.1), size: WXAppearance.menuItemIconImageSize, cornerRadius: nil, borderWidth: nil, borderColor: color)
     }
     
     /// 占位图标 - 列表项 - 右侧箭头：空心描边 圆角矩形
     static func wx_menuItemArrowImage() -> UIImage? {
-        return wx_image(color: .clear, size: WXAppearance.menuItemArrowImageSize, cornerRadius: nil, borderWidth: nil, borderColor: WXAppearance.imageBackgroundColor)
+        return wx_image(color: WXAppearance.imageBackgroundColor.withAlphaComponent(0.1), size: WXAppearance.menuItemArrowImageSize, cornerRadius: nil, borderWidth: nil, borderColor: WXAppearance.imageBackgroundColor)
     }
 
     /// 占位图片：实心圆角矩形
