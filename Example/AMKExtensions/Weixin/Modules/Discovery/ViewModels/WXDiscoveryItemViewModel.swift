@@ -25,7 +25,7 @@ class WXDiscoveryItemViewModel: NSObject {
     
     init(title: String?, iconImage: UIImage?, clickedBlock: WXDiscoveryItemViewModelClickedBlock?) {
         self.title = title
-        self.iconImage = iconImage ?? WXDiscoveryItemViewModel.iconImage(withColor: WXAppearance.imageBackgroundColor)        
+        self.iconImage = iconImage ?? WXAppearance.menuItemIconImage(color: WXAppearance.imageBackgroundColor)
         self.clickedBlock = clickedBlock
     }
     
@@ -48,9 +48,5 @@ class WXDiscoveryItemViewModel: NSObject {
     // MARK: - Protocol
     
     // MARK: - Helper Methods
-    
-    static func iconImage(withColor color: UIColor?) -> UIImage? {
-        return UIImage(color: color ?? WXAppearance.imageBackgroundColor, size: CGSize(width: 20, height: 20))?.byRoundCornerRadius(3)
-    }
-    
+        
 }

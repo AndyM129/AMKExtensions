@@ -32,4 +32,19 @@ class WXAppearance {
     /// TableView - section 间隔高度
     static let tableViewSectionIntervalHeight :CGFloat = 8
     
+    /// 列表左侧侧的图标 尺寸
+    static let menuItemIconImageSize = CGSize(width: 30, height: 30)
+    
+    /// 列表左侧的图标
+    static func menuItemIconImage(color: UIColor) -> UIImage? {
+        return UIImage(color: .clear, size: menuItemIconImageSize)?.byRoundCornerRadius(3, borderWidth: 1.5, borderColor: color)
+    }
+    
+    /// 列表右侧的箭头图标 尺寸
+    static let menuItemArrowImageSize = CGSize(width: 17, height: 17)
+    
+    /// 列表右侧的箭头图标
+    static var menuItemArrowImage: UIImage? {
+        return UIImage(color: .clear, size: menuItemArrowImageSize)?.byRoundCornerRadius(3, borderWidth: 1, borderColor: WXAppearance.imageBackgroundColor)
+    }
 }

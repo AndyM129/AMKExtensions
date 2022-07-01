@@ -20,7 +20,9 @@ class WXMeTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = UIColor.white
+        backgroundColor = UIColor.white
+        selectedBackgroundView = UIView(frame: bounds)
+        selectedBackgroundView?.backgroundColor = UIColor(white: 0, alpha: 0.1)
 
     }
     
@@ -32,7 +34,7 @@ class WXMeTableViewCell: UITableViewCell {
     
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView.init()
-        iconImageView.image = UIImage(color: UIColor.lightGray, size: CGSize(width: 30, height: 30))
+        iconImageView.image = WXAppearance.menuItemIconImage(color: WXAppearance.imageBackgroundColor)
         iconImageView.contentMode = .scaleAspectFit
         contentView.addSubview(iconImageView)
         return iconImageView
@@ -51,7 +53,7 @@ class WXMeTableViewCell: UITableViewCell {
     
     lazy var arrowImageView: UIImageView = {
         let arrowImageView = UIImageView.init()
-        arrowImageView.image = UIImage(color: UIColor.lightGray, size: CGSize(width: 17, height: 17))
+        arrowImageView.image = WXAppearance.menuItemArrowImage
         arrowImageView.contentMode = .scaleAspectFit
         contentView.addSubview(arrowImageView)
         return arrowImageView
@@ -72,8 +74,7 @@ class WXMeTableViewCell: UITableViewCell {
     
     override func updateConstraints() {
         iconImageView.snp.makeConstraints { make in
-            make.width.equalTo(30)
-            make.height.equalTo(30)
+            make.size.equalTo(WXAppearance.menuItemIconImageSize)
             make.left.equalTo(contentView).offset(15)
             make.centerY.equalTo(contentView)
         }
@@ -83,8 +84,7 @@ class WXMeTableViewCell: UITableViewCell {
             make.centerY.equalTo(contentView)
         }
         arrowImageView.snp.makeConstraints { make in
-            make.width.equalTo(17)
-            make.height.equalTo(17)
+            make.size.equalTo(WXAppearance.menuItemArrowImageSize)
             make.right.equalTo(contentView).inset(15)
             make.centerY.equalTo(contentView)
         }

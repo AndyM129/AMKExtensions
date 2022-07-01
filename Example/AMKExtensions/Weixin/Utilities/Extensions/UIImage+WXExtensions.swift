@@ -11,7 +11,7 @@ import UIKit
 extension UIImage {
 
     // MARK: - Init Methods
-
+    
     static func wx_image(color: UIColor, size: CGSize?, cornerRadius: CGFloat?, borderWidth: CGFloat?) -> UIImage? {
         let filledColor = borderWidth == nil ? color : UIColor.clear
         let borderColor = borderWidth == nil ? nil : color
@@ -21,7 +21,7 @@ extension UIImage {
     }
     
     // MARK: - Getters & Setters
-    
+        
     // MARK: - Data & Networking
     
     // MARK: - Public Methods

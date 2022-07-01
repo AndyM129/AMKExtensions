@@ -34,7 +34,7 @@ class WXDiscoveryTableViewCell: UITableViewCell {
     
     lazy var iconImageView: UIImageView = {
         let iconImageView = UIImageView.init()
-        iconImageView.image = UIImage(color: .clear, size: CGSize(width: 30, height: 30))?.byRoundCornerRadius(3, borderWidth: 2, borderColor: WXAppearance.imageBackgroundColor)
+        iconImageView.image = WXAppearance.menuItemIconImage(color: WXAppearance.imageBackgroundColor)
         iconImageView.contentMode = .scaleAspectFit
         contentView.addSubview(iconImageView)
         return iconImageView
@@ -63,7 +63,7 @@ class WXDiscoveryTableViewCell: UITableViewCell {
     
     lazy var arrowImageView: UIImageView = {
         let arrowImageView = UIImageView.init()
-        arrowImageView.image = UIImage(color: .clear, size: CGSize(width: 17, height: 17))?.byRoundCornerRadius(3, borderWidth: 1, borderColor: WXAppearance.imageBackgroundColor)
+        arrowImageView.image = WXAppearance.menuItemArrowImage
         arrowImageView.contentMode = .scaleAspectFit
         contentView.addSubview(arrowImageView)
         return arrowImageView
@@ -84,8 +84,7 @@ class WXDiscoveryTableViewCell: UITableViewCell {
     
     override func updateConstraints() {
         iconImageView.snp.makeConstraints { make in
-            make.width.equalTo(30)
-            make.height.equalTo(30)
+            make.size.equalTo(WXAppearance.menuItemIconImageSize)
             make.left.equalTo(contentView).offset(15)
             make.centerY.equalTo(contentView)
         }
@@ -100,8 +99,7 @@ class WXDiscoveryTableViewCell: UITableViewCell {
             make.centerY.equalTo(contentView)
         }
         arrowImageView.snp.makeConstraints { make in
-            make.width.equalTo(17)
-            make.height.equalTo(17)
+            make.size.equalTo(WXAppearance.menuItemArrowImageSize)
             make.right.equalTo(contentView).inset(15)
             make.centerY.equalTo(contentView)
         }

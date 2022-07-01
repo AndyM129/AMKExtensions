@@ -66,11 +66,19 @@ class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDe
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
+        tableView.tableHeaderView = {
+            let tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.width, height: view.height))
+            tableHeaderView.backgroundColor = .white
+            return tableHeaderView
+        }()
+        tableView.contentInset = UIEdgeInsets(top: -tableView.tableHeaderView!.height, left: 0, bottom: 0, right: 0)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.backgroundColor = view.backgroundColor
+        tableView.separatorColor = WXAppearance.viewBackgroundColor
         tableView.estimatedSectionHeaderHeight = 0
         tableView.estimatedSectionFooterHeight = 0
         tableView.register(WXMeTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(WXMeTableViewCell.self))
+        tableView.register(WXMeInfoTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(WXMeInfoTableViewCell.self))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: NSStringFromClass(UITableViewHeaderFooterView.self))
         view.addSubview(tableView)
@@ -115,6 +123,17 @@ class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let itemViewModel = viewModel.sections[indexPath.section][indexPath.row]
+        
+        // 信息 cell
+        if itemViewModel is WXMeInfoItemViewModel {
+            let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(WXMeInfoTableViewCell.self), for: indexPath) as! WXMeInfoTableViewCell
+            cell.profileImageView.image = UIImage(color: UIColor(red:0.22, green:0.52, blue:0.97, alpha:1.00), size: CGSize(width: 100, height: 100))
+            cell.usernameLabel.text = "Andy"
+            cell.userIdLabel.text = "微信号：Andy_129"
+            return cell
+        }
+
+        // 默认 cell
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(WXMeTableViewCell.self), for: indexPath) as! WXMeTableViewCell
         cell.iconImageView.image = itemViewModel.iconImage
         cell.titleLabel.text = itemViewModel.title
@@ -132,7 +151,11 @@ class WXMeViewController: WXViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return WXMeTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: nil)
+        let itemViewModel = viewModel.sections[indexPath.section][indexPath.row]
+        if itemViewModel is WXMeInfoItemViewModel {
+            return WXMeInfoTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: itemViewModel)
+        }
+        return WXMeTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: itemViewModel)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
