@@ -25,7 +25,6 @@ class AMTViewController: UIViewController {
         title = title ?? tabBarItem.title
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? AMTAppearance.viewBackgroundColor
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

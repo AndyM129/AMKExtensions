@@ -39,7 +39,7 @@ class AMTRootViewController: UITabBarController {
         }
                 
         viewControllers = [
-            AMTNavigationController.init(rootViewController: AMTOpenUrlsViewController()),
+            AMTNavigationController.init(rootViewController: AMTOpenUrlViewController()),
             AMTNavigationController.init(rootViewController: AMTSettingsViewController()),
         ]
     }
