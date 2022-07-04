@@ -22,8 +22,8 @@ class AMTOpenUrlsViewController: AMTViewController {
         super.init(nibName: nil, bundle: nil)
         title = "调起APP"
         tabBarItem.title = "调起"
-        tabBarItem.image = UIImage.wx_iconImage(color: WXAppearance.normalTintColor, size: WXAppearance.tabBarItemSize)
-        tabBarItem.selectedImage = UIImage.wx_selectedIconImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)
+        tabBarItem.image = UIImage(named: "amt_tabbar_open_url")
+        tabBarItem.selectedImage = UIImage(named: "amt_tabbar_open_url")
     }
     
     required init?(coder: NSCoder) {

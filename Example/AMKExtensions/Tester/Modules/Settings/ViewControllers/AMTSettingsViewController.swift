@@ -21,8 +21,8 @@ class AMTSettingsViewController: AMTViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         tabBarItem.title = "设置"
-        tabBarItem.image = UIImage.wx_iconImage(color: WXAppearance.normalTintColor, size: WXAppearance.tabBarItemSize)
-        tabBarItem.selectedImage = UIImage.wx_selectedIconImage(color: WXAppearance.selectedTintColor, size: WXAppearance.tabBarItemSize)
+        tabBarItem.image = UIImage(named: "amt_tabbar_setting")
+        tabBarItem.selectedImage = UIImage(named: "amt_tabbar_setting")
     }
     
     required init?(coder: NSCoder) {

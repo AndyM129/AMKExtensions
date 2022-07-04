@@ -147,6 +147,7 @@
 		88F7317D2872A14F00D959A3 /* AMTOpenUrlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317B2872A14800D959A3 /* AMTOpenUrlsViewController.swift */; };
 		88F7317F2872A32200D959A3 /* AMTSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */; };
 		88F731802872A32200D959A3 /* AMTSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */; };
+		88F731832872A56F00D959A3 /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F731822872A56F00D959A3 /* TesterImages.xcassets */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
 		DD24B3956808C7F3365DBC7F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
@@ -225,6 +226,7 @@
 		88E515A9286F26630056813A /* String+WXExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WXExtensions.swift"; sourceTree = "<group>"; };
 		88F7317B2872A14800D959A3 /* AMTOpenUrlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlsViewController.swift; sourceTree = "<group>"; };
 		88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingsViewController.swift; sourceTree = "<group>"; };
+		88F731822872A56F00D959A3 /* TesterImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TesterImages.xcassets; sourceTree = "<group>"; };
 		DC3B593863B76026CCD7E49C /* Pods-AMKExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Tests/Pods-AMKExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E79B7270D1C6A97826FB1D35 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E9E325FC9D8F8CAC0FAC4B6D /* AMKExtensions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AMKExtensions.podspec; path = ../AMKExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -366,6 +368,7 @@
 				882F75D528729BCB00FA7B2A /* Services */,
 				882F75B828729BCB00FA7B2A /* Utilities */,
 				882F75EA28729C4800FA7B2A /* Configurations */,
+				88F731812872A54D00D959A3 /* Resources */,
 			);
 			path = Tester;
 			sourceTree = "<group>";
@@ -890,6 +893,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		88F731812872A54D00D959A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88F731822872A56F00D959A3 /* TesterImages.xcassets */,
+			);
+			name = Resources;
+			path = AMKExtensions/Weixin/Resources;
+			sourceTree = SOURCE_ROOT;
+		};
 		B9BF1DBA8BDDA1D627580F95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1065,6 +1077,7 @@
 			files = (
 				882F75AE28729B7500FA7B2A /* Main.storyboard in Resources */,
 				882F75AF28729B7500FA7B2A /* LaunchScreen.xib in Resources */,
+				88F731832872A56F00D959A3 /* TesterImages.xcassets in Resources */,
 				882F75B028729B7500FA7B2A /* Images.xcassets in Resources */,
 				882F75EC28729C4800FA7B2A /* Tester-Info.plist in Resources */,
 			);
