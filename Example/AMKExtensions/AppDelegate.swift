@@ -14,9 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        print("👨🏻‍💻 Application launching: \(application.appBundleID!) => \(application.appBundleName!) (\(application.appVersion!)+\(application.appBuildVersion!))")
+        return true
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
+        
+        #if AMKE_WEIXIN
+        window?.rootViewController = WXRootViewController()
+        #else
         window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        #endif
+        
         window?.makeKeyAndVisible()
         return true
     }
