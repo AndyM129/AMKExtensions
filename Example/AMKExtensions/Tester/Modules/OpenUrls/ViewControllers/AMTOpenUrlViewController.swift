@@ -34,7 +34,7 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
+        reloadDataFromNetworking(completionHandler: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +44,7 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,7 +70,22 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
         return tableView
     }()
     
+    lazy var viewModel: AMTOpenUrlTabViewModel = {
+        return AMTOpenUrlTabViewModel(sectionViewModels: nil)
+    }()
+    
     // MARK: - Data & Networking
+    
+    func reloadDataFromNetworking(completionHandler: AMTOpenUrlTabViewModelReloadCompletionHandler?) {
+        viewModel.reloadDataFromNetworking { [unowned self] error in
+            guard error == nil else {
+                print("刷新失败：\(error!)")
+                return
+            }
+            
+            tableView.reloadData()
+        }
+    }
     
     // MARK: - Layout Subviews
     

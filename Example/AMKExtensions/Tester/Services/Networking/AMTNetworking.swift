@@ -7,10 +7,3 @@
 //
 
 import UIKit
-
-typealias AMTNetworkingCompletionBlock = (_ responseObject: Any?, _ error: Error?)->Void
-
-/// 网络请求
-class AMTNetworking: NSObject {
-
-}
