@@ -7,12 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03AD92E60BC0442FCB45D3C6 /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D18BCBAE342A4677CC4C809 /* Pods_AMKExtensions_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		6AD57DB5407C245E1CF3BAC7 /* Pods_Weixin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F775E4E8A1A34BDDED5E4B6D /* Pods_Weixin.framework */; };
+		882F755528728FA400FA7B2A /* WXContactsTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5159D286F052B0056813A /* WXContactsTableViewHeaderView.swift */; };
+		882F755628728FA400FA7B2A /* AMDemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51548286C673E0056813A /* AMDemoTableViewController.swift */; };
+		882F755728728FA400FA7B2A /* WXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5157C286DE94C0056813A /* WXViewController.swift */; };
+		882F755828728FA400FA7B2A /* WXMessagesItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E515A3286F1E160056813A /* WXMessagesItemViewModel.swift */; };
+		882F755928728FA400FA7B2A /* WXMeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51589286E9E210056813A /* WXMeItemViewModel.swift */; };
+		882F755A28728FA400FA7B2A /* WXContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51570286DCA210056813A /* WXContactsViewController.swift */; };
+		882F755B28728FA400FA7B2A /* WXDiscoveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51582286E8B430056813A /* WXDiscoveryTableViewCell.swift */; };
+		882F755C28728FA400FA7B2A /* WXDiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51572286DCA340056813A /* WXDiscoveryViewController.swift */; };
+		882F755D28728FA400FA7B2A /* AMDemoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */; };
+		882F755E28728FA400FA7B2A /* WXMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51586286E9D220056813A /* WXMeTableViewCell.swift */; };
+		882F755F28728FA400FA7B2A /* UIColor+WXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5159B286F00320056813A /* UIColor+WXExtensions.swift */; };
+		882F756028728FA400FA7B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		882F756128728FA400FA7B2A /* WXContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51592286EF4D10056813A /* WXContactsTableViewCell.swift */; };
+		882F756228728FA400FA7B2A /* WXMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51574286DCA400056813A /* WXMeViewController.swift */; };
+		882F756328728FA400FA7B2A /* WXMessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E515A4286F1E160056813A /* WXMessagesViewModel.swift */; };
+		882F756428728FA400FA7B2A /* WXMeInfoItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5158E286EA5730056813A /* WXMeInfoItemViewModel.swift */; };
+		882F756528728FA400FA7B2A /* UIImage+WXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51584286E90F50056813A /* UIImage+WXExtensions.swift */; };
+		882F756628728FA400FA7B2A /* String+WXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E515A9286F26630056813A /* String+WXExtensions.swift */; };
+		882F756728728FA400FA7B2A /* WXDiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51580286DECB90056813A /* WXDiscoveryViewModel.swift */; };
+		882F756828728FA400FA7B2A /* WXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5157A286DDF730056813A /* WXNavigationController.swift */; };
+		882F756928728FA400FA7B2A /* WXAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51577286DCCC50056813A /* WXAppearance.swift */; };
+		882F756A28728FA400FA7B2A /* WXContactsTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E515A1286F0E8A0056813A /* WXContactsTableFooterView.swift */; };
+		882F756B28728FA400FA7B2A /* WXDiscoveryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5157E286DEBCC0056813A /* WXDiscoveryItemViewModel.swift */; };
+		882F756C28728FA400FA7B2A /* AMTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51546286C2AD80056813A /* AMTempViewController.swift */; };
+		882F756D28728FA400FA7B2A /* WXContactsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51595286EF6930056813A /* WXContactsItemViewModel.swift */; };
+		882F756E28728FA400FA7B2A /* WXMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */; };
+		882F756F28728FA400FA7B2A /* WXNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51599286EF8A50056813A /* WXNetworking.swift */; };
+		882F757028728FA400FA7B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
+		882F757128728FA400FA7B2A /* WXConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51590286EC7BE0056813A /* WXConstants.swift */; };
+		882F757228728FA400FA7B2A /* WXMeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5158C286EA4E40056813A /* WXMeInfoTableViewCell.swift */; };
+		882F757328728FA400FA7B2A /* WXMeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51588286E9E210056813A /* WXMeViewModel.swift */; };
+		882F757428728FA400FA7B2A /* WXContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51594286EF6930056813A /* WXContactsViewModel.swift */; };
+		882F757528728FA400FA7B2A /* WXMessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E515A7286F20ED0056813A /* WXMessagesTableViewCell.swift */; };
+		882F757628728FA400FA7B2A /* WXRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156C286DC8CF0056813A /* WXRootViewController.swift */; };
+		882F757A28728FA400FA7B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
+		882F757B28728FA400FA7B2A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		882F757C28728FA400FA7B2A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		882F758428728FF200FA7B2A /* Weixin-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 882F758328728FF200FA7B2A /* Weixin-Info.plist */; };
 		88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51546286C2AD80056813A /* AMTempViewController.swift */; };
 		88E51549286C673E0056813A /* AMDemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51548286C673E0056813A /* AMDemoTableViewController.swift */; };
 		88E5154B286C7D7C0056813A /* AMDemoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */; };
@@ -46,7 +86,7 @@
 		88E515A8286F20ED0056813A /* WXMessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E515A7286F20ED0056813A /* WXMessagesTableViewCell.swift */; };
 		88E515AA286F26630056813A /* String+WXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E515A9286F26630056813A /* String+WXExtensions.swift */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
-		DD24B3956808C7F3365DBC7F /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE80C895C91B68EBF172325D /* Pods_AMKExtensions_Example.framework */; };
+		DD24B3956808C7F3365DBC7F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +100,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D18BCBAE342A4677CC4C809 /* Pods_AMKExtensions_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMKExtensions_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13008F6196F099D2EA08ED4C /* Pods-AMKExtensions_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Tests.release.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Tests/Pods-AMKExtensions_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		15642ECE4E5E00DE1AAE3F50 /* Pods-Weixin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weixin.release.xcconfig"; path = "Target Support Files/Pods-Weixin/Pods-Weixin.release.xcconfig"; sourceTree = "<group>"; };
 		4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMKExtensions_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* AMKExtensions_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMKExtensions_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +116,8 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		718511108D40DBC61243E30B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8404DD4FA284C9179899B7D1 /* Pods-AMKExtensions_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Example.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Example/Pods-AMKExtensions_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		882F758128728FA400FA7B2A /* Weixin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weixin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		882F758328728FF200FA7B2A /* Weixin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Weixin-Info.plist"; sourceTree = "<group>"; };
 		88E51546286C2AD80056813A /* AMTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMTempViewController.swift; path = Temp/AMTempViewController.swift; sourceTree = "<group>"; };
 		88E51548286C673E0056813A /* AMDemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoTableViewController.swift; path = Temp/AMDemoTableViewController.swift; sourceTree = "<group>"; };
 		88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoCollectionViewController.swift; path = Temp/AMDemoCollectionViewController.swift; sourceTree = "<group>"; };
@@ -109,8 +153,9 @@
 		DC3B593863B76026CCD7E49C /* Pods-AMKExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Tests/Pods-AMKExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E79B7270D1C6A97826FB1D35 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E9E325FC9D8F8CAC0FAC4B6D /* AMKExtensions.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AMKExtensions.podspec; path = ../AMKExtensions.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		EE80C895C91B68EBF172325D /* Pods_AMKExtensions_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMKExtensions_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F027A13044B5E5D64A227FA4 /* Pods-AMKExtensions_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Example.release.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Example/Pods-AMKExtensions_Example.release.xcconfig"; sourceTree = "<group>"; };
+		F5AFB0F825352A7962AECC30 /* Pods-Weixin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weixin.debug.xcconfig"; path = "Target Support Files/Pods-Weixin/Pods-Weixin.debug.xcconfig"; sourceTree = "<group>"; };
+		F775E4E8A1A34BDDED5E4B6D /* Pods_Weixin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weixin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +163,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD24B3956808C7F3365DBC7F /* Pods_AMKExtensions_Example.framework in Frameworks */,
+				DD24B3956808C7F3365DBC7F /* (null) in Frameworks */,
+				03AD92E60BC0442FCB45D3C6 /* Pods_AMKExtensions_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +173,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882F757728728FA400FA7B2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AD57DB5407C245E1CF3BAC7 /* Pods_Weixin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +204,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* AMKExtensions_Example.app */,
 				607FACE51AFB9204008FA782 /* AMKExtensions_Tests.xctest */,
+				882F758128728FA400FA7B2A /* Weixin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				882F758328728FF200FA7B2A /* Weixin-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -213,6 +269,8 @@
 				F027A13044B5E5D64A227FA4 /* Pods-AMKExtensions_Example.release.xcconfig */,
 				DC3B593863B76026CCD7E49C /* Pods-AMKExtensions_Tests.debug.xcconfig */,
 				13008F6196F099D2EA08ED4C /* Pods-AMKExtensions_Tests.release.xcconfig */,
+				F5AFB0F825352A7962AECC30 /* Pods-Weixin.debug.xcconfig */,
+				15642ECE4E5E00DE1AAE3F50 /* Pods-Weixin.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -538,8 +596,9 @@
 		B9BF1DBA8BDDA1D627580F95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE80C895C91B68EBF172325D /* Pods_AMKExtensions_Example.framework */,
 				4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */,
+				F775E4E8A1A34BDDED5E4B6D /* Pods_Weixin.framework */,
+				0D18BCBAE342A4677CC4C809 /* Pods_AMKExtensions_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -585,6 +644,25 @@
 			productReference = 607FACE51AFB9204008FA782 /* AMKExtensions_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		882F755228728FA400FA7B2A /* Weixin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 882F757E28728FA400FA7B2A /* Build configuration list for PBXNativeTarget "Weixin" */;
+			buildPhases = (
+				882F755328728FA400FA7B2A /* [CP] Check Pods Manifest.lock */,
+				882F755428728FA400FA7B2A /* Sources */,
+				882F757728728FA400FA7B2A /* Frameworks */,
+				882F757928728FA400FA7B2A /* Resources */,
+				882F757D28728FA400FA7B2A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Weixin;
+			productName = AMKExtensions;
+			productReference = 882F758128728FA400FA7B2A /* Weixin.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -598,13 +676,16 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 9X349G8KD4;
+						DevelopmentTeam = TGLMB8BDP2;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					882F755228728FA400FA7B2A = {
+						DevelopmentTeam = TGLMB8BDP2;
 					};
 				};
 			};
@@ -624,6 +705,7 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* AMKExtensions_Example */,
 				607FACE41AFB9204008FA782 /* AMKExtensions_Tests */,
+				882F755228728FA400FA7B2A /* Weixin */,
 			);
 		};
 /* End PBXProject section */
@@ -643,6 +725,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882F757928728FA400FA7B2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882F758428728FF200FA7B2A /* Weixin-Info.plist in Resources */,
+				882F757A28728FA400FA7B2A /* Main.storyboard in Resources */,
+				882F757B28728FA400FA7B2A /* LaunchScreen.xib in Resources */,
+				882F757C28728FA400FA7B2A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +794,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		882F755328728FA400FA7B2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Weixin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		882F757D28728FA400FA7B2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weixin/Pods-Weixin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AMKExtensions/AMKExtensions.framework",
+				"${BUILT_PRODUCTS_DIR}/AMKStackView/AMKStackView.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMKExtensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMKStackView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Weixin/Pods-Weixin-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF3091A36A5306009A29BE8C /* [CP] Check Pods Manifest.lock */ = {
@@ -774,6 +921,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		882F755428728FA400FA7B2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				882F755528728FA400FA7B2A /* WXContactsTableViewHeaderView.swift in Sources */,
+				882F755628728FA400FA7B2A /* AMDemoTableViewController.swift in Sources */,
+				882F755728728FA400FA7B2A /* WXViewController.swift in Sources */,
+				882F755828728FA400FA7B2A /* WXMessagesItemViewModel.swift in Sources */,
+				882F755928728FA400FA7B2A /* WXMeItemViewModel.swift in Sources */,
+				882F755A28728FA400FA7B2A /* WXContactsViewController.swift in Sources */,
+				882F755B28728FA400FA7B2A /* WXDiscoveryTableViewCell.swift in Sources */,
+				882F755C28728FA400FA7B2A /* WXDiscoveryViewController.swift in Sources */,
+				882F755D28728FA400FA7B2A /* AMDemoCollectionViewController.swift in Sources */,
+				882F755E28728FA400FA7B2A /* WXMeTableViewCell.swift in Sources */,
+				882F755F28728FA400FA7B2A /* UIColor+WXExtensions.swift in Sources */,
+				882F756028728FA400FA7B2A /* ViewController.swift in Sources */,
+				882F756128728FA400FA7B2A /* WXContactsTableViewCell.swift in Sources */,
+				882F756228728FA400FA7B2A /* WXMeViewController.swift in Sources */,
+				882F756328728FA400FA7B2A /* WXMessagesViewModel.swift in Sources */,
+				882F756428728FA400FA7B2A /* WXMeInfoItemViewModel.swift in Sources */,
+				882F756528728FA400FA7B2A /* UIImage+WXExtensions.swift in Sources */,
+				882F756628728FA400FA7B2A /* String+WXExtensions.swift in Sources */,
+				882F756728728FA400FA7B2A /* WXDiscoveryViewModel.swift in Sources */,
+				882F756828728FA400FA7B2A /* WXNavigationController.swift in Sources */,
+				882F756928728FA400FA7B2A /* WXAppearance.swift in Sources */,
+				882F756A28728FA400FA7B2A /* WXContactsTableFooterView.swift in Sources */,
+				882F756B28728FA400FA7B2A /* WXDiscoveryItemViewModel.swift in Sources */,
+				882F756C28728FA400FA7B2A /* AMTempViewController.swift in Sources */,
+				882F756D28728FA400FA7B2A /* WXContactsItemViewModel.swift in Sources */,
+				882F756E28728FA400FA7B2A /* WXMessagesViewController.swift in Sources */,
+				882F756F28728FA400FA7B2A /* WXNetworking.swift in Sources */,
+				882F757028728FA400FA7B2A /* AppDelegate.swift in Sources */,
+				882F757128728FA400FA7B2A /* WXConstants.swift in Sources */,
+				882F757228728FA400FA7B2A /* WXMeInfoTableViewCell.swift in Sources */,
+				882F757328728FA400FA7B2A /* WXMeViewModel.swift in Sources */,
+				882F757428728FA400FA7B2A /* WXContactsViewModel.swift in Sources */,
+				882F757528728FA400FA7B2A /* WXMessagesTableViewCell.swift in Sources */,
+				882F757628728FA400FA7B2A /* WXRootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,7 +1099,7 @@
 			baseConfigurationReference = 8404DD4FA284C9179899B7D1 /* Pods-AMKExtensions_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9X349G8KD4;
+				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = AMKExtensions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.1.0;
@@ -920,6 +1108,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -937,6 +1126,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -980,6 +1170,42 @@
 			};
 			name = Release;
 		};
+		882F757F28728FA400FA7B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5AFB0F825352A7962AECC30 /* Pods-Weixin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TGLMB8BDP2;
+				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Weixin-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions-weixin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		882F758028728FA400FA7B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15642ECE4E5E00DE1AAE3F50 /* Pods-Weixin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TGLMB8BDP2;
+				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Weixin-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions-weixin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1006,6 +1232,15 @@
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
 				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		882F757E28728FA400FA7B2A /* Build configuration list for PBXNativeTarget "Weixin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				882F757F28728FA400FA7B2A /* Debug */,
+				882F758028728FA400FA7B2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

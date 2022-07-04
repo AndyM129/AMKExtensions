@@ -2,7 +2,7 @@ use_frameworks!
 
 platform :ios, '10.0'
 
-target 'AMKExtensions_Example' do
+def common_pods
     pod 'AMKExtensions', :path => '../'
     pod 'SnapKit'
     pod 'AMKStackView'
@@ -10,8 +10,16 @@ target 'AMKExtensions_Example' do
     #pod 'JSONKit'
     pod 'HandyJSON'
     pod 'FDFullscreenPopGesture'
+end
+
+target 'AMKExtensions_Example' do
+    common_pods
     
     target 'AMKExtensions_Tests' do
         inherit! :search_paths
     end
+end
+
+target 'Weixin' do
+    common_pods
 end
