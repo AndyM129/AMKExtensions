@@ -42,10 +42,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? UIColor.white
         tableView.reloadData()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 1)) { [unowned self] in
-            navigationController?.pushViewController(WXRootViewController(), animated: true)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,6 +89,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }))
         examples.append(Example(title: "仿微信", subtitle: "", clickedBlock: { [unowned self] example in
             navigationController?.pushViewController(WXRootViewController(), animated: true)
+        }))
+        examples.append(Example(title: "Tester", subtitle: "APP测试工具", clickedBlock: { [unowned self] example in
+            navigationController?.pushViewController(AMTRootViewController(), animated: true)
         }))
         return examples
     }()

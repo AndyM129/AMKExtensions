@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         #if AMKE_WEIXIN
         window?.rootViewController = WXRootViewController()
+        #elseif AMKE_TESTER
+        window?.rootViewController = AMTRootViewController()
         #else
         window?.rootViewController = UINavigationController(rootViewController: ViewController())
         #endif
