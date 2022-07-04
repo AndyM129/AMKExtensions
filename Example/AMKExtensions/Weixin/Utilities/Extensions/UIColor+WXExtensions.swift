@@ -60,7 +60,7 @@ extension UIColor {
     ]
     
     /// 从色库 随机取一个颜色
-    static func wx_randomColor() -> UIColor {
+    static func wx_random() -> UIColor {
         return wx_colors[Int.random(in: 0..<wx_colors.count)]
     }
     

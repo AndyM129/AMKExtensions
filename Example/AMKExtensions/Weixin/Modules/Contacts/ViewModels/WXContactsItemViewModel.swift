@@ -23,6 +23,10 @@ class WXContactsItemViewModel: NSObject {
     
     // MARK: - Init Contactsthods
     
+    convenience init(randomWithClickedBlock clickedBlock: WXContactsItemViewModelClickedBlock?) {
+        self.init(title: String.wx_randomUsername(), iconImage: UIImage.wx_randomProfileImage(), clickedBlock: clickedBlock)
+    }
+    
     init(title: String?, iconImage: UIImage?, clickedBlock: WXContactsItemViewModelClickedBlock?) {
         self.title = title
         self.iconImage = iconImage ?? UIImage.wx_menuItemIconImage()

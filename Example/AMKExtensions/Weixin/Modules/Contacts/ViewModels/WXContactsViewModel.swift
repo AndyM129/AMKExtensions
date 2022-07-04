@@ -64,18 +64,11 @@ class WXContactsViewModel: NSObject {
         // 模拟网络耗时
         DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 1)) { [unowned self] in
             
-            // 名字大全
-            let surnames = ["赵", "钱", "孙", "李", "周", "吴", "郑", "王"]
-            let names = ["澄邈", "德泽", "海超", "海阳", "海荣", "海逸", "海昌", "瀚钰", "瀚文", "涵亮", "涵煦", "明宇", "涵衍"]
-            
-            // 随机组成人名 & 头像，并加入列表
+            // 随机人名 & 头像，并加入列表
             var contacts: WXContactsSection = []
             let count = Int.random(in: 10...200)
             for _ in 0...count {
-                let surname = surnames[Int(arc4random()) % surnames.count]
-                let name = names[Int(arc4random()) % names.count]
-                let iconImage = UIImage.wx_image(color: UIColor.wx_randomColor(), size: WXAppearance.menuItemIconImageSize)
-                contacts.append(WXContactsItemViewModel(title: "\(surname)\(name)", iconImage: iconImage, clickedBlock: { viewModel in
+                contacts.append(WXContactsItemViewModel(randomWithClickedBlock: { viewModel in
                     
                 }))
             }

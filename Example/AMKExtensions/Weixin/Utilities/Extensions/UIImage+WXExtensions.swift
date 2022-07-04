@@ -52,6 +52,11 @@ extension UIImage {
         return wx_image(color: color, size: size, cornerRadius: nil, borderWidth: nil, borderColor: nil)
     }
     
+    /// 占位图片：随机头像
+    static func wx_randomProfileImage() -> UIImage? {
+        return wx_image(color: UIColor.wx_random(), size: 100, cornerRadius: nil, borderWidth: nil, borderColor: nil)
+    }
+    
     /// 占位图
     static func wx_image(color: UIColor?, size: Any?, cornerRadius: CGFloat?, borderWidth: CGFloat?, borderColor: UIColor?) -> UIImage? {
         let imageColor = color ?? WXAppearance.imageBackgroundColor
