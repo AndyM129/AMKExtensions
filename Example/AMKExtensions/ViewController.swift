@@ -38,14 +38,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Title"
+        title = "AMKExtensions"
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? UIColor.white
         tableView.reloadData()
         
         // Debug
         DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 1)) { [unowned self] in
-            navigationController?.pushViewController(AMLogViewController(), animated: true)
+            navigationController?.pushViewController(AMToastViewController(), animated: true)
         }
     }
     
@@ -97,6 +97,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }))
         examples.append(Example(title: "开发调试日志", subtitle: "", clickedBlock: { [unowned self] example in
             navigationController?.pushViewController(AMLogViewController(), animated: true)
+        }))
+        examples.append(Example(title: "Toast", subtitle: "", clickedBlock: { [unowned self] example in
+            navigationController?.pushViewController(AMToastViewController(), animated: true)
         }))
         examples.append(Example(title: "仿微信", subtitle: "", clickedBlock: { [unowned self] example in
             navigationController?.pushViewController(WXRootViewController(), animated: true)

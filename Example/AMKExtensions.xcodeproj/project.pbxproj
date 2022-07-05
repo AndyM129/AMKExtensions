@@ -127,6 +127,7 @@
 		88AF1A012873134700924F2F /* AMJsonAndObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1A002873134700924F2F /* AMJsonAndObjectViewController.swift */; };
 		88AF1A032873172E00924F2F /* AMJsonAndModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1A022873172E00924F2F /* AMJsonAndModelViewController.swift */; };
 		88AF1A052873E8A500924F2F /* AMLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1A042873E8A500924F2F /* AMLogViewController.swift */; };
+		88AF1A9F28742F7B00924F2F /* AMToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1A9E28742F7B00924F2F /* AMToastViewController.swift */; };
 		88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51546286C2AD80056813A /* AMTempViewController.swift */; };
 		88E51549286C673E0056813A /* AMDemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51548286C673E0056813A /* AMDemoTableViewController.swift */; };
 		88E5154B286C7D7C0056813A /* AMDemoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */; };
@@ -221,6 +222,7 @@
 		88AF1A002873134700924F2F /* AMJsonAndObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMJsonAndObjectViewController.swift; path = Temp/AMJsonAndObjectViewController.swift; sourceTree = "<group>"; };
 		88AF1A022873172E00924F2F /* AMJsonAndModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMJsonAndModelViewController.swift; path = Temp/AMJsonAndModelViewController.swift; sourceTree = "<group>"; };
 		88AF1A042873E8A500924F2F /* AMLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMLogViewController.swift; path = Temp/AMLogViewController.swift; sourceTree = "<group>"; };
+		88AF1A9E28742F7B00924F2F /* AMToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMToastViewController.swift; path = Temp/AMToastViewController.swift; sourceTree = "<group>"; };
 		88E51546286C2AD80056813A /* AMTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMTempViewController.swift; path = Temp/AMTempViewController.swift; sourceTree = "<group>"; };
 		88E51548286C673E0056813A /* AMDemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoTableViewController.swift; path = Temp/AMDemoTableViewController.swift; sourceTree = "<group>"; };
 		88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoCollectionViewController.swift; path = Temp/AMDemoCollectionViewController.swift; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 				88AF1A002873134700924F2F /* AMJsonAndObjectViewController.swift */,
 				88AF1A022873172E00924F2F /* AMJsonAndModelViewController.swift */,
 				88AF1A042873E8A500924F2F /* AMLogViewController.swift */,
+				88AF1A9E28742F7B00924F2F /* AMToastViewController.swift */,
 				88AF19FE2873122F00924F2F /* AMStackViewController.swift */,
 			);
 			name = Temp;
@@ -1144,6 +1147,7 @@
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
@@ -1158,6 +1162,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
@@ -1182,6 +1187,7 @@
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
@@ -1196,6 +1202,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
@@ -1286,6 +1293,7 @@
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
@@ -1300,6 +1308,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
@@ -1351,6 +1360,7 @@
 				88E51583286E8B430056813A /* WXDiscoveryTableViewCell.swift in Sources */,
 				88AF19F72872EA5600924F2F /* AMTOpenUrlSectionRowViewModel.swift in Sources */,
 				882F75E228729BCB00FA7B2A /* AMTViewController.swift in Sources */,
+				88AF1A9F28742F7B00924F2F /* AMToastViewController.swift in Sources */,
 				887D0DDD2872C58400E17002 /* AMTOpenUrlDetailViewController.swift in Sources */,
 				882F75D828729BCB00FA7B2A /* AMTConstants.swift in Sources */,
 				88AF19FD2873039300924F2F /* AMJsonViewController.swift in Sources */,
