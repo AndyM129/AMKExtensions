@@ -122,6 +122,10 @@
 		88AF19F82872EA5600924F2F /* AMTOpenUrlSectionRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19F62872EA5600924F2F /* AMTOpenUrlSectionRowViewModel.swift */; };
 		88AF19FA2872EB5D00924F2F /* AMTOpenUrlTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19F92872EB5D00924F2F /* AMTOpenUrlTabViewModel.swift */; };
 		88AF19FB2872EB5D00924F2F /* AMTOpenUrlTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19F92872EB5D00924F2F /* AMTOpenUrlTabViewModel.swift */; };
+		88AF19FD2873039300924F2F /* AMKJsonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19FC2873039300924F2F /* AMKJsonViewController.swift */; };
+		88AF19FF2873122F00924F2F /* AMKStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19FE2873122F00924F2F /* AMKStackViewController.swift */; };
+		88AF1A012873134700924F2F /* AMKJsonAndObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1A002873134700924F2F /* AMKJsonAndObjectViewController.swift */; };
+		88AF1A032873172E00924F2F /* AMKJsonAndModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1A022873172E00924F2F /* AMKJsonAndModelViewController.swift */; };
 		88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51546286C2AD80056813A /* AMTempViewController.swift */; };
 		88E51549286C673E0056813A /* AMDemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51548286C673E0056813A /* AMDemoTableViewController.swift */; };
 		88E5154B286C7D7C0056813A /* AMDemoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */; };
@@ -161,7 +165,7 @@
 		88F731832872A56F00D959A3 /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F731822872A56F00D959A3 /* TesterImages.xcassets */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
 		AF1D90F6A74D3A2E885F2DCB /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D18BCBAE342A4677CC4C809 /* Pods_AMKExtensions_Example.framework */; };
-		DD24B3956808C7F3365DBC7F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		DD24B3956808C7F3365DBC7F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +215,10 @@
 		88AF19F22872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlSectionViewModel.swift; sourceTree = "<group>"; };
 		88AF19F62872EA5600924F2F /* AMTOpenUrlSectionRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlSectionRowViewModel.swift; sourceTree = "<group>"; };
 		88AF19F92872EB5D00924F2F /* AMTOpenUrlTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlTabViewModel.swift; sourceTree = "<group>"; };
+		88AF19FC2873039300924F2F /* AMKJsonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMKJsonViewController.swift; path = Temp/AMKJsonViewController.swift; sourceTree = "<group>"; };
+		88AF19FE2873122F00924F2F /* AMKStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMKStackViewController.swift; path = Temp/AMKStackViewController.swift; sourceTree = "<group>"; };
+		88AF1A002873134700924F2F /* AMKJsonAndObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMKJsonAndObjectViewController.swift; path = Temp/AMKJsonAndObjectViewController.swift; sourceTree = "<group>"; };
+		88AF1A022873172E00924F2F /* AMKJsonAndModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMKJsonAndModelViewController.swift; path = Temp/AMKJsonAndModelViewController.swift; sourceTree = "<group>"; };
 		88E51546286C2AD80056813A /* AMTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMTempViewController.swift; path = Temp/AMTempViewController.swift; sourceTree = "<group>"; };
 		88E51548286C673E0056813A /* AMDemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoTableViewController.swift; path = Temp/AMDemoTableViewController.swift; sourceTree = "<group>"; };
 		88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoCollectionViewController.swift; path = Temp/AMDemoCollectionViewController.swift; sourceTree = "<group>"; };
@@ -261,7 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD24B3956808C7F3365DBC7F /* (null) in Frameworks */,
+				DD24B3956808C7F3365DBC7F /* BuildFile in Frameworks */,
 				03AD92E60BC0442FCB45D3C6 /* Pods_AMKExtensions_Example.framework in Frameworks */,
 				AF1D90F6A74D3A2E885F2DCB /* Pods_AMKExtensions_Example.framework in Frameworks */,
 			);
@@ -616,6 +624,10 @@
 				88E51546286C2AD80056813A /* AMTempViewController.swift */,
 				88E51548286C673E0056813A /* AMDemoTableViewController.swift */,
 				88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */,
+				88AF19FC2873039300924F2F /* AMKJsonViewController.swift */,
+				88AF1A002873134700924F2F /* AMKJsonAndObjectViewController.swift */,
+				88AF1A022873172E00924F2F /* AMKJsonAndModelViewController.swift */,
+				88AF19FE2873122F00924F2F /* AMKStackViewController.swift */,
 			);
 			name = Temp;
 			sourceTree = "<group>";
@@ -1131,6 +1143,7 @@
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1143,6 +1156,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1165,6 +1179,7 @@
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1177,6 +1192,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1265,6 +1281,7 @@
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1277,6 +1294,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1325,7 +1343,10 @@
 				882F75E228729BCB00FA7B2A /* AMTViewController.swift in Sources */,
 				887D0DDD2872C58400E17002 /* AMTOpenUrlDetailViewController.swift in Sources */,
 				882F75D828729BCB00FA7B2A /* AMTConstants.swift in Sources */,
+				88AF19FD2873039300924F2F /* AMKJsonViewController.swift in Sources */,
 				88E51573286DCA340056813A /* WXDiscoveryViewController.swift in Sources */,
+				88AF19FF2873122F00924F2F /* AMKStackViewController.swift in Sources */,
+				88AF1A012873134700924F2F /* AMKJsonAndObjectViewController.swift in Sources */,
 				88E5154B286C7D7C0056813A /* AMDemoCollectionViewController.swift in Sources */,
 				88AF19FA2872EB5D00924F2F /* AMTOpenUrlTabViewModel.swift in Sources */,
 				88E51587286E9D220056813A /* WXMeTableViewCell.swift in Sources */,
@@ -1338,6 +1359,7 @@
 				88E51585286E90F50056813A /* UIImage+WXExtensions.swift in Sources */,
 				882F75E428729BCB00FA7B2A /* AMTNavigationController.swift in Sources */,
 				88E515AA286F26630056813A /* String+WXExtensions.swift in Sources */,
+				88AF1A032873172E00924F2F /* AMKJsonAndModelViewController.swift in Sources */,
 				88E51581286DECB90056813A /* WXDiscoveryViewModel.swift in Sources */,
 				88E5157B286DDF730056813A /* WXNavigationController.swift in Sources */,
 				882F75DC28729BCB00FA7B2A /* String+AMTExtensions.swift in Sources */,

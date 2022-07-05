@@ -7,7 +7,7 @@ def common_pods
     pod 'SnapKit'
     pod 'AMKStackView'
     pod 'FLEX'
-    #pod 'JSONKit'
+    pod 'SwiftyJSON' #'JSONKit'
     pod 'HandyJSON'
     pod 'FDFullscreenPopGesture'
     pod 'Alamofire'

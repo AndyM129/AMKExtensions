@@ -42,6 +42,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? UIColor.white
         tableView.reloadData()
+        
+        // Debug
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 1)) { [unowned self] in
+//            navigationController?.pushViewController(AMKJsonAndModelViewController(), animated: true)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +91,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }))
         examples.append(Example(title: "AMDemoCollectionViewController", subtitle: "", clickedBlock: { [unowned self] example in
             navigationController?.pushViewController(AMDemoCollectionViewController(), animated: true)
+        }))
+        examples.append(Example(title: "Json 相关处理", subtitle: "", clickedBlock: { [unowned self] example in
+            navigationController?.pushViewController(AMKJsonViewController(), animated: true)
         }))
         examples.append(Example(title: "仿微信", subtitle: "", clickedBlock: { [unowned self] example in
             navigationController?.pushViewController(WXRootViewController(), animated: true)
