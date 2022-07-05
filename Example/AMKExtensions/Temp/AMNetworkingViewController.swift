@@ -12,6 +12,13 @@ import SwiftyJSON
 import HandyJSON
 import Alamofire
 
+typealias AMURLSessionTaskCompletionHandler = (URLResponse?, JSON?, Error?) -> Void
+
+enum AMURLSessionTaskError: Error {
+    case invalidUrlString(_ description: String? = nil)
+    case invalidResponseData(_ description: String? = nil)
+}
+
 class AMNetworkingViewController: AMStackViewController {
 
     override func viewDidLoad() {
@@ -22,52 +29,6 @@ class AMNetworkingViewController: AMStackViewController {
     
     // MARK: -
     
-    class Wid: HandyJSON {
-        var day: String? // "01",
-        var night: String? // "02"
-        required init() {}
-    }
-    
-    class Future: HandyJSON {
-        var date: String? // "2022-07-07",
-        var temperature: String? // "25/33℃",
-        var weather: String? // "多云转阴",
-        var wid: Wid?
-        var direct: String? // "西南风转北风"
-        required init() {}
-    }
-    
-    class Realtime: HandyJSON {
-        var temperature: String? // "28",
-        var humidity: String? // "88",
-        var info: String? // "晴",
-        var wid: String? // "00",
-        var direct: String? // "东南风",
-        var power: String? // "3级",
-        var aqi: String? // "35"
-        required init() {}
-    }
-    
-    class Result: HandyJSON {
-        var city: String?
-        var realtime: Realtime?
-        var future: [Future]?
-        required init() {}
-    }
-    
-    class NetworkingModel: HandyJSON {
-        var reason: String?
-        var result: Result?
-        var errorCode: Int?
-        required init() {}
-        
-        // 支持自定义解析规则，详见：https://github.com/alibaba/HandyJSON/blob/master/README_cn.md#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%A3%E6%9E%90%E8%A7%84%E5%88%99
-        func mapping(mapper: HelpingMapper) {
-            mapper <<<
-                self.errorCode <-- "error_code"
-        }
-    }
-
     func test_URLSession() {
         stackView.addArrangedSeparator(withTitle: "URLSession", color: view.tintColor, size: 13)
         stackView.addArrangedButton("dataTask", controlEvents: .touchUpInside) { sender in
@@ -128,13 +89,6 @@ class AMNetworkingViewController: AMStackViewController {
         }
     }
     
-    typealias AMURLSessionTaskCompletionHandler = (URLResponse?, JSON?, Error?) -> Void
-    
-    enum AMURLSessionTaskError: Error {
-        case invalidUrlString(_ description: String? = nil)
-        case invalidResponseData(_ description: String? = nil)
-    }
-    
     /// 封装一个网络请求的方法
     func request(_ urlString: String?, params: [String: Any?] = [:], method: HTTPMethod? = .get, completionHandler: AMURLSessionTaskCompletionHandler?) -> Void {
         let completionHandler = completionHandler ?? { data, response, error in }
@@ -162,12 +116,63 @@ class AMNetworkingViewController: AMStackViewController {
             guard let data = data else {
                 return completionHandler(response, nil, AMURLSessionTaskError.invalidResponseData("data 为空"))
             }
-            guard let json = try? JSON(data) else {
+            guard let jsonString = String(data: data, encoding: .utf8) else {
                 return completionHandler(response, nil, AMURLSessionTaskError.invalidResponseData("data 解析失败"))
             }
-            return completionHandler(response, json, nil)
+            return completionHandler(response, JSON(parseJSON: jsonString), nil)
         }
         dataTask.resume()
+    }
+    
+    // MARK: - Alamofire
+
+    
+    // MARK: - 用到的 Model
+    
+    class Wid: HandyJSON {
+        var day: String? // "01",
+        var night: String? // "02"
+        required init() {}
+    }
+    
+    class Future: HandyJSON {
+        var date: String? // "2022-07-07",
+        var temperature: String? // "25/33℃",
+        var weather: String? // "多云转阴",
+        var wid: Wid?
+        var direct: String? // "西南风转北风"
+        required init() {}
+    }
+    
+    class Realtime: HandyJSON {
+        var temperature: String? // "28",
+        var humidity: String? // "88",
+        var info: String? // "晴",
+        var wid: String? // "00",
+        var direct: String? // "东南风",
+        var power: String? // "3级",
+        var aqi: String? // "35"
+        required init() {}
+    }
+    
+    class Result: HandyJSON {
+        var city: String?
+        var realtime: Realtime?
+        var future: [Future]?
+        required init() {}
+    }
+    
+    class NetworkingModel: HandyJSON {
+        var reason: String?
+        var result: Result?
+        var errorCode: Int?
+        required init() {}
+        
+        // 支持自定义解析规则，详见：https://github.com/alibaba/HandyJSON/blob/master/README_cn.md#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%A3%E6%9E%90%E8%A7%84%E5%88%99
+        func mapping(mapper: HelpingMapper) {
+            mapper <<<
+                self.errorCode <-- "error_code"
+        }
     }
 
 }
