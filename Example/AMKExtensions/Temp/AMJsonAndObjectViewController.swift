@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 /// Json 与 Object 互转
-class AMKJsonAndObjectViewController: AMKStackViewController {
+class AMJsonAndObjectViewController: AMStackViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

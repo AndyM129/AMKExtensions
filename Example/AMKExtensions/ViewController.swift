@@ -44,9 +44,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.reloadData()
         
         // Debug
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 1)) { [unowned self] in
-//            navigationController?.pushViewController(AMKJsonAndModelViewController(), animated: true)
-//        }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 1)) { [unowned self] in
+            navigationController?.pushViewController(AMLogViewController(), animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,7 +93,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             navigationController?.pushViewController(AMDemoCollectionViewController(), animated: true)
         }))
         examples.append(Example(title: "Json 相关处理", subtitle: "", clickedBlock: { [unowned self] example in
-            navigationController?.pushViewController(AMKJsonViewController(), animated: true)
+            navigationController?.pushViewController(AMJsonViewController(), animated: true)
+        }))
+        examples.append(Example(title: "开发调试日志", subtitle: "", clickedBlock: { [unowned self] example in
+            navigationController?.pushViewController(AMLogViewController(), animated: true)
         }))
         examples.append(Example(title: "仿微信", subtitle: "", clickedBlock: { [unowned self] example in
             navigationController?.pushViewController(WXRootViewController(), animated: true)

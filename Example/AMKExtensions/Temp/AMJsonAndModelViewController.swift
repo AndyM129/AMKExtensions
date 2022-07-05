@@ -10,7 +10,7 @@ import UIKit
 import HandyJSON
 
 /// Json 与 Model 互转
-class AMKJsonAndModelViewController: AMKStackViewController {
+class AMJsonAndModelViewController: AMStackViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

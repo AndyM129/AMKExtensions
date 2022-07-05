@@ -4,18 +4,29 @@ platform :ios, '10.0'
 
 def common_pods
     pod 'AMKExtensions', :path => '../'
+    
+    # UI
     pod 'SnapKit'
     pod 'AMKStackView'
-    pod 'FLEX'
+    pod 'FDFullscreenPopGesture'
+    
+    # 网络
+    pod 'Alamofire'
+    
+    # 数据
     pod 'SwiftyJSON' #'JSONKit'
     pod 'HandyJSON'
-    pod 'FDFullscreenPopGesture'
-    pod 'Alamofire'
+    
+    # 日志
+    pod 'SwiftyBeaver'
+    #pod 'TinyConsole'
+    
+    # 调试
+    pod 'FLEX'
 end
 
 target 'AMKExtensions_Example' do
     common_pods
-    
     target 'AMKExtensions_Tests' do
         inherit! :search_paths
     end

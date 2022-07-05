@@ -11,7 +11,7 @@ import SnapKit
 import AMKExtensions
 import AMKStackView
 
-class AMKJsonViewController: AMKStackViewController {
+class AMJsonViewController: AMStackViewController {
     
     // MARK: - Life Circle
     
@@ -19,10 +19,10 @@ class AMKJsonViewController: AMKStackViewController {
         super.viewDidLoad()
         title = "Json 相关处理"
         stackView.addArrangedButton("Json 与 Object 互转", controlEvents: .touchUpInside) { [unowned self] sender in
-            navigationController?.pushViewController(AMKJsonAndObjectViewController(), animated: true)
+            navigationController?.pushViewController(AMJsonAndObjectViewController(), animated: true)
         }
         stackView.addArrangedButton("Json 与 Model 互转", controlEvents: .touchUpInside) { [unowned self] sender in
-            navigationController?.pushViewController(AMKJsonAndModelViewController(), animated: true)
+            navigationController?.pushViewController(AMJsonAndModelViewController(), animated: true)
         }
     }
                 

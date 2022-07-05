@@ -9,7 +9,7 @@
 import UIKit
 import AMKStackView
 
-class AMKStackViewController: UIViewController {
+class AMStackViewController: UIViewController {
 
     // MARK: - Deinit
     
