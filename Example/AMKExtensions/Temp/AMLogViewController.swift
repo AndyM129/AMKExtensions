@@ -62,46 +62,50 @@ class AMLogViewController: AMStackViewController {
         }
     }
     
-    
-    
     func test_SwiftyBeaver() {
-        let log = SwiftyBeaver.self
-
-        // 配置 - 输出到控制台，详见：https://docs.swiftybeaver.com/article/9-log-to-xcode-console
-        let console = ConsoleDestination()
-        console.format = "$DHH:mm:ss.SSS$d $C$L$c$N.$F Line $l: $M" // 详见：https://docs.swiftybeaver.com/article/20-custom-format
-        console.levelString.verbose = ""
-        console.levelString.debug = ""
-        console.levelString.info = ""
-        console.levelString.warning = ""
-        console.levelString.error = ""
-        console.levelColor.verbose = ""
-        console.levelColor.debug = "👨🏻‍💻 "
-        console.levelColor.info = "ℹ️ "
-        console.levelColor.warning = "⚠️ "
-        console.levelColor.error = "❌ "
-        log.addDestination(console)
-        
-        // 配置 - 输出到 MacApp，详见：https://docs.swiftybeaver.com/article/11-log-to-swiftybeaver-platform
-        //let platform = SBPlatformDestination(appID: "dGPwkz", appSecret: "xg2o7W9dRqancFt5hbgZ9eruiyvvynce", encryptionKey: "ke26cokfxzd2Wmp79jjytxgeDPw2dojJ")
-        //log.addDestination(platform)
-        
         // 示例
         stackView.addArrangedSeparator(withTitle: "SwiftyBeaver", color: view.tintColor, size: 13)
+        stackView.addArrangedButton("自定义配置", controlEvents: .touchUpInside) { sender in
+            // 重置配置
+            SwiftyBeaver.removeAllDestinations()
+            
+            // 配置 - 输出到控制台，详见：https://docs.swiftybeaver.com/article/9-log-to-xcode-console
+            let console = ConsoleDestination()
+            console.format = "$DHH:mm:ss.SSS$d $C$L$c$N.$F Line $l: $M" // 详见：https://docs.swiftybeaver.com/article/20-custom-format
+            console.levelString.verbose = ""
+            console.levelString.debug = ""
+            console.levelString.info = ""
+            console.levelString.warning = ""
+            console.levelString.error = ""
+            console.levelColor.verbose = ""
+            console.levelColor.debug = "👨🏻‍💻 "
+            console.levelColor.info = "ℹ️ "
+            console.levelColor.warning = "⚠️ "
+            console.levelColor.error = "❌ "
+            SwiftyBeaver.addDestination(console)
+            
+            // 配置 - 输出到 MacApp，详见：https://docs.swiftybeaver.com/article/11-log-to-swiftybeaver-platform
+            //let platform = SBPlatformDestination(appID: "dGPwkz", appSecret: "xg2o7W9dRqancFt5hbgZ9eruiyvvynce", encryptionKey: "ke26cokfxzd2Wmp79jjytxgeDPw2dojJ")
+            //SwiftyBeaver.addDestination(platform)
+        }
+        stackView.addArrangedButton("恢复默认", controlEvents: .touchUpInside) { sender in
+            SwiftyBeaver.removeAllDestinations()
+            SwiftyBeaver.addDestination(ConsoleDestination())
+        }
         stackView.addArrangedButton("log", controlEvents: .touchUpInside) { sender in
-            log.verbose("not so important")
-            log.debug("something to debug")
-            log.info("a nice information")
-            log.warning("oh no, that won’t be good")
-            log.error("ouch, an error did occur!")
+            SwiftyBeaver.verbose("not so important")
+            SwiftyBeaver.debug("something to debug")
+            SwiftyBeaver.info("a nice information")
+            SwiftyBeaver.warning("oh no, that won’t be good")
+            SwiftyBeaver.error("ouch, an error did occur!")
             print("\n\n")
             
             // log anything!
-            log.verbose(123)
-            log.info(-123.45678)
-            log.warning(Date())
-            log.error(["I", "like", "logs!"])
-            log.error(["name": "Mr Beaver", "address": "7 Beaver Lodge"])
+            SwiftyBeaver.verbose(123)
+            SwiftyBeaver.info(-123.45678)
+            SwiftyBeaver.warning(Date())
+            SwiftyBeaver.error(["I", "like", "logs!"])
+            SwiftyBeaver.error(["name": "Mr Beaver", "address": "7 Beaver Lodge"])
             print("\n\n")
         }
     }

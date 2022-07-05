@@ -8,6 +8,7 @@
 
 import UIKit
 import FLEX
+import AMKExtensions
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        print("👨🏻‍💻 Application launching: \(application.appBundleID!) => \(application.appBundleName!) (\(application.appVersion!)+\(application.appBuildVersion!))")
+        AMKELog.info("Application launching: \(application.appBundleID!) => \(application.appBundleName!) (\(application.appVersion!)+\(application.appBuildVersion!))")
         return true
     }
     

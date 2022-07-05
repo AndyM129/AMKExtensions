@@ -18,17 +18,20 @@ Pod::Spec.new do |s|
     s.social_media_url = 'https://juejin.cn/user/2875978147966855'
     s.ios.deployment_target = '10.0'
     s.requires_arc = true
-    
-    
-#    s.source_files = 'AMKExtensions/Classes/**/*.swift'
-
-    
-    
     s.default_subspec = 'DefaultSubspec'
     
     # 默认子组件
     s.subspec 'DefaultSubspec' do |defaultSubspec|
         defaultSubspec.dependency 'AMKExtensions/Foundation'
+    end
+
+    # ThirdPart 第三方库扩展
+    s.subspec 'ThirdPart' do |thirdPart|
+        # SwiftyBeaver 调试日志
+        thirdPart.subspec 'SwiftyBeaver' do |swiftyBeaver|
+            swiftyBeaver.source_files = 'AMKExtensions/Classes/ThirdPart/SwiftyBeaver/*.swift'
+            swiftyBeaver.dependency 'SwiftyBeaver'
+        end
     end
     
     # Foundation 通用扩展
