@@ -128,6 +128,7 @@
 		88AF1A032873172E00924F2F /* AMJsonAndModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1A022873172E00924F2F /* AMJsonAndModelViewController.swift */; };
 		88AF1A052873E8A500924F2F /* AMLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1A042873E8A500924F2F /* AMLogViewController.swift */; };
 		88AF1A9F28742F7B00924F2F /* AMToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1A9E28742F7B00924F2F /* AMToastViewController.swift */; };
+		88AF1AA1287436FF00924F2F /* AMNetworkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1AA0287436FF00924F2F /* AMNetworkingViewController.swift */; };
 		88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51546286C2AD80056813A /* AMTempViewController.swift */; };
 		88E51549286C673E0056813A /* AMDemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51548286C673E0056813A /* AMDemoTableViewController.swift */; };
 		88E5154B286C7D7C0056813A /* AMDemoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */; };
@@ -167,7 +168,7 @@
 		88F731832872A56F00D959A3 /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F731822872A56F00D959A3 /* TesterImages.xcassets */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
 		AF1D90F6A74D3A2E885F2DCB /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D18BCBAE342A4677CC4C809 /* Pods_AMKExtensions_Example.framework */; };
-		DD24B3956808C7F3365DBC7F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		DD24B3956808C7F3365DBC7F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +224,7 @@
 		88AF1A022873172E00924F2F /* AMJsonAndModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMJsonAndModelViewController.swift; path = Temp/AMJsonAndModelViewController.swift; sourceTree = "<group>"; };
 		88AF1A042873E8A500924F2F /* AMLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMLogViewController.swift; path = Temp/AMLogViewController.swift; sourceTree = "<group>"; };
 		88AF1A9E28742F7B00924F2F /* AMToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMToastViewController.swift; path = Temp/AMToastViewController.swift; sourceTree = "<group>"; };
+		88AF1AA0287436FF00924F2F /* AMNetworkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMNetworkingViewController.swift; path = Temp/AMNetworkingViewController.swift; sourceTree = "<group>"; };
 		88E51546286C2AD80056813A /* AMTempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMTempViewController.swift; path = Temp/AMTempViewController.swift; sourceTree = "<group>"; };
 		88E51548286C673E0056813A /* AMDemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoTableViewController.swift; path = Temp/AMDemoTableViewController.swift; sourceTree = "<group>"; };
 		88E5154A286C7D7C0056813A /* AMDemoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AMDemoCollectionViewController.swift; path = Temp/AMDemoCollectionViewController.swift; sourceTree = "<group>"; };
@@ -273,7 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD24B3956808C7F3365DBC7F /* BuildFile in Frameworks */,
+				DD24B3956808C7F3365DBC7F /* (null) in Frameworks */,
 				03AD92E60BC0442FCB45D3C6 /* Pods_AMKExtensions_Example.framework in Frameworks */,
 				AF1D90F6A74D3A2E885F2DCB /* Pods_AMKExtensions_Example.framework in Frameworks */,
 			);
@@ -633,6 +635,7 @@
 				88AF1A022873172E00924F2F /* AMJsonAndModelViewController.swift */,
 				88AF1A042873E8A500924F2F /* AMLogViewController.swift */,
 				88AF1A9E28742F7B00924F2F /* AMToastViewController.swift */,
+				88AF1AA0287436FF00924F2F /* AMNetworkingViewController.swift */,
 				88AF19FE2873122F00924F2F /* AMStackViewController.swift */,
 			);
 			name = Temp;
@@ -1387,6 +1390,7 @@
 				88E515A2286F0E8A0056813A /* WXContactsTableFooterView.swift in Sources */,
 				88E5157F286DEBCC0056813A /* WXDiscoveryItemViewModel.swift in Sources */,
 				88F7317F2872A32200D959A3 /* AMTSettingsViewController.swift in Sources */,
+				88AF1AA1287436FF00924F2F /* AMNetworkingViewController.swift in Sources */,
 				882F75DA28729BCB00FA7B2A /* AMTAppearance.swift in Sources */,
 				88E51547286C2AD80056813A /* AMTempViewController.swift in Sources */,
 				882F75E628729BCB00FA7B2A /* AMTRootViewController.swift in Sources */,
