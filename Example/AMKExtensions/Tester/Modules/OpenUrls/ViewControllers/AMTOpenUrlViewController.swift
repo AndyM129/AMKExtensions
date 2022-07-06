@@ -73,9 +73,9 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
         return tableView
     }()
     
-    lazy var viewModel: AMTOpenUrlTabViewModel = {
-        return AMTOpenUrlTabViewModel(sectionViewModels: nil)
-    }()
+//    lazy var viewModel: AMTOpenUrlTabViewModel = {
+//        return AMTOpenUrlTabViewModel(sectionViewModels: nil)
+//    }()
     
     // MARK: - Data & Networking
     
@@ -141,11 +141,14 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AMTTesterConfigManager.shared.openUrlTab?.sections?[section].rows?.count ?? 0
+        let sectionModel: AMTOpenUrlSectionModel? = AMTTesterConfigManager.shared.openUrlTab?.sections?[section]
+        return sectionModel?.rows?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let rowModel: AMTOpenUrlSectionRowModel? = AMTTesterConfigManager.shared.openUrlTab?.sections?[indexPath.section].rows?[indexPath.row]
+        let sectionModel: AMTOpenUrlSectionModel? = AMTTesterConfigManager.shared.openUrlTab?.sections?[indexPath.section]
+        let rowModel: AMTOpenUrlSectionRowModel? = sectionModel?.rows?[indexPath.row]
+        
         var cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self))
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: NSStringFromClass(UITableViewCell.self))
@@ -168,11 +171,12 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
     // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sectionModel: AMTOpenUrlSectionModel? = AMTTesterConfigManager.shared.openUrlTab?.sections?[indexPath.section]
+        let rowModel: AMTOpenUrlSectionRowModel? = sectionModel?.rows?[indexPath.row]
+
         tableView.deselectRow(at: indexPath, animated: true)
         print("tableViewDidSelectRow: \(tableView), \(indexPath)")
-        // navigationController?.pushViewController(AMTOpenUrlDetailViewController(), animated: true)
-        
-        MBProgressHUD.amt_showHUD(text: "xxxx")
+        navigationController?.pushViewController(AMTOpenUrlExamplesViewController(row: rowModel), animated: true)
     }
     
     // MARK: - Helper Methods

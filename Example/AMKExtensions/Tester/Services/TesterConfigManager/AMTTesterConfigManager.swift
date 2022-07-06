@@ -31,6 +31,9 @@ class AMTTesterConfigManager: NSObject {
     /// 单例
     static let shared: AMTTesterConfigManager = AMTTesterConfigManager()
     
+    /// 版本号
+    static let appVersion: String = "1.0.0"
+    
     /// 「调起」Tab 的相关配置
     var openUrlTab: AMTOpenUrlTabModel? = AMTOpenUrlTabModel()
     
@@ -63,8 +66,8 @@ class AMTTesterConfigManager: NSObject {
                 return
             }
             
-            AMKELog.info(JSON(parseJSON: jsonString))
-            openUrlTab = model.data?.openUrlTab
+            openUrlTab = model.data?.openUrlTab            
+            MBProgressHUD.amt_showHUD(text: "配置已更新", context: model.toJSON())
             NotificationCenter.default.post(name: AMTTesterConfigManager.didReloadDataSucceedNotification, object: nil)
         }
     }

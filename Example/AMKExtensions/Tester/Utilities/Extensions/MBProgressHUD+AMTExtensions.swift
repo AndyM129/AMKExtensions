@@ -36,7 +36,7 @@ extension MBProgressHUD {
         hud.mode = mode
         hud.bezelView.style = .solidColor
         hud.bezelView.color = UIColor.init(white: 0, alpha: 0.8)
-        hud.label.textColor = UIColor.init(white: 1, alpha: 0.8)
+        hud.label.textColor = UIColor.init(white: 1, alpha: 0.9)
         hud.detailsLabel.textColor = UIColor.init(white: 1, alpha: 0.8)
         hud.label.text = text;
         hud.detailsLabel.text = details;

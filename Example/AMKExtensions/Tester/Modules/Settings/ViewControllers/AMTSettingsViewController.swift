@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AMTSettingsViewController: AMTViewController {
+class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Deinit
     
@@ -33,7 +33,7 @@ class AMTSettingsViewController: AMTViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +58,26 @@ class AMTSettingsViewController: AMTViewController {
     
     // MARK: - Getters & Setters
     
+    lazy var tableView: UITableView = { [unowned self] in
+        let tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.backgroundColor = view.backgroundColor
+        tableView.separatorColor = tableView.backgroundColor
+        tableView.estimatedSectionHeaderHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
+        
+        tableView.register(AMTSettingsIconTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(AMTSettingsIconTableViewCell.self))
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+        tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: NSStringFromClass(UITableViewHeaderFooterView.self))
+        view.addSubview(tableView)
+        return tableView
+    }()
+    
     // MARK: - Data & Networking
     
     // MARK: - Layout Subviews
@@ -79,6 +99,44 @@ class AMTSettingsViewController: AMTViewController {
     // MARK: - KVO
     
     // MARK: - Protocols
+    
+    // MARK: UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            return tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(AMTSettingsIconTableViewCell.self), for: indexPath) as! AMTSettingsIconTableViewCell
+        }
+        if indexPath.row == 1 {
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+            cell.textLabel?.text = "联网更新配置"
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        }
+        
+        return tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+    }
+        
+    // MARK: UITableViewDelegate
+        
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return AMTSettingsIconTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: nil)
+        }
+        return 50
+    }
+        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print("tableViewDidSelectRow: \(tableView), \(indexPath)")
+        
+        if indexPath.row == 1 {
+            AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
+        }
+    }
     
     // MARK: - Helper Methods
 

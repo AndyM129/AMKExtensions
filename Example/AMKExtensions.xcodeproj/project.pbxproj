@@ -75,8 +75,8 @@
 		882F75EF28729C8200FA7B2A /* Weixin-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 882F75EE28729C8200FA7B2A /* Weixin-Info.plist */; };
 		887D0DDA2872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DD92872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift */; };
 		887D0DDB2872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DD92872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift */; };
-		887D0DDD2872C58400E17002 /* AMTOpenUrlDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlDetailViewController.swift */; };
-		887D0DDE2872C58400E17002 /* AMTOpenUrlDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlDetailViewController.swift */; };
+		887D0DDD2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */; };
+		887D0DDE2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */; };
 		88AF19F12872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19F02872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift */; };
 		88AF19F32872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19F22872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift */; };
 		88AF19F42872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19F22872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift */; };
@@ -95,7 +95,6 @@
 		88AF1AB528751BEF00924F2F /* AMNetworkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1AAB28751BEF00924F2F /* AMNetworkingViewController.swift */; };
 		88AF1AB628751BEF00924F2F /* AMJsonAndModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1AAC28751BEF00924F2F /* AMJsonAndModelViewController.swift */; };
 		88AF1AB728751BEF00924F2F /* AMToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1AAD28751BEF00924F2F /* AMToastViewController.swift */; };
-		88AF1AB82875205F00924F2F /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F731822872A56F00D959A3 /* TesterImages.xcassets */; };
 		88AF1ABC2875261700924F2F /* AMTOpenUrlExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1ABB2875261700924F2F /* AMTOpenUrlExampleModel.swift */; };
 		88AF1ABD2875261700924F2F /* AMTOpenUrlExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1ABB2875261700924F2F /* AMTOpenUrlExampleModel.swift */; };
 		88AF1ABF2875271D00924F2F /* AMTOpenUrlSectionRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1ABE2875271D00924F2F /* AMTOpenUrlSectionRowModel.swift */; };
@@ -114,6 +113,10 @@
 		88AF1B6F287549EE00924F2F /* AMTTesterConfigNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B6D287549EE00924F2F /* AMTTesterConfigNetworkModel.swift */; };
 		88AF1B7128754ABF00924F2F /* AMTTesterConfigDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B7028754ABE00924F2F /* AMTTesterConfigDataModel.swift */; };
 		88AF1B7228754ABF00924F2F /* AMTTesterConfigDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B7028754ABE00924F2F /* AMTTesterConfigDataModel.swift */; };
+		88AF1B752875754C00924F2F /* AMTSettingsIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B742875754C00924F2F /* AMTSettingsIconTableViewCell.swift */; };
+		88AF1B762875754C00924F2F /* AMTSettingsIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B742875754C00924F2F /* AMTSettingsIconTableViewCell.swift */; };
+		88AF1B792875819F00924F2F /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF1B782875819F00924F2F /* TesterImages.xcassets */; };
+		88AF1B7A2875819F00924F2F /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF1B782875819F00924F2F /* TesterImages.xcassets */; };
 		88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156C286DC8CF0056813A /* WXRootViewController.swift */; };
 		88E5156F286DCA0B0056813A /* WXMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */; };
 		88E51571286DCA210056813A /* WXContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51570286DCA210056813A /* WXContactsViewController.swift */; };
@@ -147,7 +150,6 @@
 		88F7317D2872A14F00D959A3 /* AMTOpenUrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317B2872A14800D959A3 /* AMTOpenUrlViewController.swift */; };
 		88F7317F2872A32200D959A3 /* AMTSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */; };
 		88F731802872A32200D959A3 /* AMTSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */; };
-		88F731832872A56F00D959A3 /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F731822872A56F00D959A3 /* TesterImages.xcassets */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
 		AF1D90F6A74D3A2E885F2DCB /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D18BCBAE342A4677CC4C809 /* Pods_AMKExtensions_Example.framework */; };
 		DD24B3956808C7F3365DBC7F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -195,7 +197,7 @@
 		882F75EB28729C4800FA7B2A /* Tester-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tester-Info.plist"; sourceTree = "<group>"; };
 		882F75EE28729C8200FA7B2A /* Weixin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Weixin-Info.plist"; sourceTree = "<group>"; };
 		887D0DD92872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlsTableViewCell.swift; sourceTree = "<group>"; };
-		887D0DDC2872C58400E17002 /* AMTOpenUrlDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlDetailViewController.swift; sourceTree = "<group>"; };
+		887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlExamplesViewController.swift; sourceTree = "<group>"; };
 		88AF19F02872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlExampleViewModel.swift; sourceTree = "<group>"; };
 		88AF19F22872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlSectionViewModel.swift; sourceTree = "<group>"; };
 		88AF19F62872EA5600924F2F /* AMTOpenUrlSectionRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlSectionRowViewModel.swift; sourceTree = "<group>"; };
@@ -219,6 +221,8 @@
 		88AF1B6A287547BC00924F2F /* AMTTesterConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTesterConfigManager.swift; sourceTree = "<group>"; };
 		88AF1B6D287549EE00924F2F /* AMTTesterConfigNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTesterConfigNetworkModel.swift; sourceTree = "<group>"; };
 		88AF1B7028754ABE00924F2F /* AMTTesterConfigDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTesterConfigDataModel.swift; sourceTree = "<group>"; };
+		88AF1B742875754C00924F2F /* AMTSettingsIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingsIconTableViewCell.swift; sourceTree = "<group>"; };
+		88AF1B782875819F00924F2F /* TesterImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TesterImages.xcassets; sourceTree = "<group>"; };
 		88E5156C286DC8CF0056813A /* WXRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXRootViewController.swift; sourceTree = "<group>"; };
 		88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMessagesViewController.swift; sourceTree = "<group>"; };
 		88E51570286DCA210056813A /* WXContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXContactsViewController.swift; sourceTree = "<group>"; };
@@ -250,7 +254,6 @@
 		88E515A9286F26630056813A /* String+WXExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WXExtensions.swift"; sourceTree = "<group>"; };
 		88F7317B2872A14800D959A3 /* AMTOpenUrlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlViewController.swift; sourceTree = "<group>"; };
 		88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingsViewController.swift; sourceTree = "<group>"; };
-		88F731822872A56F00D959A3 /* TesterImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TesterImages.xcassets; sourceTree = "<group>"; };
 		98E861252DCFD10DACE621C5 /* Pods-AMKExtensions_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Example.release.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Example/Pods-AMKExtensions_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DC3B593863B76026CCD7E49C /* Pods-AMKExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Tests/Pods-AMKExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E79B7270D1C6A97826FB1D35 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -395,7 +398,7 @@
 				882F75D528729BCB00FA7B2A /* Services */,
 				882F75B828729BCB00FA7B2A /* Utilities */,
 				882F75EA28729C4800FA7B2A /* Configurations */,
-				88F731812872A54D00D959A3 /* Resources */,
+				88AF1B772875819F00924F2F /* Resources */,
 			);
 			path = Tester;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 		882F75C928729BCB00FA7B2A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				88AF1B742875754C00924F2F /* AMTSettingsIconTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -534,7 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				88F7317B2872A14800D959A3 /* AMTOpenUrlViewController.swift */,
-				887D0DDC2872C58400E17002 /* AMTOpenUrlDetailViewController.swift */,
+				887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -647,6 +651,14 @@
 				88AF1B7028754ABE00924F2F /* AMTTesterConfigDataModel.swift */,
 			);
 			path = TesterConfigManager;
+			sourceTree = "<group>";
+		};
+		88AF1B772875819F00924F2F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88AF1B782875819F00924F2F /* TesterImages.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		88E5154D286DC79A0056813A /* Weixin */ = {
@@ -951,15 +963,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		88F731812872A54D00D959A3 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				88F731822872A56F00D959A3 /* TesterImages.xcassets */,
-			);
-			name = Resources;
-			path = AMKExtensions/Weixin/Resources;
-			sourceTree = SOURCE_ROOT;
-		};
 		B9BF1DBA8BDDA1D627580F95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1108,7 +1111,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				88AF1AB82875205F00924F2F /* TesterImages.xcassets in Resources */,
+				88AF1B792875819F00924F2F /* TesterImages.xcassets in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1137,7 +1140,7 @@
 			files = (
 				882F75AE28729B7500FA7B2A /* Main.storyboard in Resources */,
 				882F75AF28729B7500FA7B2A /* LaunchScreen.xib in Resources */,
-				88F731832872A56F00D959A3 /* TesterImages.xcassets in Resources */,
+				88AF1B7A2875819F00924F2F /* TesterImages.xcassets in Resources */,
 				882F75B028729B7500FA7B2A /* Images.xcassets in Resources */,
 				882F75EC28729C4800FA7B2A /* Tester-Info.plist in Resources */,
 			);
@@ -1374,7 +1377,7 @@
 				88E51583286E8B430056813A /* WXDiscoveryTableViewCell.swift in Sources */,
 				88AF19F72872EA5600924F2F /* AMTOpenUrlSectionRowViewModel.swift in Sources */,
 				882F75E228729BCB00FA7B2A /* AMTViewController.swift in Sources */,
-				887D0DDD2872C58400E17002 /* AMTOpenUrlDetailViewController.swift in Sources */,
+				887D0DDD2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */,
 				88AF1AB728751BEF00924F2F /* AMToastViewController.swift in Sources */,
 				882F75D828729BCB00FA7B2A /* AMTConstants.swift in Sources */,
 				88E51573286DCA340056813A /* WXDiscoveryViewController.swift in Sources */,
@@ -1397,6 +1400,7 @@
 				88E5157B286DDF730056813A /* WXNavigationController.swift in Sources */,
 				882F75DC28729BCB00FA7B2A /* String+AMTExtensions.swift in Sources */,
 				88AF1B6E287549EE00924F2F /* AMTTesterConfigNetworkModel.swift in Sources */,
+				88AF1B752875754C00924F2F /* AMTSettingsIconTableViewCell.swift in Sources */,
 				88E51578286DCCC50056813A /* WXAppearance.swift in Sources */,
 				88AF1ABC2875261700924F2F /* AMTOpenUrlExampleModel.swift in Sources */,
 				88AF1AAE28751BEF00924F2F /* AMJsonAndObjectViewController.swift in Sources */,
@@ -1480,13 +1484,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88AF1B762875754C00924F2F /* AMTSettingsIconTableViewCell.swift in Sources */,
 				88F7317D2872A14F00D959A3 /* AMTOpenUrlViewController.swift in Sources */,
 				88AF1B6C287547BC00924F2F /* AMTTesterConfigManager.swift in Sources */,
 				88AF1ABD2875261700924F2F /* AMTOpenUrlExampleModel.swift in Sources */,
 				88AF1AC3287527AE00924F2F /* AMTOpenUrlSectionModel.swift in Sources */,
 				88AF19F82872EA5600924F2F /* AMTOpenUrlSectionRowViewModel.swift in Sources */,
 				882F75E328729BCB00FA7B2A /* AMTViewController.swift in Sources */,
-				887D0DDE2872C58400E17002 /* AMTOpenUrlDetailViewController.swift in Sources */,
+				887D0DDE2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */,
 				882F75D928729BCB00FA7B2A /* AMTConstants.swift in Sources */,
 				88AF19FB2872EB5D00924F2F /* AMTOpenUrlTabViewModel.swift in Sources */,
 				882F75E528729BCB00FA7B2A /* AMTNavigationController.swift in Sources */,

@@ -37,6 +37,19 @@ class AMTOpenUrlExampleModel: NSObject, HandyJSON {
     
     var pasteboard: String?
     
+    var detailText: String? {
+        var strings: [String] = []
+
+        if let router = router {
+            strings.append("[Router] \(router)")
+        }
+        if let pasteboard = pasteboard {
+            strings.append("[Pasteboard] \(pasteboard)")
+        }
+        
+        return strings.joined(separator: "\n\n")
+    }
+    
     // MARK: - Data & Networking
     
     // MARK: - Action Methods

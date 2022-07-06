@@ -13,11 +13,14 @@ class AMTAppearance {
         
     // MARK: - Common UI
     
+    /// 主题色
+    static let tintColor: UIColor = UIColor(red:0.46, green:0.45, blue:0.88, alpha:1.00)
+    
     /// 主题色 - 默认状态
     static let normalTintColor: UIColor = UIColor(white: 0.2, alpha: 1)
     
     /// 主题色 - 选中状态
-    static let selectedTintColor: UIColor = UIColor(red:0.49, green:0.48, blue:0.87, alpha:1.00)
+    static let selectedTintColor: UIColor = tintColor
     
     /// 页面背景色
     static let viewBackgroundColor: UIColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.00)

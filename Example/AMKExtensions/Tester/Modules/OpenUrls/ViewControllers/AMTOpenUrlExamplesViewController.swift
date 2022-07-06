@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MBProgressHUD
+import YYCategories
 
-class AMTOpenUrlDetailViewController: AMTViewController, UITableViewDataSource, UITableViewDelegate {
+class AMTOpenUrlExamplesViewController: AMTViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Deinit
     
@@ -18,9 +20,10 @@ class AMTOpenUrlDetailViewController: AMTViewController, UITableViewDataSource, 
     
     // MARK: - Init Methods
     
-    init() {
+    init(row: AMTOpenUrlSectionRowModel?) {
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
+        self.row = row
     }
     
     required init?(coder: NSCoder) {
@@ -31,7 +34,6 @@ class AMTOpenUrlDetailViewController: AMTViewController, UITableViewDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "调起阅读页"
         tableView.reloadData()
     }
     
@@ -68,6 +70,15 @@ class AMTOpenUrlDetailViewController: AMTViewController, UITableViewDataSource, 
         return tableView
     }()
     
+    var row: AMTOpenUrlSectionRowModel? {
+        didSet {
+            title = row?.title
+            if !isViewLoaded { return }
+            
+            tableView.reloadData()
+        }
+    }
+    
     // MARK: - Data & Networking
     
     // MARK: - Layout Subviews
@@ -93,10 +104,11 @@ class AMTOpenUrlDetailViewController: AMTViewController, UITableViewDataSource, 
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return row?.examples?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let example: AMTOpenUrlExampleModel? = row?.examples?[indexPath.row]
         var cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self))
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: NSStringFromClass(UITableViewCell.self))
@@ -108,19 +120,36 @@ class AMTOpenUrlDetailViewController: AMTViewController, UITableViewDataSource, 
             cell!.detailTextLabel?.textColor = .lightGray
             cell!.accessoryType = .disclosureIndicator
         }
-        cell!.textLabel?.text = "调起 \(indexPath.row)文档"
-        cell!.detailTextLabel?.text = ["router": "xxx://yyy/zzz?key=value", "pasteboard": "asdjlasdkasd.asmd';,wE'D,;WLEMD/;KAKWEMDKAMDAMSDMAsd.,m/wklemdkamSDM"].description
+        cell!.textLabel?.text = example?.title
+        cell!.detailTextLabel?.text = example?.detailText
         return cell!
     }
     
     // MARK: UITableViewDelegate
             
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let example: AMTOpenUrlExampleModel? = row?.examples?[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
-        print("tableViewDidSelectRow: \(tableView), \(indexPath)")
+
+        // 参数校验
+        guard let router = example?.router?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            MBProgressHUD.amt_showHUD(text: "无效路由", context: example?.toJSON)
+            return
+        }
+        guard let url = URL(string: router) else {
+            MBProgressHUD.amt_showHUD(text: "路由解析异常", context: example?.toJSON)
+            return
+        }
+        
+        // 写入剪贴板，并尝试调起
+        UIPasteboard.general.string = example?.pasteboard
+        UIApplication.shared.open(url, options: [:]) { succeed in
+            if !succeed {
+                MBProgressHUD.amt_showHUD(text: "调起失败", context: example?.toJSON)
+            }
+        }
     }
     
     // MARK: - Helper Methods
-
 
 }
