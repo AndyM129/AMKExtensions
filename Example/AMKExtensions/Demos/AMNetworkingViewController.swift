@@ -12,19 +12,13 @@ import SwiftyJSON
 import HandyJSON
 import Alamofire
 
-typealias AMURLSessionTaskCompletionHandler = (URLResponse?, JSON?, Error?) -> Void
-
-enum AMURLSessionTaskError: Error {
-    case invalidUrlString(_ description: String? = nil)
-    case invalidResponseData(_ description: String? = nil)
-}
-
 class AMNetworkingViewController: AMStackViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "网络请求"
         test_URLSession()
+        test_Alamofire()
     }
     
     // MARK: -
@@ -76,7 +70,50 @@ class AMNetworkingViewController: AMStackViewController {
             dataTask.resume()
         }
         
-        stackView.addArrangedButton("dataTask - 封装+Model解析", controlEvents: .touchUpInside) { [unowned self] sender in
+        stackView.addArrangedButton("dataTask - 封装+Model解析", controlEvents: .touchUpInside) { _ in
+            enum AMURLSessionTaskError: Error {
+                case invalidUrlString(_ description: String? = nil)
+                case invalidResponseData(_ description: String? = nil)
+            }
+            
+            typealias AMURLSessionTaskCompletionHandler = (URLResponse?, JSON?, Error?) -> Void
+            
+            // 封装一个网络请求的方法
+            func request(_ urlString: String?, params: [String: Any?] = [:], method: HTTPMethod? = .get, completionHandler: AMURLSessionTaskCompletionHandler?) -> Void {
+                let completionHandler = completionHandler ?? { data, response, error in }
+                
+                guard let urlString = urlString else {
+                    return completionHandler(nil, nil, AMURLSessionTaskError.invalidUrlString("urlString 为空"))
+                }
+                guard let url = URL(string: urlString) else {
+                    return completionHandler(nil, nil, AMURLSessionTaskError.invalidUrlString("url 创建失败"))
+                }
+                guard let request = try? URLRequest(url: url, method: .post, headers: nil) else {
+                    return completionHandler(nil, nil, AMURLSessionTaskError.invalidUrlString("request 创建失败"))
+                }
+                
+                let session = URLSession(configuration: {
+                    let configuration = URLSessionConfiguration.default
+                    configuration.timeoutIntervalForRequest = 5
+                    return configuration
+                }())
+                
+                let dataTask = session.dataTask(with: request) { data, response, error in
+                    guard error == nil else {
+                        return completionHandler(response, nil, error)
+                    }
+                    guard let data = data else {
+                        return completionHandler(response, nil, AMURLSessionTaskError.invalidResponseData("data 为空"))
+                    }
+                    guard let jsonString = String(data: data, encoding: .utf8) else {
+                        return completionHandler(response, nil, AMURLSessionTaskError.invalidResponseData("data 解析失败"))
+                    }
+                    return completionHandler(response, JSON(parseJSON: jsonString), nil)
+                }
+                dataTask.resume()
+            }
+            
+            // 调用
             request("http://apis.juhe.cn/simpleWeather/query?city=%E5%8C%97%E4%BA%AC&key=251518e073ef6c3c9504dd286c3f6a86") { response, json, error in
                 guard error == nil else {
                     return AMKELog.error("\(response?.url?.absoluteString ?? "") => \(String(describing: error))")
@@ -89,43 +126,37 @@ class AMNetworkingViewController: AMStackViewController {
         }
     }
     
-    /// 封装一个网络请求的方法
-    func request(_ urlString: String?, params: [String: Any?] = [:], method: HTTPMethod? = .get, completionHandler: AMURLSessionTaskCompletionHandler?) -> Void {
-        let completionHandler = completionHandler ?? { data, response, error in }
-        
-        guard let urlString = urlString else {
-            return completionHandler(nil, nil, AMURLSessionTaskError.invalidUrlString("urlString 为空"))
-        }
-        guard let url = URL(string: urlString) else {
-            return completionHandler(nil, nil, AMURLSessionTaskError.invalidUrlString("url 创建失败"))
-        }
-        guard let request = try? URLRequest(url: url, method: .post, headers: nil) else {
-            return completionHandler(nil, nil, AMURLSessionTaskError.invalidUrlString("request 创建失败"))
-        }
-
-        let session = URLSession(configuration: {
-            let configuration = URLSessionConfiguration.default
-            configuration.timeoutIntervalForRequest = 5
-            return configuration
-        }())
-
-        let dataTask = session.dataTask(with: request) { data, response, error in
-            guard error == nil else {
-                return completionHandler(response, nil, error)
-            }
-            guard let data = data else {
-                return completionHandler(response, nil, AMURLSessionTaskError.invalidResponseData("data 为空"))
-            }
-            guard let jsonString = String(data: data, encoding: .utf8) else {
-                return completionHandler(response, nil, AMURLSessionTaskError.invalidResponseData("data 解析失败"))
-            }
-            return completionHandler(response, JSON(parseJSON: jsonString), nil)
-        }
-        dataTask.resume()
-    }
-    
     // MARK: - Alamofire
-
+    
+    // https://juejin.cn/post/6974791858744459294
+    func test_Alamofire() {
+        stackView.addArrangedSeparator(withTitle: "Alamofire", color: view.tintColor, size: 13)
+        stackView.addArrangedButton("简单请求 - GET", controlEvents: .touchUpInside) { sender in
+            let urlString = "https://httpbin.org/get?aa=11&bb=22" //"https://itunes.apple.com/lookup?id=414478124"
+            AF.request(urlString).response { response in
+                guard let data = response.data else {
+                    return AMKELog.info("data 为空")
+                }
+                guard let jsonString = String(data: data, encoding: .utf8) else {
+                    return AMKELog.info("data 解析失败")
+                }
+                AMKELog.info(JSON(parseJSON: jsonString))
+            }
+        }
+        stackView.addArrangedButton("简单请求 - POST", controlEvents: .touchUpInside) { sender in
+            let urlString = "https://httpbin.org/post?xx=88&yy=99"
+            let parameters = ["aa":11, "bb":22]
+            AF.request(urlString, method: .post, parameters: parameters).response { response in
+                guard let data = response.data else {
+                    return AMKELog.info("data 为空")
+                }
+                guard let jsonString = String(data: data, encoding: .utf8) else {
+                    return AMKELog.info("data 解析失败")
+                }
+                AMKELog.info(JSON(parseJSON: jsonString))
+            }
+        }
+    }
     
     // MARK: - 用到的 Model
     
