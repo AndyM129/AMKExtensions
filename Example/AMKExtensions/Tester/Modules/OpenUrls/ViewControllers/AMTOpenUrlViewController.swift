@@ -37,6 +37,7 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: AMTTesterConfigManager.didReloadDataSucceedNotification, object: nil)
     }
     
@@ -73,47 +74,12 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
         return tableView
     }()
     
-//    lazy var viewModel: AMTOpenUrlTabViewModel = {
-//        return AMTOpenUrlTabViewModel(sectionViewModels: nil)
-//    }()
-    
     // MARK: - Data & Networking
     
     @objc func reloadData() {
         tableView.reloadData()
     }
-    
-//    func reloadDataFromNetworking(completionHandler: AMTOpenUrlTabViewModelReloadCompletionHandler?) {
-//        let urlString = "https://www.fastmock.site/mock/918edb52006d5f75261f317f3ba37180/tester/data"
-//        AF.request(urlString).response { response in
-//            guard let data = response.data else {
-//                MBProgressHUD.amt_showHUD(text: "数据刷新失败", details: "返回 data 为空", context: response)
-//                return
-//            }
-//            guard let jsonString = String(data: data, encoding: .utf8) else {
-//                MBProgressHUD.amt_showHUD(text: "数据刷新失败", details: "data 解析失败", context: data)
-//                return
-//            }
-//            guard let model = AMTOpenUrlTabModel.deserialize(from: jsonString) else {
-//                MBProgressHUD.amt_showHUD(text: "数据刷新失败", details: "model 解析失败", context: jsonString)
-//                return
-//            }
-//
-////            AMKELog.info(JSON(parseJSON: jsonString))
-//        }
-//
-//
-//
-////        viewModel.reloadDataFromNetworking { [unowned self] error in
-////            guard error == nil else {
-////                print("刷新失败：\(error!)")
-////                return
-////            }
-////
-////            tableView.reloadData()
-////        }
-//    }
-    
+        
     // MARK: - Layout Subviews
     
     override func viewWillLayoutSubviews() {
@@ -159,7 +125,7 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
             cell!.accessoryType = .disclosureIndicator
         }
         cell!.textLabel?.text = rowModel?.title
-        cell!.detailTextLabel?.text = "附加说明"
+        cell!.detailTextLabel?.text = rowModel?.detail
         return cell!
     }
     

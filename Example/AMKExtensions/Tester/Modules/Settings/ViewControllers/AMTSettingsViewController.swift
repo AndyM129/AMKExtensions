@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FLEX
 
 class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -103,17 +104,34 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             return tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(AMTSettingsIconTableViewCell.self), for: indexPath) as! AMTSettingsIconTableViewCell
         }
+        
         if indexPath.row == 1 {
             let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
             cell.textLabel?.text = "联网更新配置"
             cell.accessoryType = .disclosureIndicator
+            return cell
+        }
+        
+        if indexPath.row == 2 {
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+            cell.textLabel?.text = "FLEX 开关"
+            cell.accessoryView = {
+                let flexSwitch = UISwitch(frame: CGRect(x: 0, y: 0, width: 60, height: 50))
+                flexSwitch.onTintColor = AMTAppearance.tintColor
+                flexSwitch.isOn = UserDefaults.standard.bool(forKey: AMTConstants.flexSwitchUserDefaultsKey)
+                flexSwitch.addBlock(for: .valueChanged) {[unowned flexSwitch] sender in
+                    flexSwitch.isOn ? FLEXManager.shared.showExplorer() : FLEXManager.shared.hideExplorer()
+                    UserDefaults.standard.set(flexSwitch.isOn, forKey: AMTConstants.flexSwitchUserDefaultsKey)
+                }
+                return flexSwitch
+            }()
             return cell
         }
         

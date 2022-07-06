@@ -1654,6 +1654,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.1.0;
 				MODULE_NAME = ExampleApp;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_DEMOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1672,6 +1673,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.1.0;
 				MODULE_NAME = ExampleApp;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_DEMOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1762,7 +1764,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F45F3E76B08CA53F9B781BB /* Pods-Tester.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = TesterAppIcon;
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1781,7 +1783,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EBB59AFA18ED12A9B10A2412 /* Pods-Tester.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = TesterAppIcon;
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

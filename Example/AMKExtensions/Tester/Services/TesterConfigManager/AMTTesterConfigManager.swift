@@ -24,6 +24,12 @@ class AMTTesterConfigManager: NSObject {
     
     override init() {
         super.init()
+        
+        // 尝试加载缓存数据
+        let data = UserDefaults.standard.data(forKey: AMTConstants.testerConfigUserDefaultsKey)
+        let jsonString = data==nil ? nil : String(data: data!, encoding: .utf8)
+        let networkModel = AMTTesterConfigNetworkModel.deserialize(from: jsonString)
+        openUrlTab = networkModel?.data?.openUrlTab
     }
     
     // MARK: - Getters & Setters
@@ -59,15 +65,20 @@ class AMTTesterConfigManager: NSObject {
                 NotificationCenter.default.post(name: AMTTesterConfigManager.didReloadDataFailedNotification, object: nil, userInfo: userInfo)
                 return
             }
-            guard let model = AMTTesterConfigNetworkModel.deserialize(from: jsonString) else {
+            guard let networkModel = AMTTesterConfigNetworkModel.deserialize(from: jsonString) else {
                 let userInfo = [ NSLocalizedDescriptionKey: "数据刷新失败", NSLocalizedFailureReasonErrorKey: "model 解析失败"]
                 MBProgressHUD.amt_showHUD(text: userInfo[NSLocalizedDescriptionKey], details: userInfo[NSLocalizedFailureReasonErrorKey], context: response)
                 NotificationCenter.default.post(name: AMTTesterConfigManager.didReloadDataFailedNotification, object: nil, userInfo: userInfo)
                 return
             }
             
-            openUrlTab = model.data?.openUrlTab            
-            MBProgressHUD.amt_showHUD(text: "配置已更新", context: model.toJSON())
+            // 缓存结果
+            UserDefaults.standard.set(data, forKey: AMTConstants.testerConfigUserDefaultsKey)
+            UserDefaults.standard.synchronize()
+            
+            // 更新数据
+            openUrlTab = networkModel.data?.openUrlTab
+            MBProgressHUD.amt_showHUD(text: "配置已更新", context: networkModel.toJSON())
             NotificationCenter.default.post(name: AMTTesterConfigManager.didReloadDataSucceedNotification, object: nil)
         }
     }

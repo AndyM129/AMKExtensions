@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import FDFullscreenPopGesture
+import FLEX
 
 class AMTRootViewController: UITabBarController {
 
@@ -47,6 +48,13 @@ class AMTRootViewController: UITabBarController {
 
         // 刷新数据
         AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
+        
+        // 更新 FLEX 的显示状态
+        NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: .main) { noti in
+            if UserDefaults.standard.bool(forKey: AMTConstants.flexSwitchUserDefaultsKey) {
+                FLEXManager.shared.showExplorer()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

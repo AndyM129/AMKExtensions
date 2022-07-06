@@ -34,6 +34,7 @@ class AMTOpenUrlExamplesViewController: AMTViewController, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = row?.title ?? "相关示例"
         tableView.reloadData()
     }
     
@@ -70,14 +71,7 @@ class AMTOpenUrlExamplesViewController: AMTViewController, UITableViewDataSource
         return tableView
     }()
     
-    var row: AMTOpenUrlSectionRowModel? {
-        didSet {
-            title = row?.title
-            if !isViewLoaded { return }
-            
-            tableView.reloadData()
-        }
-    }
+    var row: AMTOpenUrlSectionRowModel?
     
     // MARK: - Data & Networking
     
@@ -123,6 +117,10 @@ class AMTOpenUrlExamplesViewController: AMTViewController, UITableViewDataSource
         cell!.textLabel?.text = example?.title
         cell!.detailTextLabel?.text = example?.detailText
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return row?.detail
     }
     
     // MARK: UITableViewDelegate

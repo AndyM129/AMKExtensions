@@ -40,14 +40,23 @@ class AMTOpenUrlExampleModel: NSObject, HandyJSON {
     var detailText: String? {
         var strings: [String] = []
 
+        // 路由
         if let router = router {
-            strings.append("[Router] \(router)")
-        }
-        if let pasteboard = pasteboard {
-            strings.append("[Pasteboard] \(pasteboard)")
+            strings.append("[路由] \(router)")
         }
         
-        return strings.joined(separator: "\n\n")
+        // 剪贴板内容
+        if var pasteboard = pasteboard {
+            let maxLength = 120
+            if pasteboard.count > maxLength {
+                let startIndex = pasteboard.startIndex
+                let endIndex = pasteboard.index(startIndex, offsetBy: maxLength)
+                pasteboard = String(pasteboard[startIndex..<endIndex]) + "...（已省略 \(pasteboard.count - maxLength) / \(pasteboard.count) 字）"
+            }
+            strings.append("[剪贴板] \(pasteboard)")
+        }
+        
+        return (strings.isEmpty ? "" : "\n") + strings.joined(separator: "\n\n")
     }
     
     // MARK: - Data & Networking

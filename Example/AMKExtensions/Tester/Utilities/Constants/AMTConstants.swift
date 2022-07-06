@@ -8,5 +8,16 @@
 
 import UIKit
 
-/// 1像素
-let kAMTOnePixel: CGFloat = 1.0 / UIScreen.main.scale
+/// 全局常量
+class AMTConstants {
+    
+    /// 1像素
+    static let onePixel: CGFloat = 1.0 / UIScreen.main.scale
+    
+    /// UserDefaultsKey: APP 配置
+    static let testerConfigUserDefaultsKey = "com.github.andym129.tester.userDefaults.key.testerConfig"
+    
+    /// UserDefaultsKey: FLEX 开关
+    static let flexSwitchUserDefaultsKey = "com.github.andym129.tester.userDefaults.key.flex"
+
+}

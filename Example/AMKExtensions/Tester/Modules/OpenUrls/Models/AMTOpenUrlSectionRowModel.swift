@@ -22,7 +22,7 @@ class AMTOpenUrlSectionRowModel: NSObject, HandyJSON {
     
     required override init() {}
     
-    init(title: String? = nil, examples: [AMTOpenUrlExampleModel]? = nil) {
+    init(title: String? = nil, detail: String? = nil, examples: [AMTOpenUrlExampleModel]? = nil) {
         super.init()
         self.title = title
         self.examples = examples
@@ -31,6 +31,8 @@ class AMTOpenUrlSectionRowModel: NSObject, HandyJSON {
     // MARK: - Getters & Setters
     
     var title: String?
+    
+    var detail: String?
     
     var examples: [AMTOpenUrlExampleModel]?
     
