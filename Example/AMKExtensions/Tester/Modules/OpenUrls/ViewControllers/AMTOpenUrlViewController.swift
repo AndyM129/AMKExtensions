@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import AMKExtensions
+import MBProgressHUD
 
 class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -34,7 +37,7 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reloadDataFromNetworking(completionHandler: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: AMTTesterConfigManager.didReloadDataSucceedNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +47,7 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.reloadData()
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,16 +79,40 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
     
     // MARK: - Data & Networking
     
-    func reloadDataFromNetworking(completionHandler: AMTOpenUrlTabViewModelReloadCompletionHandler?) {
-        viewModel.reloadDataFromNetworking { [unowned self] error in
-            guard error == nil else {
-                print("刷新失败：\(error!)")
-                return
-            }
-            
-            tableView.reloadData()
-        }
+    @objc func reloadData() {
+        tableView.reloadData()
     }
+    
+//    func reloadDataFromNetworking(completionHandler: AMTOpenUrlTabViewModelReloadCompletionHandler?) {
+//        let urlString = "https://www.fastmock.site/mock/918edb52006d5f75261f317f3ba37180/tester/data"
+//        AF.request(urlString).response { response in
+//            guard let data = response.data else {
+//                MBProgressHUD.amt_showHUD(text: "数据刷新失败", details: "返回 data 为空", context: response)
+//                return
+//            }
+//            guard let jsonString = String(data: data, encoding: .utf8) else {
+//                MBProgressHUD.amt_showHUD(text: "数据刷新失败", details: "data 解析失败", context: data)
+//                return
+//            }
+//            guard let model = AMTOpenUrlTabModel.deserialize(from: jsonString) else {
+//                MBProgressHUD.amt_showHUD(text: "数据刷新失败", details: "model 解析失败", context: jsonString)
+//                return
+//            }
+//
+////            AMKELog.info(JSON(parseJSON: jsonString))
+//        }
+//
+//
+//
+////        viewModel.reloadDataFromNetworking { [unowned self] error in
+////            guard error == nil else {
+////                print("刷新失败：\(error!)")
+////                return
+////            }
+////
+////            tableView.reloadData()
+////        }
+//    }
     
     // MARK: - Layout Subviews
     
@@ -110,14 +137,15 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
     // MARK: UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return AMTTesterConfigManager.shared.openUrlTab?.sections?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return AMTTesterConfigManager.shared.openUrlTab?.sections?[section].rows?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let rowModel: AMTOpenUrlSectionRowModel? = AMTTesterConfigManager.shared.openUrlTab?.sections?[indexPath.section].rows?[indexPath.row]
         var cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self))
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: NSStringFromClass(UITableViewCell.self))
@@ -127,21 +155,24 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
             cell!.detailTextLabel?.textColor = .lightGray
             cell!.accessoryType = .disclosureIndicator
         }
-        cell!.textLabel?.text = "调起阅读页"
+        cell!.textLabel?.text = rowModel?.title
         cell!.detailTextLabel?.text = "附加说明"
         return cell!
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return String(format: "阅读页", section)
+        let sectionModel: AMTOpenUrlSectionModel? = AMTTesterConfigManager.shared.openUrlTab?.sections?[section]
+        return sectionModel?.header
     }
-        
+    
     // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print("tableViewDidSelectRow: \(tableView), \(indexPath)")
-        navigationController?.pushViewController(AMTOpenUrlDetailViewController(), animated: true)
+        // navigationController?.pushViewController(AMTOpenUrlDetailViewController(), animated: true)
+        
+        MBProgressHUD.amt_showHUD(text: "xxxx")
     }
     
     // MARK: - Helper Methods

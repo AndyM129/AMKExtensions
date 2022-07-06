@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import FDFullscreenPopGesture
 
 class AMTRootViewController: UITabBarController {
 
@@ -43,6 +44,9 @@ class AMTRootViewController: UITabBarController {
             AMTNavigationController.init(rootViewController: AMTOpenUrlViewController()),
             AMTNavigationController.init(rootViewController: AMTSettingsViewController()),
         ]
+
+        // 刷新数据
+        AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
