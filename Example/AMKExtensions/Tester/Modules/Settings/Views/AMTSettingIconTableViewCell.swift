@@ -56,7 +56,7 @@ class AMTSettingIconTableViewCell: UITableViewCell {
         let application = UIApplication.shared
         
         let subtitleLabel = UILabel()
-        subtitleLabel.text = "版本：\(application.appVersion!)+\(application.appBuildVersion!)"
+        subtitleLabel.text = "版本：\(application.appVersion!)\n(Build \(application.appBuildVersion!))"
         subtitleLabel.textColor = AMTAppearance.subtitleColor
         subtitleLabel.textAlignment = .center
         subtitleLabel.numberOfLines = 0;

@@ -36,6 +36,7 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleAppUpdateDidCheckSucceedNotification), name: AMTAppUpdateManager.didCheckSucceedNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,6 +100,10 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
     
     // MARK: - Notifications
     
+    @objc func handleAppUpdateDidCheckSucceedNotification(sender: Any) {
+        tableView.reloadData()
+    }
+    
     // MARK: - KVO
     
     // MARK: - Protocols
@@ -128,7 +133,7 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
             cell.textLabel?.text = "检查更新"
             if let checkData = AMTAppUpdateManager.shared.checkData, checkData.isValid {
                 cell.detailTextLabel?.text = checkData.buildHaveNewVersion! ? "可升级至 v\(checkData.buildVersionNo!)" : "已是最新版"
-                cell.badgeView.isHidden = false
+                cell.badgeView.isHidden = !checkData.buildHaveNewVersion!
             }
             return cell
         }
@@ -172,7 +177,7 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
             navigationController?.pushViewController(safariViewController, animated: true)
         }
         else if indexPath.row == 3 {
-            AMTAppUpdateManager.shared.checkUpdate()
+            AMTAppUpdateManager.shared.checkUpdate(silent: false)
         }
     }
     

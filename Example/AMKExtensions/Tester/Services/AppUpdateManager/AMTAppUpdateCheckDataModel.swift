@@ -34,14 +34,14 @@ class AMTAppUpdateCheckDataModel: NSObject, HandyJSON {
     var buildIcon: String?
     var buildKey: String?
     var buildName: String?
-    var buildShortcutUrl: String?
+    //var buildShortcutUrl: String?
     var buildUpdateDescription: String?
     var buildVersion: String?
     var buildVersionNo: String?
     var downloadURL: String?
-    var forceUpdateVersion: String?
-    var forceUpdateVersionNo: String?
-    var needForceUpdate: Bool?
+    //var forceUpdateVersion: String?
+    //var forceUpdateVersionNo: String?
+    //var needForceUpdate: Bool?
     
     /// 数据是否是有效的
     var isValid: Bool {
@@ -53,14 +53,14 @@ class AMTAppUpdateCheckDataModel: NSObject, HandyJSON {
         if buildIcon == nil { return false }
         if buildKey == nil { return false }
         if buildName == nil { return false }
-        if buildShortcutUrl == nil { return false }
+        //if buildShortcutUrl == nil { return false }
         if buildUpdateDescription == nil { return false }
         if buildVersion == nil { return false }
         if buildVersionNo == nil { return false }
         if downloadURL == nil { return false }
-        if forceUpdateVersion == nil { return false }
-        if forceUpdateVersionNo == nil { return false }
-        if needForceUpdate == nil { return false }
+        //if forceUpdateVersion == nil { return false }
+        //if forceUpdateVersionNo == nil { return false }
+        //if needForceUpdate == nil { return false }
         return true
     }
     
