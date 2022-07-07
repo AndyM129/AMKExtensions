@@ -45,7 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // Debug
         DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 1)) { [unowned self] in
-            navigationController?.pushViewController(AMNetworkingViewController(), animated: true)
+            navigationController?.pushViewController(AMTRootViewController(), animated: true)
         }
     }
     
@@ -103,6 +103,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }))
         examples.append(Example(title: "网络请求", subtitle: "", clickedBlock: { [unowned self] example in
             navigationController?.pushViewController(AMNetworkingViewController(), animated: true)
+        }))
+        examples.append(Example(title: "暗夜模式适配", subtitle: "", clickedBlock: { [unowned self] example in
+            navigationController?.pushViewController(AMDarkModeViewController(), animated: true)
         }))
         examples.append(Example(title: "仿微信", subtitle: "", clickedBlock: { [unowned self] example in
             navigationController?.pushViewController(WXRootViewController(), animated: true)

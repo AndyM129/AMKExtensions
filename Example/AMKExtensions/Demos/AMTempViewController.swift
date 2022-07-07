@@ -11,17 +11,7 @@ import SnapKit
 import AMKExtensions
 import AMKStackView
 
-class AMTempViewController: UIViewController, UITextFieldDelegate {
-    
-    lazy var stackView: AMKStackView = { [unowned self] in
-        let stackView = AMKStackView.init(axis: .vertical, spacing: 20)!
-        view.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(view).inset(UIApplication.shared.statusBarFrame.size.height + navigationController!.navigationBar.frame.size.height + 20)
-            make.left.right.bottom.equalTo(view).inset(20)
-        }
-        return stackView
-    }()
+class AMTempViewController: AMStackViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()

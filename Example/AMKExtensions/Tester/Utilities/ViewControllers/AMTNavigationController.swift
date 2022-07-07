@@ -24,14 +24,14 @@ class AMTNavigationController: UINavigationController {
         super.viewDidLoad()
         
         navigationBar.isTranslucent = false
-        navigationBar.tintColor = AMTAppearance.navigationBarTintColor
-        navigationBar.barTintColor = AMTAppearance.viewBackgroundColor
-        navigationBar.backgroundColor = AMTAppearance.navigationBarBackgroundColor
+        navigationBar.tintColor = AMTAppearance.tintColor
+        navigationBar.barTintColor = AMTAppearance.barBackgroundColor
+        navigationBar.backgroundColor = AMTAppearance.barBackgroundColor
         navigationBar.shadowImage = UIImage(color: UIColor.clear)
         
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
-            appearance.backgroundColor = AMTAppearance.navigationBarBackgroundColor
+            appearance.backgroundColor = AMTAppearance.barBackgroundColor
             appearance.shadowColor = UIColor.clear
             navigationBar.standardAppearance = appearance
             navigationBar.scrollEdgeAppearance = appearance

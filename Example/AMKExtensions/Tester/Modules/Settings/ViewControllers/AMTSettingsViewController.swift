@@ -114,6 +114,11 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
         
         if indexPath.row == 1 {
             let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+            cell.backgroundColor = AMTAppearance.contentBackgroundColor
+            cell.selectedBackgroundView = UIView(frame: cell.bounds)
+            cell.selectedBackgroundView?.backgroundColor = AMTAppearance.contentSelectedBackgroundColor
+            cell.textLabel?.textColor = AMTAppearance.titleColor
+            cell.detailTextLabel?.textColor = AMTAppearance.subtitleColor
             cell.textLabel?.text = "联网更新配置"
             cell.accessoryType = .disclosureIndicator
             return cell
@@ -121,6 +126,11 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
         
         if indexPath.row == 2 {
             let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+            cell.backgroundColor = AMTAppearance.contentBackgroundColor
+            cell.selectedBackgroundView = UIView(frame: cell.bounds)
+            cell.selectedBackgroundView?.backgroundColor = AMTAppearance.contentSelectedBackgroundColor
+            cell.textLabel?.textColor = AMTAppearance.titleColor
+            cell.detailTextLabel?.textColor = AMTAppearance.subtitleColor
             cell.textLabel?.text = "FLEX 开关"
             cell.accessoryView = {
                 let flexSwitch = UISwitch(frame: CGRect(x: 0, y: 0, width: 60, height: 50))

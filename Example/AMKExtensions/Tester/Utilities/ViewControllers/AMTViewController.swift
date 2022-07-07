@@ -49,6 +49,14 @@ class AMTViewController: UIViewController {
     
     // MARK: - Getters & Setters
     
+    func dynamicProviderColor(inLight: UIColor?, inDark: UIColor? = nil) -> UIColor? {
+        if #available(iOS 13.0, *) {
+            return UIColor { traitCollection in return (traitCollection.userInterfaceStyle == .light ? inLight : inDark) ?? UIColor() }
+        } else {
+            return inLight
+        }
+    }
+    
     // MARK: - Data & Networking
     
     // MARK: - Layout Subviews

@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
     
     # 默认子组件
     s.subspec 'DefaultSubspec' do |defaultSubspec|
+        defaultSubspec.dependency 'AMKExtensions/UIKit'
         defaultSubspec.dependency 'AMKExtensions/Foundation'
     end
 
@@ -31,6 +32,17 @@ Pod::Spec.new do |s|
         thirdPart.subspec 'SwiftyBeaver' do |swiftyBeaver|
             swiftyBeaver.source_files = 'AMKExtensions/Classes/ThirdPart/SwiftyBeaver/*.swift'
             swiftyBeaver.dependency 'SwiftyBeaver'
+        end
+    end
+    
+    # UIKit 通用扩展
+    s.subspec 'UIKit' do |uiKit|
+        # NSString 相关扩展
+        uiKit.subspec 'UIColor' do |color|
+            # 易用封装 相关
+            color.subspec 'Handy' do |handy|
+                handy.source_files = 'AMKExtensions/Classes/UIKit/UIColor/Handy/*.swift'
+            end
         end
     end
     

@@ -73,8 +73,7 @@
 		882F75E928729BCB00FA7B2A /* AMTNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882F75D728729BCB00FA7B2A /* AMTNetworking.swift */; };
 		882F75EC28729C4800FA7B2A /* Tester-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 882F75EB28729C4800FA7B2A /* Tester-Info.plist */; };
 		882F75EF28729C8200FA7B2A /* Weixin-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 882F75EE28729C8200FA7B2A /* Weixin-Info.plist */; };
-		887D0DDA2872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DD92872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift */; };
-		887D0DDB2872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DD92872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift */; };
+		885E11C728766C9700439D3D /* AMDarkModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11C628766C9700439D3D /* AMDarkModeViewController.swift */; };
 		887D0DDD2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */; };
 		887D0DDE2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */; };
 		88AF19F12872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19F02872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift */; };
@@ -196,7 +195,7 @@
 		882F75D728729BCB00FA7B2A /* AMTNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMTNetworking.swift; sourceTree = "<group>"; };
 		882F75EB28729C4800FA7B2A /* Tester-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tester-Info.plist"; sourceTree = "<group>"; };
 		882F75EE28729C8200FA7B2A /* Weixin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Weixin-Info.plist"; sourceTree = "<group>"; };
-		887D0DD92872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlsTableViewCell.swift; sourceTree = "<group>"; };
+		885E11C628766C9700439D3D /* AMDarkModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMDarkModeViewController.swift; sourceTree = "<group>"; };
 		887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlExamplesViewController.swift; sourceTree = "<group>"; };
 		88AF19F02872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlExampleViewModel.swift; sourceTree = "<group>"; };
 		88AF19F22872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlSectionViewModel.swift; sourceTree = "<group>"; };
@@ -546,7 +545,6 @@
 		882F75CE28729BCB00FA7B2A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				887D0DD92872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -638,6 +636,7 @@
 				88AF1AA628751BEF00924F2F /* AMLogViewController.swift */,
 				88AF1AAD28751BEF00924F2F /* AMToastViewController.swift */,
 				88AF1AAB28751BEF00924F2F /* AMNetworkingViewController.swift */,
+				885E11C628766C9700439D3D /* AMDarkModeViewController.swift */,
 				88AF1AA828751BEF00924F2F /* AMStackViewController.swift */,
 			);
 			path = Demos;
@@ -1422,7 +1421,6 @@
 				882F75E828729BCB00FA7B2A /* AMTNetworking.swift in Sources */,
 				88E5158D286EA4E40056813A /* WXMeInfoTableViewCell.swift in Sources */,
 				88AF1ABF2875271D00924F2F /* AMTOpenUrlSectionRowModel.swift in Sources */,
-				887D0DDA2872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift in Sources */,
 				88AF1AB128751BEF00924F2F /* AMDemoTableViewController.swift in Sources */,
 				882F75E028729BCB00FA7B2A /* UIColor+AMTExtensions.swift in Sources */,
 				88AF19F32872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift in Sources */,
@@ -1431,6 +1429,7 @@
 				88AF1AB628751BEF00924F2F /* AMJsonAndModelViewController.swift in Sources */,
 				88E515A8286F20ED0056813A /* WXMessagesTableViewCell.swift in Sources */,
 				88AF1AB028751BEF00924F2F /* AMLogViewController.swift in Sources */,
+				885E11C728766C9700439D3D /* AMDarkModeViewController.swift in Sources */,
 				88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1509,7 +1508,6 @@
 				882F75DF28729BCB00FA7B2A /* UIImage+AMTExtensions.swift in Sources */,
 				882F75E928729BCB00FA7B2A /* AMTNetworking.swift in Sources */,
 				88AF19F52872EA0400924F2F /* AMTOpenUrlExampleViewModel.swift in Sources */,
-				887D0DDB2872C17C00E17002 /* AMTOpenUrlsTableViewCell.swift in Sources */,
 				88AF1B7228754ABF00924F2F /* AMTTesterConfigDataModel.swift in Sources */,
 				882F75E128729BCB00FA7B2A /* UIColor+AMTExtensions.swift in Sources */,
 			);

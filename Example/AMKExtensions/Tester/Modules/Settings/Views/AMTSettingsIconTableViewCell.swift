@@ -20,7 +20,7 @@ class AMTSettingsIconTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = UIColor.white
+        backgroundColor = AMTAppearance.viewBackgroundColor
         selectionStyle = .none
     }
     
@@ -56,7 +56,7 @@ class AMTSettingsIconTableViewCell: UITableViewCell {
         
         let subtitleLabel = UILabel()
         subtitleLabel.text = "版本：\(application.appVersion!)+\(application.appBuildVersion!)"
-        subtitleLabel.textColor = AMTAppearance.normalTintColor
+        subtitleLabel.textColor = AMTAppearance.subtitleColor
         subtitleLabel.textAlignment = .center
         subtitleLabel.numberOfLines = 0;
         subtitleLabel.font = UIFont.systemFont(ofSize: 13)

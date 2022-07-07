@@ -33,8 +33,15 @@ class AMStackViewController: UIViewController {
         super.viewDidLoad()
         title = "Title"
         automaticallyAdjustsScrollViewInsets = false;
-        view.backgroundColor = view.backgroundColor ?? UIColor.white
-        
+        view.backgroundColor = view.backgroundColor ?? {
+            let inLight = UIColor.white
+            let inDark = UIColor.black
+            if #available(iOS 13.0, *) {
+                return UIColor { traitCollection in return traitCollection.userInterfaceStyle == .light ? inLight : inDark }
+            } else {
+                return inLight
+            }
+        }()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,3 +102,4 @@ class AMStackViewController: UIViewController {
 
 
 }
+

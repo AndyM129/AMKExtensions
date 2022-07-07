@@ -118,10 +118,11 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
         var cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self))
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: NSStringFromClass(UITableViewCell.self))
-            cell!.backgroundColor = .white
+            cell!.backgroundColor = AMTAppearance.contentBackgroundColor
             cell!.selectedBackgroundView = UIView(frame: cell!.bounds)
-            cell!.selectedBackgroundView?.backgroundColor = AMTAppearance.tableViewCellSelectedBackgroundColor
-            cell!.detailTextLabel?.textColor = .lightGray
+            cell!.selectedBackgroundView?.backgroundColor = AMTAppearance.contentSelectedBackgroundColor
+            cell!.textLabel?.textColor = AMTAppearance.titleColor
+            cell!.detailTextLabel?.textColor = AMTAppearance.subtitleColor
             cell!.accessoryType = .disclosureIndicator
         }
         cell!.textLabel?.text = rowModel?.title

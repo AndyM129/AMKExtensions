@@ -28,16 +28,16 @@ extension MBProgressHUD {
         let duration = duration ?? 2
         let superview: UIView = superview ?? UIApplication.shared.delegate!.window!! as UIView
         
-        UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [MBProgressHUD.self]).color = UIColor.init(white: 1, alpha: 0.8)
         MBProgressHUD.hide(for: superview, animated: true)
         
         let hud = MBProgressHUD.showAdded(to: superview, animated: true)
         hud.isUserInteractionEnabled = false
         hud.mode = mode
+        hud.contentColor = AMTAppearance.toastTitleColor
         hud.bezelView.style = .solidColor
-        hud.bezelView.color = UIColor.init(white: 0, alpha: 0.8)
-        hud.label.textColor = UIColor.init(white: 1, alpha: 0.9)
-        hud.detailsLabel.textColor = UIColor.init(white: 1, alpha: 0.8)
+        hud.bezelView.color = AMTAppearance.toastBackgroundColor
+        hud.label.textColor = AMTAppearance.toastTitleColor
+        hud.detailsLabel.textColor = AMTAppearance.toastSubtitleColor
         hud.label.text = text;
         hud.detailsLabel.text = details;
         hud.hide(animated: true, afterDelay: duration)

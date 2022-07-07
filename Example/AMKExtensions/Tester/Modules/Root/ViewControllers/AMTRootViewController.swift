@@ -27,17 +27,17 @@ class AMTRootViewController: UITabBarController {
         super.viewDidLoad()
         title = "Tester"
         automaticallyAdjustsScrollViewInsets = false;
-        view.backgroundColor = view.backgroundColor ?? UIColor.white
+        view.backgroundColor = view.backgroundColor ?? AMTAppearance.viewBackgroundColor
         fd_prefersNavigationBarHidden = true
         
         tabBar.isTranslucent = false
-        tabBar.barTintColor = UIColor.white
+        tabBar.barTintColor = AMTAppearance.barBackgroundColor
         tabBar.tintColor = AMTAppearance.selectedTintColor
-        tabBar.unselectedItemTintColor = AMTAppearance.normalTintColor
+        tabBar.unselectedItemTintColor = AMTAppearance.unselectedTintColor
         
         if #available(iOS 13.0, *) {
             let appearance = UITabBarAppearance()
-            appearance.backgroundColor = UIColor.white
+            appearance.backgroundColor = AMTAppearance.barBackgroundColor
             tabBar.standardAppearance = appearance
         }
                 
