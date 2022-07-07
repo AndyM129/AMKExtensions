@@ -86,7 +86,7 @@ class AMTRootViewController: UITabBarController {
     func setupViewControllers() {
         viewControllers = [
             AMTNavigationController.init(rootViewController: AMTOpenUrlViewController()),
-            AMTNavigationController.init(rootViewController: AMTSettingsViewController()),
+            AMTNavigationController.init(rootViewController: AMTSettingViewController()),
         ]
     }
     

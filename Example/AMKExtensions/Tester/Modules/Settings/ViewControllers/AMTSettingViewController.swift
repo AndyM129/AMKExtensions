@@ -8,8 +8,9 @@
 
 import UIKit
 import FLEX
+import SafariServices
 
-class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITableViewDelegate {
+class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: - Deinit
     
@@ -39,12 +40,11 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -72,7 +72,9 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
             tableView.sectionHeaderTopPadding = 0
         }
         
-        tableView.register(AMTSettingsIconTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(AMTSettingsIconTableViewCell.self))
+//        tableView.register(AMTSettingIconTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(AMTSettingIconTableViewCell.self))
+//        tableView.register(AMTSettingTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(AMTSettingTableViewCell.self))
+//        tableView.register(AMTSettingSwitchTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(AMTSettingSwitchTableViewCell.self))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: NSStringFromClass(UITableViewHeaderFooterView.self))
         view.addSubview(tableView)
@@ -104,71 +106,56 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            return tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(AMTSettingsIconTableViewCell.self), for: indexPath) as! AMTSettingsIconTableViewCell
+            return tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(AMTSettingIconTableViewCell.self)) ?? AMTSettingIconTableViewCell(style: .default, reuseIdentifier: AMTSettingIconTableViewCell.className())
         }
-        
         if indexPath.row == 1 {
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
-            cell.backgroundColor = AMTAppearance.contentBackgroundColor
-            cell.selectedBackgroundView = UIView(frame: cell.bounds)
-            cell.selectedBackgroundView?.backgroundColor = AMTAppearance.contentSelectedBackgroundColor
-            cell.textLabel?.textColor = AMTAppearance.titleColor
-            cell.detailTextLabel?.textColor = AMTAppearance.subtitleColor
-            cell.textLabel?.text = "联网更新配置"
-            cell.accessoryType = .disclosureIndicator
+            let cell = tableView.dequeueReusableCell(withIdentifier: AMTSettingTableViewCell.className()) as? AMTSettingTableViewCell ?? AMTSettingTableViewCell(style: .value1, reuseIdentifier: AMTSettingTableViewCell.className())
+            cell.textLabel?.text = "更新配置"
             return cell
         }
-        
         if indexPath.row == 2 {
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
-            cell.backgroundColor = AMTAppearance.contentBackgroundColor
-            cell.selectedBackgroundView = UIView(frame: cell.bounds)
-            cell.selectedBackgroundView?.backgroundColor = AMTAppearance.contentSelectedBackgroundColor
-            cell.textLabel?.textColor = AMTAppearance.titleColor
-            cell.detailTextLabel?.textColor = AMTAppearance.subtitleColor
-            cell.textLabel?.text = "检查更新"
-            cell.accessoryType = .disclosureIndicator
+            let cell = tableView.dequeueReusableCell(withIdentifier: AMTSettingTableViewCell.className()) as? AMTSettingTableViewCell ?? AMTSettingTableViewCell(style: .value1, reuseIdentifier: AMTSettingTableViewCell.className())
+            cell.textLabel?.text = "功能介绍"
             return cell
         }
-        
         if indexPath.row == 3 {
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
-            cell.backgroundColor = AMTAppearance.contentBackgroundColor
-            cell.selectedBackgroundView = UIView(frame: cell.bounds)
-            cell.selectedBackgroundView?.backgroundColor = AMTAppearance.contentSelectedBackgroundColor
-            cell.textLabel?.textColor = AMTAppearance.titleColor
-            cell.detailTextLabel?.textColor = AMTAppearance.subtitleColor
-            cell.textLabel?.text = "FLEX 开关"
-            cell.accessoryView = {
-                let flexSwitch = UISwitch(frame: CGRect(x: 0, y: 0, width: 60, height: 50))
-                flexSwitch.onTintColor = AMTAppearance.tintColor
-                flexSwitch.isOn = UserDefaults.standard.bool(forKey: AMTConstants.flexSwitchUserDefaultsKey)
-                flexSwitch.addBlock(for: .valueChanged) {[unowned flexSwitch] sender in
-                    flexSwitch.isOn ? FLEXManager.shared.showExplorer() : FLEXManager.shared.hideExplorer()
-                    UserDefaults.standard.set(flexSwitch.isOn, forKey: AMTConstants.flexSwitchUserDefaultsKey)
-                }
-                return flexSwitch
-            }()
+            let cell = tableView.dequeueReusableCell(withIdentifier: AMTSettingTableViewCell.className()) as? AMTSettingTableViewCell ?? AMTSettingTableViewCell(style: .value1, reuseIdentifier: AMTSettingTableViewCell.className())
+            cell.textLabel?.text = "检查更新"
+            if let checkData = AMTAppUpdateManager.shared.checkData, checkData.isValid {
+                cell.detailTextLabel?.text = checkData.buildHaveNewVersion! ? "可升级至 v\(checkData.buildVersionNo!)" : "已是最新版"
+                cell.badgeView.isHidden = false
+            }
             return cell
         }
-        
-        return tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+        if indexPath.row == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: AMTSettingSwitchTableViewCell.className()) as? AMTSettingSwitchTableViewCell ?? AMTSettingSwitchTableViewCell(style: .value1, reuseIdentifier: AMTSettingTableViewCell.className())
+            cell.textLabel?.text = "FLEX 开关"
+            cell.accessorySwitch.setBlockFor(.valueChanged) { [unowned cell] sender in
+                cell.accessorySwitch.isOn ? FLEXManager.shared.showExplorer() : FLEXManager.shared.hideExplorer()
+                UserDefaults.standard.set(cell.accessorySwitch.isOn, forKey: AMTConstants.flexSwitchUserDefaultsKey)
+                UserDefaults.standard.synchronize()
+            }
+            return cell
+        }
+        return tableView.dequeueReusableCell(withIdentifier: UITableViewCell.className(), for: indexPath)
     }
         
     // MARK: UITableViewDelegate
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return AMTSettingsIconTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: nil)
+        switch indexPath.row {
+        case 0: return AMTSettingIconTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: nil)
+        case 1, 2, 3: return AMTSettingTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: nil)
+        case 4: return AMTSettingSwitchTableViewCell.tableView(tableView, heightForRowAt: indexPath, withData: nil)
+        default: return 0
         }
-        return 50
     }
-        
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print("tableViewDidSelectRow: \(tableView), \(indexPath)")
@@ -177,6 +164,14 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
             AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
         }
         else if indexPath.row == 2 {
+            let urlString = "https://www.pgyer.com/wktester"
+            let safariViewController = SFSafariViewController(url: URL(string: urlString)!)
+            safariViewController.hidesBottomBarWhenPushed = true
+            safariViewController.preferredBarTintColor = AMTAppearance.barBackgroundColor
+            safariViewController.preferredControlTintColor = AMTAppearance.selectedTintColor
+            navigationController?.pushViewController(safariViewController, animated: true)
+        }
+        else if indexPath.row == 3 {
             AMTAppUpdateManager.shared.checkUpdate()
         }
     }

@@ -76,6 +76,14 @@
 		885E11C728766C9700439D3D /* AMDarkModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11C628766C9700439D3D /* AMDarkModeViewController.swift */; };
 		885E11CF2876D07100439D3D /* AMTAppUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11CE2876D07100439D3D /* AMTAppUpdateManager.swift */; };
 		885E11D02876D07100439D3D /* AMTAppUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11CE2876D07100439D3D /* AMTAppUpdateManager.swift */; };
+		885E11D22876DBD600439D3D /* AMTAppUpdateCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11D12876DBD600439D3D /* AMTAppUpdateCheckModel.swift */; };
+		885E11D32876DBD600439D3D /* AMTAppUpdateCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11D12876DBD600439D3D /* AMTAppUpdateCheckModel.swift */; };
+		885E11D52876DC8100439D3D /* AMTAppUpdateCheckDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11D42876DC8100439D3D /* AMTAppUpdateCheckDataModel.swift */; };
+		885E11D62876DC8100439D3D /* AMTAppUpdateCheckDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11D42876DC8100439D3D /* AMTAppUpdateCheckDataModel.swift */; };
+		885E11D82876E47000439D3D /* AMTSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11D72876E47000439D3D /* AMTSettingTableViewCell.swift */; };
+		885E11D92876E47000439D3D /* AMTSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11D72876E47000439D3D /* AMTSettingTableViewCell.swift */; };
+		885E11DB2876E56100439D3D /* AMTSettingSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11DA2876E56100439D3D /* AMTSettingSwitchTableViewCell.swift */; };
+		885E11DC2876E56100439D3D /* AMTSettingSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11DA2876E56100439D3D /* AMTSettingSwitchTableViewCell.swift */; };
 		887D0DDD2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */; };
 		887D0DDE2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */; };
 		88AF19F12872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19F02872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift */; };
@@ -114,8 +122,8 @@
 		88AF1B6F287549EE00924F2F /* AMTTesterConfigNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B6D287549EE00924F2F /* AMTTesterConfigNetworkModel.swift */; };
 		88AF1B7128754ABF00924F2F /* AMTTesterConfigDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B7028754ABE00924F2F /* AMTTesterConfigDataModel.swift */; };
 		88AF1B7228754ABF00924F2F /* AMTTesterConfigDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B7028754ABE00924F2F /* AMTTesterConfigDataModel.swift */; };
-		88AF1B752875754C00924F2F /* AMTSettingsIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B742875754C00924F2F /* AMTSettingsIconTableViewCell.swift */; };
-		88AF1B762875754C00924F2F /* AMTSettingsIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B742875754C00924F2F /* AMTSettingsIconTableViewCell.swift */; };
+		88AF1B752875754C00924F2F /* AMTSettingIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B742875754C00924F2F /* AMTSettingIconTableViewCell.swift */; };
+		88AF1B762875754C00924F2F /* AMTSettingIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B742875754C00924F2F /* AMTSettingIconTableViewCell.swift */; };
 		88AF1B792875819F00924F2F /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF1B782875819F00924F2F /* TesterImages.xcassets */; };
 		88AF1B7A2875819F00924F2F /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF1B782875819F00924F2F /* TesterImages.xcassets */; };
 		88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156C286DC8CF0056813A /* WXRootViewController.swift */; };
@@ -149,8 +157,8 @@
 		88E515AA286F26630056813A /* String+WXExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E515A9286F26630056813A /* String+WXExtensions.swift */; };
 		88F7317C2872A14800D959A3 /* AMTOpenUrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317B2872A14800D959A3 /* AMTOpenUrlViewController.swift */; };
 		88F7317D2872A14F00D959A3 /* AMTOpenUrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317B2872A14800D959A3 /* AMTOpenUrlViewController.swift */; };
-		88F7317F2872A32200D959A3 /* AMTSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */; };
-		88F731802872A32200D959A3 /* AMTSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */; };
+		88F7317F2872A32200D959A3 /* AMTSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317E2872A32200D959A3 /* AMTSettingViewController.swift */; };
+		88F731802872A32200D959A3 /* AMTSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F7317E2872A32200D959A3 /* AMTSettingViewController.swift */; };
 		9A99C2823E927308D3CBCCF7 /* Pods_AMKExtensions_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFF10CCE9ABFF2EFEA24B0A /* Pods_AMKExtensions_Tests.framework */; };
 		AF1D90F6A74D3A2E885F2DCB /* Pods_AMKExtensions_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D18BCBAE342A4677CC4C809 /* Pods_AMKExtensions_Example.framework */; };
 		DD24B3956808C7F3365DBC7F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -199,6 +207,10 @@
 		882F75EE28729C8200FA7B2A /* Weixin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Weixin-Info.plist"; sourceTree = "<group>"; };
 		885E11C628766C9700439D3D /* AMDarkModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMDarkModeViewController.swift; sourceTree = "<group>"; };
 		885E11CE2876D07100439D3D /* AMTAppUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTAppUpdateManager.swift; sourceTree = "<group>"; };
+		885E11D12876DBD600439D3D /* AMTAppUpdateCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTAppUpdateCheckModel.swift; sourceTree = "<group>"; };
+		885E11D42876DC8100439D3D /* AMTAppUpdateCheckDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTAppUpdateCheckDataModel.swift; sourceTree = "<group>"; };
+		885E11D72876E47000439D3D /* AMTSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingTableViewCell.swift; sourceTree = "<group>"; };
+		885E11DA2876E56100439D3D /* AMTSettingSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlExamplesViewController.swift; sourceTree = "<group>"; };
 		88AF19F02872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlExampleViewModel.swift; sourceTree = "<group>"; };
 		88AF19F22872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlSectionViewModel.swift; sourceTree = "<group>"; };
@@ -223,7 +235,7 @@
 		88AF1B6A287547BC00924F2F /* AMTTesterConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTesterConfigManager.swift; sourceTree = "<group>"; };
 		88AF1B6D287549EE00924F2F /* AMTTesterConfigNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTesterConfigNetworkModel.swift; sourceTree = "<group>"; };
 		88AF1B7028754ABE00924F2F /* AMTTesterConfigDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTesterConfigDataModel.swift; sourceTree = "<group>"; };
-		88AF1B742875754C00924F2F /* AMTSettingsIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingsIconTableViewCell.swift; sourceTree = "<group>"; };
+		88AF1B742875754C00924F2F /* AMTSettingIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingIconTableViewCell.swift; sourceTree = "<group>"; };
 		88AF1B782875819F00924F2F /* TesterImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TesterImages.xcassets; sourceTree = "<group>"; };
 		88E5156C286DC8CF0056813A /* WXRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXRootViewController.swift; sourceTree = "<group>"; };
 		88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMessagesViewController.swift; sourceTree = "<group>"; };
@@ -255,7 +267,7 @@
 		88E515A7286F20ED0056813A /* WXMessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMessagesTableViewCell.swift; sourceTree = "<group>"; };
 		88E515A9286F26630056813A /* String+WXExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WXExtensions.swift"; sourceTree = "<group>"; };
 		88F7317B2872A14800D959A3 /* AMTOpenUrlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlViewController.swift; sourceTree = "<group>"; };
-		88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingsViewController.swift; sourceTree = "<group>"; };
+		88F7317E2872A32200D959A3 /* AMTSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingViewController.swift; sourceTree = "<group>"; };
 		98E861252DCFD10DACE621C5 /* Pods-AMKExtensions_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Example.release.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Example/Pods-AMKExtensions_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DC3B593863B76026CCD7E49C /* Pods-AMKExtensions_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMKExtensions_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AMKExtensions_Tests/Pods-AMKExtensions_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E79B7270D1C6A97826FB1D35 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -490,7 +502,7 @@
 		882F75C828729BCB00FA7B2A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				88F7317E2872A32200D959A3 /* AMTSettingsViewController.swift */,
+				88F7317E2872A32200D959A3 /* AMTSettingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -498,7 +510,9 @@
 		882F75C928729BCB00FA7B2A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				88AF1B742875754C00924F2F /* AMTSettingsIconTableViewCell.swift */,
+				88AF1B742875754C00924F2F /* AMTSettingIconTableViewCell.swift */,
+				885E11D72876E47000439D3D /* AMTSettingTableViewCell.swift */,
+				885E11DA2876E56100439D3D /* AMTSettingSwitchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -631,6 +645,8 @@
 			isa = PBXGroup;
 			children = (
 				885E11CE2876D07100439D3D /* AMTAppUpdateManager.swift */,
+				885E11D12876DBD600439D3D /* AMTAppUpdateCheckModel.swift */,
+				885E11D42876DC8100439D3D /* AMTAppUpdateCheckDataModel.swift */,
 			);
 			path = AppUpdateManager;
 			sourceTree = "<group>";
@@ -1412,19 +1428,22 @@
 				88E5157B286DDF730056813A /* WXNavigationController.swift in Sources */,
 				882F75DC28729BCB00FA7B2A /* String+AMTExtensions.swift in Sources */,
 				88AF1B6E287549EE00924F2F /* AMTTesterConfigNetworkModel.swift in Sources */,
-				88AF1B752875754C00924F2F /* AMTSettingsIconTableViewCell.swift in Sources */,
+				885E11DB2876E56100439D3D /* AMTSettingSwitchTableViewCell.swift in Sources */,
+				88AF1B752875754C00924F2F /* AMTSettingIconTableViewCell.swift in Sources */,
 				88E51578286DCCC50056813A /* WXAppearance.swift in Sources */,
 				88AF1ABC2875261700924F2F /* AMTOpenUrlExampleModel.swift in Sources */,
 				88AF1AAE28751BEF00924F2F /* AMJsonAndObjectViewController.swift in Sources */,
 				88E515A2286F0E8A0056813A /* WXContactsTableFooterView.swift in Sources */,
 				88E5157F286DEBCC0056813A /* WXDiscoveryItemViewModel.swift in Sources */,
-				88F7317F2872A32200D959A3 /* AMTSettingsViewController.swift in Sources */,
+				88F7317F2872A32200D959A3 /* AMTSettingViewController.swift in Sources */,
 				882F75DA28729BCB00FA7B2A /* AMTAppearance.swift in Sources */,
 				882F75E628729BCB00FA7B2A /* AMTRootViewController.swift in Sources */,
 				88E51597286EF6930056813A /* WXContactsItemViewModel.swift in Sources */,
+				885E11D52876DC8100439D3D /* AMTAppUpdateCheckDataModel.swift in Sources */,
 				88E5156F286DCA0B0056813A /* WXMessagesViewController.swift in Sources */,
 				88E5159A286EF8A50056813A /* WXNetworking.swift in Sources */,
 				88AF19F12872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift in Sources */,
+				885E11D22876DBD600439D3D /* AMTAppUpdateCheckModel.swift in Sources */,
 				88AF1AB528751BEF00924F2F /* AMNetworkingViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				88AF1B642875442000924F2F /* AMTNetworkStatusModel.swift in Sources */,
@@ -1440,6 +1459,7 @@
 				88E5158A286E9E210056813A /* WXMeViewModel.swift in Sources */,
 				88E51596286EF6930056813A /* WXContactsViewModel.swift in Sources */,
 				88AF1AB628751BEF00924F2F /* AMJsonAndModelViewController.swift in Sources */,
+				885E11D82876E47000439D3D /* AMTSettingTableViewCell.swift in Sources */,
 				88E515A8286F20ED0056813A /* WXMessagesTableViewCell.swift in Sources */,
 				88AF1AB028751BEF00924F2F /* AMLogViewController.swift in Sources */,
 				885E11C728766C9700439D3D /* AMDarkModeViewController.swift in Sources */,
@@ -1496,7 +1516,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88AF1B762875754C00924F2F /* AMTSettingsIconTableViewCell.swift in Sources */,
+				88AF1B762875754C00924F2F /* AMTSettingIconTableViewCell.swift in Sources */,
+				885E11D32876DBD600439D3D /* AMTAppUpdateCheckModel.swift in Sources */,
 				88F7317D2872A14F00D959A3 /* AMTOpenUrlViewController.swift in Sources */,
 				88AF1B6C287547BC00924F2F /* AMTTesterConfigManager.swift in Sources */,
 				88AF1ABD2875261700924F2F /* AMTOpenUrlExampleModel.swift in Sources */,
@@ -1506,14 +1527,17 @@
 				887D0DDE2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */,
 				882F75D928729BCB00FA7B2A /* AMTConstants.swift in Sources */,
 				88AF19FB2872EB5D00924F2F /* AMTOpenUrlTabViewModel.swift in Sources */,
+				885E11DC2876E56100439D3D /* AMTSettingSwitchTableViewCell.swift in Sources */,
 				882F75E528729BCB00FA7B2A /* AMTNavigationController.swift in Sources */,
 				88AF1AC928752ABA00924F2F /* MBProgressHUD+AMTExtensions.swift in Sources */,
 				88AF19F42872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift in Sources */,
+				885E11D62876DC8100439D3D /* AMTAppUpdateCheckDataModel.swift in Sources */,
 				885E11D02876D07100439D3D /* AMTAppUpdateManager.swift in Sources */,
 				88AF1AC02875271D00924F2F /* AMTOpenUrlSectionRowModel.swift in Sources */,
 				88AF1B6F287549EE00924F2F /* AMTTesterConfigNetworkModel.swift in Sources */,
 				882F75DD28729BCB00FA7B2A /* String+AMTExtensions.swift in Sources */,
-				88F731802872A32200D959A3 /* AMTSettingsViewController.swift in Sources */,
+				885E11D92876E47000439D3D /* AMTSettingTableViewCell.swift in Sources */,
+				88F731802872A32200D959A3 /* AMTSettingViewController.swift in Sources */,
 				882F75DB28729BCB00FA7B2A /* AMTAppearance.swift in Sources */,
 				882F75E728729BCB00FA7B2A /* AMTRootViewController.swift in Sources */,
 				882F75A328729B7500FA7B2A /* AppDelegate.swift in Sources */,
@@ -1780,7 +1804,7 @@
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULE_NAME = ExampleApp;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_TESTER";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions-tester";
@@ -1799,7 +1823,7 @@
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULE_NAME = ExampleApp;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_TESTER";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions-tester";

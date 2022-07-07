@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class AMTSettingsIconTableViewCell: UITableViewCell {
+class AMTSettingIconTableViewCell: UITableViewCell {
 
     // MARK: - Deinit
     
@@ -71,7 +71,7 @@ class AMTSettingsIconTableViewCell: UITableViewCell {
     
     /// 行高
     static func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath, withData: Any?) -> CGFloat {
-        return tableView.height * 0.45
+        return tableView.height * 0.40
     }
     
     override class var requiresConstraintBasedLayout: Bool {
@@ -83,7 +83,7 @@ class AMTSettingsIconTableViewCell: UITableViewCell {
             make.width.equalTo(100)
             make.height.equalTo(100)
             make.centerX.equalTo(contentView)
-            make.bottom.equalTo(contentView.snp.centerY)
+            make.bottom.equalTo(contentView.snp.centerY).offset(30)
         }
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalTo(contentView)
