@@ -1807,7 +1807,7 @@
 			baseConfigurationReference = 6F45F3E76B08CA53F9B781BB /* Pods-Tester.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TesterAppIcon;
-				CURRENT_PROJECT_VERSION = 20220707201333;
+				CURRENT_PROJECT_VERSION = 20220707203240;
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1827,7 +1827,7 @@
 			baseConfigurationReference = EBB59AFA18ED12A9B10A2412 /* Pods-Tester.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TesterAppIcon;
-				CURRENT_PROJECT_VERSION = 20220707201333;
+				CURRENT_PROJECT_VERSION = 20220707203240;
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
