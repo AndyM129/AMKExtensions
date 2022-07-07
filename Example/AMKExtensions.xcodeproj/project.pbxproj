@@ -74,6 +74,8 @@
 		882F75EC28729C4800FA7B2A /* Tester-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 882F75EB28729C4800FA7B2A /* Tester-Info.plist */; };
 		882F75EF28729C8200FA7B2A /* Weixin-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 882F75EE28729C8200FA7B2A /* Weixin-Info.plist */; };
 		885E11C728766C9700439D3D /* AMDarkModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11C628766C9700439D3D /* AMDarkModeViewController.swift */; };
+		885E11CF2876D07100439D3D /* AMTAppUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11CE2876D07100439D3D /* AMTAppUpdateManager.swift */; };
+		885E11D02876D07100439D3D /* AMTAppUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E11CE2876D07100439D3D /* AMTAppUpdateManager.swift */; };
 		887D0DDD2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */; };
 		887D0DDE2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */; };
 		88AF19F12872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF19F02872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift */; };
@@ -196,6 +198,7 @@
 		882F75EB28729C4800FA7B2A /* Tester-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tester-Info.plist"; sourceTree = "<group>"; };
 		882F75EE28729C8200FA7B2A /* Weixin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Weixin-Info.plist"; sourceTree = "<group>"; };
 		885E11C628766C9700439D3D /* AMDarkModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMDarkModeViewController.swift; sourceTree = "<group>"; };
+		885E11CE2876D07100439D3D /* AMTAppUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTAppUpdateManager.swift; sourceTree = "<group>"; };
 		887D0DDC2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlExamplesViewController.swift; sourceTree = "<group>"; };
 		88AF19F02872E98E00924F2F /* AMTOpenUrlExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlExampleViewModel.swift; sourceTree = "<group>"; };
 		88AF19F22872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTOpenUrlSectionViewModel.swift; sourceTree = "<group>"; };
@@ -592,6 +595,7 @@
 		882F75D528729BCB00FA7B2A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				885E11CD2876D05700439D3D /* AppUpdateManager */,
 				88AF1B69287547AC00924F2F /* TesterConfigManager */,
 				882F75D628729BCB00FA7B2A /* Networking */,
 			);
@@ -621,6 +625,14 @@
 				882F75EE28729C8200FA7B2A /* Weixin-Info.plist */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		885E11CD2876D05700439D3D /* AppUpdateManager */ = {
+			isa = PBXGroup;
+			children = (
+				885E11CE2876D07100439D3D /* AMTAppUpdateManager.swift */,
+			);
+			path = AppUpdateManager;
 			sourceTree = "<group>";
 		};
 		88AF1AA328751BEF00924F2F /* Demos */ = {
@@ -1395,6 +1407,7 @@
 				882F75E428729BCB00FA7B2A /* AMTNavigationController.swift in Sources */,
 				88E515AA286F26630056813A /* String+WXExtensions.swift in Sources */,
 				88AF1AC2287527AE00924F2F /* AMTOpenUrlSectionModel.swift in Sources */,
+				885E11CF2876D07100439D3D /* AMTAppUpdateManager.swift in Sources */,
 				88E51581286DECB90056813A /* WXDiscoveryViewModel.swift in Sources */,
 				88E5157B286DDF730056813A /* WXNavigationController.swift in Sources */,
 				882F75DC28729BCB00FA7B2A /* String+AMTExtensions.swift in Sources */,
@@ -1496,6 +1509,7 @@
 				882F75E528729BCB00FA7B2A /* AMTNavigationController.swift in Sources */,
 				88AF1AC928752ABA00924F2F /* MBProgressHUD+AMTExtensions.swift in Sources */,
 				88AF19F42872E9FF00924F2F /* AMTOpenUrlSectionViewModel.swift in Sources */,
+				885E11D02876D07100439D3D /* AMTAppUpdateManager.swift in Sources */,
 				88AF1AC02875271D00924F2F /* AMTOpenUrlSectionRowModel.swift in Sources */,
 				88AF1B6F287549EE00924F2F /* AMTTesterConfigNetworkModel.swift in Sources */,
 				882F75DD28729BCB00FA7B2A /* String+AMTExtensions.swift in Sources */,

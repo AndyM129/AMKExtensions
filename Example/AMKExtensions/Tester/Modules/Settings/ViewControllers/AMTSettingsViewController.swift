@@ -104,7 +104,7 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -125,6 +125,18 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
         }
         
         if indexPath.row == 2 {
+            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
+            cell.backgroundColor = AMTAppearance.contentBackgroundColor
+            cell.selectedBackgroundView = UIView(frame: cell.bounds)
+            cell.selectedBackgroundView?.backgroundColor = AMTAppearance.contentSelectedBackgroundColor
+            cell.textLabel?.textColor = AMTAppearance.titleColor
+            cell.detailTextLabel?.textColor = AMTAppearance.subtitleColor
+            cell.textLabel?.text = "检查更新"
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        }
+        
+        if indexPath.row == 3 {
             let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self), for: indexPath)
             cell.backgroundColor = AMTAppearance.contentBackgroundColor
             cell.selectedBackgroundView = UIView(frame: cell.bounds)
@@ -163,6 +175,9 @@ class AMTSettingsViewController: AMTViewController, UITableViewDataSource, UITab
         
         if indexPath.row == 1 {
             AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
+        }
+        else if indexPath.row == 2 {
+            AMTAppUpdateManager.shared.checkUpdate()
         }
     }
     

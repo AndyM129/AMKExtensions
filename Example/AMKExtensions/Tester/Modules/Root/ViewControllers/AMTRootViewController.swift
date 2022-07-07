@@ -31,9 +31,9 @@ class AMTRootViewController: UITabBarController {
         fd_prefersNavigationBarHidden = true
         setupAppearance()
         setupViewControllers()
-        setupMTJ()
         setupFlex()
         reloadData()
+        checkUpdate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,12 +60,12 @@ class AMTRootViewController: UITabBarController {
     
     // MARK: - Data & Networking
     
-    func setupMTJ() {
-        
-    }
-    
     func reloadData() {
         AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
+    }
+    
+    func checkUpdate() {
+        AMTAppUpdateManager.shared.checkUpdate()
     }
     
     // MARK: - Layout Subviews
