@@ -4,10 +4,6 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>mtj_appkey</key>
-	<string>e7e488731e</string>
-	<key>mtj_deubglog</key>
-	<string>1</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -42,5 +38,9 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+	<key>mtj_appkey</key>
+	<string>e7e488731e</string>
+	<key>mtj_deubglog</key>
+	<string>1</string>
 </dict>
 </plist>
