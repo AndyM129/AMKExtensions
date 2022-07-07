@@ -40,4 +40,5 @@ end
 
 target 'Tester' do
     common_pods
+    pod 'BaiduMobStatCodeless'
 end

@@ -20,7 +20,7 @@ class AMTRootViewController: UITabBarController {
     }
     
     // MARK: - Init Methods
-    
+        
     // MARK: - Life Circle
     
     override func viewDidLoad() {
@@ -29,32 +29,11 @@ class AMTRootViewController: UITabBarController {
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? AMTAppearance.viewBackgroundColor
         fd_prefersNavigationBarHidden = true
-        
-        tabBar.isTranslucent = false
-        tabBar.barTintColor = AMTAppearance.barBackgroundColor
-        tabBar.tintColor = AMTAppearance.selectedTintColor
-        tabBar.unselectedItemTintColor = AMTAppearance.unselectedTintColor
-        
-        if #available(iOS 13.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.backgroundColor = AMTAppearance.barBackgroundColor
-            tabBar.standardAppearance = appearance
-        }
-                
-        viewControllers = [
-            AMTNavigationController.init(rootViewController: AMTOpenUrlViewController()),
-            AMTNavigationController.init(rootViewController: AMTSettingsViewController()),
-        ]
-
-        // 刷新数据
-        AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
-        
-        // 更新 FLEX 的显示状态
-        NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: .main) { noti in
-            if UserDefaults.standard.bool(forKey: AMTConstants.flexSwitchUserDefaultsKey) {
-                FLEXManager.shared.showExplorer()
-            }
-        }
+        setupAppearance()
+        setupViewControllers()
+        setupMTJ()
+        setupFlex()
+        reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,7 +60,44 @@ class AMTRootViewController: UITabBarController {
     
     // MARK: - Data & Networking
     
+    func setupMTJ() {
+        
+    }
+    
+    func reloadData() {
+        AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
+    }
+    
     // MARK: - Layout Subviews
+    
+    func setupAppearance() {
+        tabBar.isTranslucent = false
+        tabBar.barTintColor = AMTAppearance.barBackgroundColor
+        tabBar.tintColor = AMTAppearance.selectedTintColor
+        tabBar.unselectedItemTintColor = AMTAppearance.unselectedTintColor
+        
+        if #available(iOS 13.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.backgroundColor = AMTAppearance.barBackgroundColor
+            tabBar.standardAppearance = appearance
+        }
+    }
+    
+    func setupViewControllers() {
+        viewControllers = [
+            AMTNavigationController.init(rootViewController: AMTOpenUrlViewController()),
+            AMTNavigationController.init(rootViewController: AMTSettingsViewController()),
+        ]
+    }
+    
+    // 更新 FLEX 的显示状态
+    func setupFlex() {
+        NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: .main) { noti in
+            if UserDefaults.standard.bool(forKey: AMTConstants.flexSwitchUserDefaultsKey) {
+                FLEXManager.shared.showExplorer()
+            }
+        }
+    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
