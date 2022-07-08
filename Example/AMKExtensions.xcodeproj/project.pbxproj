@@ -134,6 +134,10 @@
 		88B4BFD42877BCB10073F84D /* AMTAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4BFD22877BCB10073F84D /* AMTAlertController.swift */; };
 		88B4C0772877C2910073F84D /* OCBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B4C0762877C2910073F84D /* OCBridgingHeader.m */; };
 		88B4C0782877C2910073F84D /* OCBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B4C0762877C2910073F84D /* OCBridgingHeader.m */; };
+		88B4C07C2877E3120073F84D /* FLEXManager+AMTExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4C07B2877E3120073F84D /* FLEXManager+AMTExtensions.swift */; };
+		88B4C07D2877E3120073F84D /* FLEXManager+AMTExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4C07B2877E3120073F84D /* FLEXManager+AMTExtensions.swift */; };
+		88B4C0832877E8EA0073F84D /* AMTTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4C0822877E8EA0073F84D /* AMTTextViewController.swift */; };
+		88B4C0842877E8EA0073F84D /* AMTTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4C0822877E8EA0073F84D /* AMTTextViewController.swift */; };
 		88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156C286DC8CF0056813A /* WXRootViewController.swift */; };
 		88E5156F286DCA0B0056813A /* WXMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */; };
 		88E51571286DCA210056813A /* WXContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51570286DCA210056813A /* WXContactsViewController.swift */; };
@@ -252,6 +256,8 @@
 		88B4C0742877C2910073F84D /* Tester-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tester-Bridging-Header.h"; sourceTree = "<group>"; };
 		88B4C0752877C2910073F84D /* OCBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCBridgingHeader.h; sourceTree = "<group>"; };
 		88B4C0762877C2910073F84D /* OCBridgingHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCBridgingHeader.m; sourceTree = "<group>"; };
+		88B4C07B2877E3120073F84D /* FLEXManager+AMTExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FLEXManager+AMTExtensions.swift"; sourceTree = "<group>"; };
+		88B4C0822877E8EA0073F84D /* AMTTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTextViewController.swift; sourceTree = "<group>"; };
 		88E5156C286DC8CF0056813A /* WXRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXRootViewController.swift; sourceTree = "<group>"; };
 		88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMessagesViewController.swift; sourceTree = "<group>"; };
 		88E51570286DCA210056813A /* WXContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXContactsViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +466,7 @@
 				882F75BE28729BCB00FA7B2A /* UIImage+AMTExtensions.swift */,
 				882F75BF28729BCB00FA7B2A /* UIColor+AMTExtensions.swift */,
 				88AF1AC728752ABA00924F2F /* MBProgressHUD+AMTExtensions.swift */,
+				88B4C07B2877E3120073F84D /* FLEXManager+AMTExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -471,6 +478,7 @@
 				882F75C228729BCB00FA7B2A /* AMTNavigationController.swift */,
 				88B4BFCF2877B7130073F84D /* AMTTabBarController.swift */,
 				88B4BFD22877BCB10073F84D /* AMTAlertController.swift */,
+				88B4C0822877E8EA0073F84D /* AMTTextViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1454,7 +1462,9 @@
 				88E515A6286F1E170056813A /* WXMessagesViewModel.swift in Sources */,
 				88AF1AC828752ABA00924F2F /* MBProgressHUD+AMTExtensions.swift in Sources */,
 				88E5158F286EA5730056813A /* WXMeInfoItemViewModel.swift in Sources */,
+				88B4C0832877E8EA0073F84D /* AMTTextViewController.swift in Sources */,
 				88E51585286E90F50056813A /* UIImage+WXExtensions.swift in Sources */,
+				88B4C07C2877E3120073F84D /* FLEXManager+AMTExtensions.swift in Sources */,
 				882F75E428729BCB00FA7B2A /* AMTNavigationController.swift in Sources */,
 				88E515AA286F26630056813A /* String+WXExtensions.swift in Sources */,
 				88AF1AC2287527AE00924F2F /* AMTOpenUrlSectionModel.swift in Sources */,
@@ -1577,8 +1587,10 @@
 				885E11D92876E47000439D3D /* AMTSettingTableViewCell.swift in Sources */,
 				88F731802872A32200D959A3 /* AMTSettingViewController.swift in Sources */,
 				882F75DB28729BCB00FA7B2A /* AMTAppearance.swift in Sources */,
+				88B4C07D2877E3120073F84D /* FLEXManager+AMTExtensions.swift in Sources */,
 				882F75E728729BCB00FA7B2A /* AMTRootViewController.swift in Sources */,
 				882F75A328729B7500FA7B2A /* AppDelegate.swift in Sources */,
+				88B4C0842877E8EA0073F84D /* AMTTextViewController.swift in Sources */,
 				88AF1B652875442000924F2F /* AMTNetworkStatusModel.swift in Sources */,
 				88AF1AC6287529AF00924F2F /* AMTOpenUrlTabModel.swift in Sources */,
 				882F75DF28729BCB00FA7B2A /* UIImage+AMTExtensions.swift in Sources */,

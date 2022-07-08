@@ -38,7 +38,7 @@ class AMTRootViewController: AMTTabBarController {
         title = "Tester"
         fd_prefersNavigationBarHidden = true
         setupViewControllers()
-        setupFlex()
+        FLEXManager.shared.amt_setup()
         reloadData()
         checkUpdate()
     }
@@ -91,17 +91,6 @@ class AMTRootViewController: AMTTabBarController {
             AMTNavigationController.init(rootViewController: AMTOpenUrlViewController()),
             AMTNavigationController.init(rootViewController: AMTSettingViewController()),
         ]
-    }
-    
-    // 更新 FLEX 的显示状态
-    func setupFlex() {
-        DispatchQueue.amke_once(token: "\(AMTRootViewController.self).setupFlex()") {
-            NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: .main) { noti in
-                if UserDefaults.standard.bool(forKey: AMTConstants.flexSwitchUserDefaultsKey) {
-                    FLEXManager.shared.showExplorer()
-                }
-            }
-        }
     }
     
     override func viewWillLayoutSubviews() {

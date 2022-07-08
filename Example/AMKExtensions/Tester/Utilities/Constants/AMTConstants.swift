@@ -10,13 +10,16 @@ import UIKit
 
 /// 全局常量
 class AMTConstants {
+
+    /// 是否为开发模式
+#if DEBUG
+    static let isDebugMode: Bool = true
+#else
+    static let isDebugMode: Bool = false
+#endif
     
     /// MTJ AppKey
-#if DEBUG
-    static let mtjAppKey: String = "" // 开发模式下不上报
-#else
-    static let mtjAppKey: String = ""
-#endif
+    static let mtjAppKey: String = isDebugMode ? "9a6ab6cb42" : ""
     
     /// 云控配置地址
     static let configManagerUrlString: String = "https://www.fastmock.site/mock/918edb52006d5f75261f317f3ba37180/tester/data"
