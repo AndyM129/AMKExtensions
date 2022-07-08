@@ -627,8 +627,8 @@
 		882F75D528729BCB00FA7B2A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				885E11CD2876D05700439D3D /* AppUpdateManager */,
 				88AF1B69287547AC00924F2F /* TesterConfigManager */,
+				885E11CD2876D05700439D3D /* AppUpdateManager */,
 				882F75D628729BCB00FA7B2A /* Networking */,
 			);
 			path = Services;

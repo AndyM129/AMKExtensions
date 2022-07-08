@@ -15,8 +15,16 @@ class AMTConstants {
 #if DEBUG
     static let mtjAppKey: String = "" // 开发模式下不上报
 #else
-    static let mtjAppKey: String = "e7e488731e"
+    static let mtjAppKey: String = ""
 #endif
+    
+    /// 云控配置地址
+    static let configManagerUrlString: String = "https://www.fastmock.site/mock/918edb52006d5f75261f317f3ba37180/tester/data"
+    
+    /// APP更新管理
+    static let pgyerApiKey: String = ""
+    static let pgyerAppKey: String = ""
+    static let pgyerAppShortcut: String = ""
     
     /// 1像素
     static let onePixel: CGFloat = 1.0 / UIScreen.main.scale

@@ -12,7 +12,7 @@ import MBProgressHUD
 import SwiftyJSON
 import AMKExtensions
 
-/// APP 更新管理
+/// 基于「www.pgyer.com」的 APP 更新管理
 class AMTAppUpdateManager: NSObject {
 
     // MARK: - Deinit Methods
@@ -64,8 +64,8 @@ class AMTAppUpdateManager: NSObject {
         
         let urlString = "https://www.pgyer.com/apiv2/app/check"
         let parameters = [
-            "_api_key":"aa1abe8fdeeb4d03892ef754f8784056",
-            "appKey":"83aebffc93f0ea1679a2531a7fbaa478",
+            "_api_key": AMTConstants.pgyerApiKey,
+            "appKey": AMTConstants.pgyerAppKey,
             "buildVersion": UIApplication.shared.appVersion,
             "buildBuildVersion": UIApplication.shared.appBuildVersion,
         ]

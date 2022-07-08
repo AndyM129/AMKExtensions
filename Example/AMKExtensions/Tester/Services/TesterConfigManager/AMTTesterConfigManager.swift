@@ -37,9 +37,6 @@ class AMTTesterConfigManager: NSObject {
     /// 单例
     static let shared: AMTTesterConfigManager = AMTTesterConfigManager()
     
-    /// 版本号
-    static let appVersion: String = "1.0.0"
-    
     /// 「调起」Tab 的相关配置
     var openUrlTab: AMTOpenUrlTabModel? = AMTOpenUrlTabModel()
     
@@ -51,8 +48,7 @@ class AMTTesterConfigManager: NSObject {
     func reloadDataFromNetwork(completionHandler: completionHandler?) {
         NotificationCenter.default.post(name: AMTTesterConfigManager.willReloadDataNotification, object: nil)
         
-        let urlString = "https://www.fastmock.site/mock/918edb52006d5f75261f317f3ba37180/tester/data"
-        AF.request(urlString).response { [unowned self] response in
+        AF.request(AMTConstants.configManagerUrlString).response { [unowned self] response in
             guard let data = response.data else {
                 let userInfo = [ NSLocalizedDescriptionKey: "数据刷新失败", NSLocalizedFailureReasonErrorKey: "返回 data 为空"]
                 MBProgressHUD.amt_showHUD(text: userInfo[NSLocalizedDescriptionKey], details: userInfo[NSLocalizedFailureReasonErrorKey], context: response)

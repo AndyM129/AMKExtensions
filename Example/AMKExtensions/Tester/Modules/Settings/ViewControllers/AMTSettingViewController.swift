@@ -165,7 +165,7 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
             BaiduMobStat.default().logEvent("setting_reload_config_clicked")
         }
         else if indexPath.row == 2 {
-            let urlString = "https://www.pgyer.com/wktester"
+            let urlString = "https://www.pgyer.com/\(AMTConstants.pgyerAppShortcut)"
             let safariViewController = SFSafariViewController(url: URL(string: urlString)!)
             safariViewController.hidesBottomBarWhenPushed = true
             safariViewController.preferredBarTintColor = AMTAppearance.barBackgroundColor
