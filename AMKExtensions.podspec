@@ -22,8 +22,10 @@ Pod::Spec.new do |s|
     
     # 默认子组件
     s.subspec 'DefaultSubspec' do |defaultSubspec|
+        defaultSubspec.dependency 'AMKExtensions/Swift'
         defaultSubspec.dependency 'AMKExtensions/UIKit'
         defaultSubspec.dependency 'AMKExtensions/Foundation'
+        defaultSubspec.dependency 'AMKExtensions/Dispatch'
     end
 
     # ThirdPart 第三方库扩展
@@ -32,6 +34,17 @@ Pod::Spec.new do |s|
         thirdPart.subspec 'SwiftyBeaver' do |swiftyBeaver|
             swiftyBeaver.source_files = 'AMKExtensions/Classes/ThirdPart/SwiftyBeaver/*.swift'
             swiftyBeaver.dependency 'SwiftyBeaver'
+        end
+    end
+    
+    # Swift 通用扩展
+    s.subspec 'Swift' do |swift|
+        # String 相关扩展
+        swift.subspec 'String' do |string|
+            # 易用封装 相关
+            string.subspec 'Handy' do |handy|
+                handy.source_files = 'AMKExtensions/Classes/Swift/String/Handy/*.swift'
+            end
         end
     end
     
@@ -55,13 +68,14 @@ Pod::Spec.new do |s|
                 handy.source_files = 'AMKExtensions/Classes/Foundation/NSAttributedString/Handy/*.swift'
             end
         end
-        
-        # NSString 相关扩展
-        foundation.subspec 'String' do |string|
-            # 易用封装 相关
-            string.subspec 'Handy' do |handy|
-                handy.source_files = 'AMKExtensions/Classes/Foundation/String/Handy/*.swift'
-            end
+    end
+    
+    # Dispatch 通用扩展
+    s.subspec 'Dispatch' do |dispatch|
+        # 易用封装 相关
+        dispatch.subspec 'Handy' do |handy|
+            handy.source_files = 'AMKExtensions/Classes/Dispatch/Handy/*.swift'
         end
     end
+    
 end
