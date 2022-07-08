@@ -11,6 +11,13 @@ import UIKit
 /// 全局常量
 class AMTConstants {
     
+    /// MTJ AppKey
+#if DEBUG
+    static let mtjAppKey: String = "" // 开发模式下不上报
+#else
+    static let mtjAppKey: String = "e7e488731e"
+#endif
+    
     /// 1像素
     static let onePixel: CGFloat = 1.0 / UIScreen.main.scale
     

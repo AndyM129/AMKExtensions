@@ -53,9 +53,5 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
-	<key>mtj_appkey</key>
-	<string>e7e488731e</string>
-	<key>mtj_deubglog</key>
-	<string>1</string>
 </dict>
 </plist>

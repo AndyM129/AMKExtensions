@@ -69,13 +69,7 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
         tableView.separatorColor = tableView.backgroundColor
         tableView.estimatedSectionHeaderHeight = 0
         tableView.estimatedSectionFooterHeight = 0
-        if #available(iOS 15.0, *) {
-            tableView.sectionHeaderTopPadding = 0
-        }
-        
-//        tableView.register(AMTSettingIconTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(AMTSettingIconTableViewCell.self))
-//        tableView.register(AMTSettingTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(AMTSettingTableViewCell.self))
-//        tableView.register(AMTSettingSwitchTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(AMTSettingSwitchTableViewCell.self))
+        if #available(iOS 15.0, *) { tableView.sectionHeaderTopPadding = 0 }
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: NSStringFromClass(UITableViewHeaderFooterView.self))
         view.addSubview(tableView)
@@ -144,6 +138,7 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
                 cell.accessorySwitch.isOn ? FLEXManager.shared.showExplorer() : FLEXManager.shared.hideExplorer()
                 UserDefaults.standard.set(cell.accessorySwitch.isOn, forKey: AMTConstants.flexSwitchUserDefaultsKey)
                 UserDefaults.standard.synchronize()
+                BaiduMobStat.default().logEvent("setting_flex_switch_clicked", attributes: ["isOn": cell.accessorySwitch.isOn ? "1" : "0"])
             }
             return cell
         }
@@ -167,6 +162,7 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
         
         if indexPath.row == 1 {
             AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
+            BaiduMobStat.default().logEvent("setting_reload_config_clicked")
         }
         else if indexPath.row == 2 {
             let urlString = "https://www.pgyer.com/wktester"
@@ -175,9 +171,11 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
             safariViewController.preferredBarTintColor = AMTAppearance.barBackgroundColor
             safariViewController.preferredControlTintColor = AMTAppearance.selectedTintColor
             navigationController?.pushViewController(safariViewController, animated: true)
+            BaiduMobStat.default().logEvent("setting_app_intro_clicked")
         }
         else if indexPath.row == 3 {
             AMTAppUpdateManager.shared.checkUpdate(silent: false)
+            BaiduMobStat.default().logEvent("setting_update_check_clicked")
         }
     }
     

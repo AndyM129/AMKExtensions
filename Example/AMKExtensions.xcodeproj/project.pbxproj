@@ -1730,7 +1730,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 0.1.0;
 				MODULE_NAME = ExampleApp;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_DEMOS";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_DEMOS -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Tester/Utilities/OCBridging/AMKExtensions_Example-Bridging-Header.h";
@@ -1852,7 +1852,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = ExampleApp;
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_TESTER";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_TESTER -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions-tester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Tester/Utilities/OCBridging/Tester-Bridging-Header.h";

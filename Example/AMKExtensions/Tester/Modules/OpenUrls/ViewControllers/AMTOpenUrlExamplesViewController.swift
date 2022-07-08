@@ -146,6 +146,7 @@ class AMTOpenUrlExamplesViewController: AMTViewController, UITableViewDataSource
             if !succeed {
                 MBProgressHUD.amt_showHUD(text: "调起失败", context: example?.toJSON)
             }
+            BaiduMobStat.default().logEvent("open_url_examples_row_clicked", attributes: ["succeed": succeed ? "1" : "0"])
         }
     }
     

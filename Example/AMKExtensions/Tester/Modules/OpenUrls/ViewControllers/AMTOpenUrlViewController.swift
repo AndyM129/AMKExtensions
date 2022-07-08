@@ -142,7 +142,7 @@ class AMTOpenUrlViewController: AMTViewController, UITableViewDataSource, UITabl
         let rowModel: AMTOpenUrlSectionRowModel? = sectionModel?.rows?[indexPath.row]
 
         tableView.deselectRow(at: indexPath, animated: true)
-        print("tableViewDidSelectRow: \(tableView), \(indexPath)")
+        BaiduMobStat.default().logEvent("open_url_section_row_clicked")
         navigationController?.pushViewController(AMTOpenUrlExamplesViewController(row: rowModel), animated: true)
     }
     

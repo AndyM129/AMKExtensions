@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import Alamofire
-import FDFullscreenPopGesture
 import FLEX
+import Alamofire
+import AMKExtensions
+import FDFullscreenPopGesture
 
 class AMTRootViewController: AMTTabBarController {
 
@@ -20,14 +21,22 @@ class AMTRootViewController: AMTTabBarController {
     }
     
     // MARK: - Init Methods
-        
+    
+    override init() {
+        super.init()
+        setupBaiduMobStat()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     // MARK: - Life Circle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Tester"
         fd_prefersNavigationBarHidden = true
-        setupAppearance()
         setupViewControllers()
         setupFlex()
         reloadData()
@@ -58,6 +67,14 @@ class AMTRootViewController: AMTTabBarController {
     
     // MARK: - Data & Networking
     
+    func setupBaiduMobStat() {
+        DispatchQueue.amke_once(token: "\(AMTRootViewController.self).setupPgyManager()") {
+            BaiduMobStat.default().start(withAppId: AMTConstants.mtjAppKey)
+            AMKELog.debug("[BaiduMobStat] getDeviceCuid: " + BaiduMobStat.default().getDeviceCuid())
+            AMKELog.debug("[BaiduMobStat] getTestDeviceId: " + BaiduMobStat.default().getTestDeviceId())
+        }
+    }
+    
     func reloadData() {
         AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
     }
@@ -68,10 +85,6 @@ class AMTRootViewController: AMTTabBarController {
     
     // MARK: - Layout Subviews
     
-    func setupAppearance() {
-        
-    }
-    
     func setupViewControllers() {
         viewControllers = [
             AMTNavigationController.init(rootViewController: AMTOpenUrlViewController()),
@@ -81,9 +94,11 @@ class AMTRootViewController: AMTTabBarController {
     
     // 更新 FLEX 的显示状态
     func setupFlex() {
-        NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: .main) { noti in
-            if UserDefaults.standard.bool(forKey: AMTConstants.flexSwitchUserDefaultsKey) {
-                FLEXManager.shared.showExplorer()
+        DispatchQueue.amke_once(token: "\(AMTRootViewController.self).setupFlex()") {
+            NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive, object: nil, queue: .main) { noti in
+                if UserDefaults.standard.bool(forKey: AMTConstants.flexSwitchUserDefaultsKey) {
+                    FLEXManager.shared.showExplorer()
+                }
             }
         }
     }
