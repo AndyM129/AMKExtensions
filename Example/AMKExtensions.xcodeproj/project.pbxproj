@@ -132,6 +132,8 @@
 		88B4BFD12877B7130073F84D /* AMTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4BFCF2877B7130073F84D /* AMTTabBarController.swift */; };
 		88B4BFD32877BCB10073F84D /* AMTAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4BFD22877BCB10073F84D /* AMTAlertController.swift */; };
 		88B4BFD42877BCB10073F84D /* AMTAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4BFD22877BCB10073F84D /* AMTAlertController.swift */; };
+		88B4C0772877C2910073F84D /* OCBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B4C0762877C2910073F84D /* OCBridgingHeader.m */; };
+		88B4C0782877C2910073F84D /* OCBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B4C0762877C2910073F84D /* OCBridgingHeader.m */; };
 		88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156C286DC8CF0056813A /* WXRootViewController.swift */; };
 		88E5156F286DCA0B0056813A /* WXMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */; };
 		88E51571286DCA210056813A /* WXContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51570286DCA210056813A /* WXContactsViewController.swift */; };
@@ -246,6 +248,10 @@
 		88AF1B782875819F00924F2F /* TesterImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TesterImages.xcassets; sourceTree = "<group>"; };
 		88B4BFCF2877B7130073F84D /* AMTTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTabBarController.swift; sourceTree = "<group>"; };
 		88B4BFD22877BCB10073F84D /* AMTAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTAlertController.swift; sourceTree = "<group>"; };
+		88B4C0732877C2910073F84D /* AMKExtensions_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMKExtensions_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		88B4C0742877C2910073F84D /* Tester-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tester-Bridging-Header.h"; sourceTree = "<group>"; };
+		88B4C0752877C2910073F84D /* OCBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCBridgingHeader.h; sourceTree = "<group>"; };
+		88B4C0762877C2910073F84D /* OCBridgingHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCBridgingHeader.m; sourceTree = "<group>"; };
 		88E5156C286DC8CF0056813A /* WXRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXRootViewController.swift; sourceTree = "<group>"; };
 		88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMessagesViewController.swift; sourceTree = "<group>"; };
 		88E51570286DCA210056813A /* WXContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXContactsViewController.swift; sourceTree = "<group>"; };
@@ -433,6 +439,7 @@
 				882F75C328729BCB00FA7B2A /* Views */,
 				882F75BC28729BCB00FA7B2A /* Extensions */,
 				882F75B928729BCB00FA7B2A /* Constants */,
+				88B4C0722877C2780073F84D /* OCBridging */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -678,6 +685,7 @@
 				88AF1AAB28751BEF00924F2F /* AMNetworkingViewController.swift */,
 				885E11C628766C9700439D3D /* AMDarkModeViewController.swift */,
 				88AF1AA828751BEF00924F2F /* AMStackViewController.swift */,
+				88B4C0732877C2910073F84D /* AMKExtensions_Example-Bridging-Header.h */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -698,6 +706,16 @@
 				88AF1B782875819F00924F2F /* TesterImages.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		88B4C0722877C2780073F84D /* OCBridging */ = {
+			isa = PBXGroup;
+			children = (
+				88B4C0752877C2910073F84D /* OCBridgingHeader.h */,
+				88B4C0762877C2910073F84D /* OCBridgingHeader.m */,
+				88B4C0742877C2910073F84D /* Tester-Bridging-Header.h */,
+			);
+			path = OCBridging;
 			sourceTree = "<group>";
 		};
 		88E5154D286DC79A0056813A /* Weixin */ = {
@@ -1106,7 +1124,7 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = TGLMB8BDP2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1340;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -1118,6 +1136,7 @@
 					};
 					882F758528729B7500FA7B2A = {
 						DevelopmentTeam = TGLMB8BDP2;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -1443,6 +1462,7 @@
 				88E51581286DECB90056813A /* WXDiscoveryViewModel.swift in Sources */,
 				88E5157B286DDF730056813A /* WXNavigationController.swift in Sources */,
 				882F75DC28729BCB00FA7B2A /* String+AMTExtensions.swift in Sources */,
+				88B4C0772877C2910073F84D /* OCBridgingHeader.m in Sources */,
 				88AF1B6E287549EE00924F2F /* AMTTesterConfigNetworkModel.swift in Sources */,
 				885E11DB2876E56100439D3D /* AMTSettingSwitchTableViewCell.swift in Sources */,
 				88AF1B752875754C00924F2F /* AMTSettingIconTableViewCell.swift in Sources */,
@@ -1563,6 +1583,7 @@
 				88AF1AC6287529AF00924F2F /* AMTOpenUrlTabModel.swift in Sources */,
 				882F75DF28729BCB00FA7B2A /* UIImage+AMTExtensions.swift in Sources */,
 				882F75E928729BCB00FA7B2A /* AMTNetworking.swift in Sources */,
+				88B4C0782877C2910073F84D /* OCBridgingHeader.m in Sources */,
 				88AF19F52872EA0400924F2F /* AMTOpenUrlExampleViewModel.swift in Sources */,
 				88AF1B7228754ABF00924F2F /* AMTTesterConfigDataModel.swift in Sources */,
 				882F75E128729BCB00FA7B2A /* UIColor+AMTExtensions.swift in Sources */,
@@ -1703,6 +1724,7 @@
 			baseConfigurationReference = F1142769EB8C06D87E04F5D8 /* Pods-AMKExtensions_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = AMKExtensions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1711,6 +1733,8 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_DEMOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Tester/Utilities/OCBridging/AMKExtensions_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1722,6 +1746,7 @@
 			baseConfigurationReference = 98E861252DCFD10DACE621C5 /* Pods-AMKExtensions_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9X349G8KD4;
 				INFOPLIST_FILE = AMKExtensions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1730,6 +1755,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_DEMOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Tester/Utilities/OCBridging/AMKExtensions_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1819,6 +1845,7 @@
 			baseConfigurationReference = 6F45F3E76B08CA53F9B781BB /* Pods-Tester.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TesterAppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 20220707203240;
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
@@ -1828,6 +1855,8 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_TESTER";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions-tester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Tester/Utilities/OCBridging/Tester-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1839,6 +1868,7 @@
 			baseConfigurationReference = EBB59AFA18ED12A9B10A2412 /* Pods-Tester.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TesterAppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 20220707203240;
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
@@ -1848,6 +1878,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_TESTER";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions-tester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Tester/Utilities/OCBridging/Tester-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
