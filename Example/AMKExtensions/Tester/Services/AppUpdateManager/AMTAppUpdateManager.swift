@@ -106,7 +106,7 @@ class AMTAppUpdateManager: NSObject {
             if silent && !shouldAutoAlertForUpdate {
                 return AMKELog.info("【此次不提示】\(title) => \(message) => \(checkData!.downloadURL!)")
             }
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let alertController = AMTAlertController(title: title, message: message, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "立即更新", style: .destructive, handler: { [unowned self] alertAction in
                 UIApplication.shared.open(URL(string: checkData!.downloadURL!)!) { [unowned self] success in
                     if success { return }

@@ -11,7 +11,7 @@ import Alamofire
 import FDFullscreenPopGesture
 import FLEX
 
-class AMTRootViewController: UITabBarController {
+class AMTRootViewController: AMTTabBarController {
 
     // MARK: - Deinit
     
@@ -26,8 +26,6 @@ class AMTRootViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Tester"
-        automaticallyAdjustsScrollViewInsets = false;
-        view.backgroundColor = view.backgroundColor ?? AMTAppearance.viewBackgroundColor
         fd_prefersNavigationBarHidden = true
         setupAppearance()
         setupViewControllers()
@@ -71,16 +69,7 @@ class AMTRootViewController: UITabBarController {
     // MARK: - Layout Subviews
     
     func setupAppearance() {
-        tabBar.isTranslucent = false
-        tabBar.barTintColor = AMTAppearance.barBackgroundColor
-        tabBar.tintColor = AMTAppearance.selectedTintColor
-        tabBar.unselectedItemTintColor = AMTAppearance.unselectedTintColor
         
-        if #available(iOS 13.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.backgroundColor = AMTAppearance.barBackgroundColor
-            tabBar.standardAppearance = appearance
-        }
     }
     
     func setupViewControllers() {

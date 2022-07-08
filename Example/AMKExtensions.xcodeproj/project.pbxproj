@@ -128,6 +128,10 @@
 		88AF1B762875754C00924F2F /* AMTSettingIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF1B742875754C00924F2F /* AMTSettingIconTableViewCell.swift */; };
 		88AF1B792875819F00924F2F /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF1B782875819F00924F2F /* TesterImages.xcassets */; };
 		88AF1B7A2875819F00924F2F /* TesterImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF1B782875819F00924F2F /* TesterImages.xcassets */; };
+		88B4BFD02877B7130073F84D /* AMTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4BFCF2877B7130073F84D /* AMTTabBarController.swift */; };
+		88B4BFD12877B7130073F84D /* AMTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4BFCF2877B7130073F84D /* AMTTabBarController.swift */; };
+		88B4BFD32877BCB10073F84D /* AMTAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4BFD22877BCB10073F84D /* AMTAlertController.swift */; };
+		88B4BFD42877BCB10073F84D /* AMTAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4BFD22877BCB10073F84D /* AMTAlertController.swift */; };
 		88E5156D286DC8CF0056813A /* WXRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156C286DC8CF0056813A /* WXRootViewController.swift */; };
 		88E5156F286DCA0B0056813A /* WXMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */; };
 		88E51571286DCA210056813A /* WXContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E51570286DCA210056813A /* WXContactsViewController.swift */; };
@@ -240,6 +244,8 @@
 		88AF1B7028754ABE00924F2F /* AMTTesterConfigDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTesterConfigDataModel.swift; sourceTree = "<group>"; };
 		88AF1B742875754C00924F2F /* AMTSettingIconTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTSettingIconTableViewCell.swift; sourceTree = "<group>"; };
 		88AF1B782875819F00924F2F /* TesterImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TesterImages.xcassets; sourceTree = "<group>"; };
+		88B4BFCF2877B7130073F84D /* AMTTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTTabBarController.swift; sourceTree = "<group>"; };
+		88B4BFD22877BCB10073F84D /* AMTAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTAlertController.swift; sourceTree = "<group>"; };
 		88E5156C286DC8CF0056813A /* WXRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXRootViewController.swift; sourceTree = "<group>"; };
 		88E5156E286DCA0B0056813A /* WXMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXMessagesViewController.swift; sourceTree = "<group>"; };
 		88E51570286DCA210056813A /* WXContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXContactsViewController.swift; sourceTree = "<group>"; };
@@ -456,6 +462,8 @@
 			children = (
 				882F75C128729BCB00FA7B2A /* AMTViewController.swift */,
 				882F75C228729BCB00FA7B2A /* AMTNavigationController.swift */,
+				88B4BFCF2877B7130073F84D /* AMTTabBarController.swift */,
+				88B4BFD22877BCB10073F84D /* AMTAlertController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1407,8 +1415,10 @@
 				88E515A5286F1E160056813A /* WXMessagesItemViewModel.swift in Sources */,
 				88E5158B286E9E210056813A /* WXMeItemViewModel.swift in Sources */,
 				88E51571286DCA210056813A /* WXContactsViewController.swift in Sources */,
+				88B4BFD32877BCB10073F84D /* AMTAlertController.swift in Sources */,
 				88E51583286E8B430056813A /* WXDiscoveryTableViewCell.swift in Sources */,
 				88AF19F72872EA5600924F2F /* AMTOpenUrlSectionRowViewModel.swift in Sources */,
+				88B4BFD02877B7130073F84D /* AMTTabBarController.swift in Sources */,
 				882F75E228729BCB00FA7B2A /* AMTViewController.swift in Sources */,
 				887D0DDD2872C58400E17002 /* AMTOpenUrlExamplesViewController.swift in Sources */,
 				88AF1AB728751BEF00924F2F /* AMToastViewController.swift in Sources */,
@@ -1541,7 +1551,9 @@
 				885E11D02876D07100439D3D /* AMTAppUpdateManager.swift in Sources */,
 				88AF1AC02875271D00924F2F /* AMTOpenUrlSectionRowModel.swift in Sources */,
 				88AF1B6F287549EE00924F2F /* AMTTesterConfigNetworkModel.swift in Sources */,
+				88B4BFD12877B7130073F84D /* AMTTabBarController.swift in Sources */,
 				882F75DD28729BCB00FA7B2A /* String+AMTExtensions.swift in Sources */,
+				88B4BFD42877BCB10073F84D /* AMTAlertController.swift in Sources */,
 				885E11D92876E47000439D3D /* AMTSettingTableViewCell.swift in Sources */,
 				88F731802872A32200D959A3 /* AMTSettingViewController.swift in Sources */,
 				882F75DB28729BCB00FA7B2A /* AMTAppearance.swift in Sources */,
