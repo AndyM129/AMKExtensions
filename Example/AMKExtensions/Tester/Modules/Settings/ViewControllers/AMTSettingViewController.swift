@@ -126,7 +126,7 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
             let cell = tableView.dequeueReusableCell(withIdentifier: AMTSettingTableViewCell.className()) as? AMTSettingTableViewCell ?? AMTSettingTableViewCell(style: .value1, reuseIdentifier: AMTSettingTableViewCell.className())
             cell.textLabel?.text = "检查更新"
             if let checkData = AMTAppUpdateManager.shared.checkData, checkData.isValid {
-                cell.detailTextLabel?.text = checkData.buildHaveNewVersion! ? "可升级至 v\(checkData.buildVersionNo!)" : "已是最新版"
+                cell.detailTextLabel?.text = checkData.buildHaveNewVersion! ? "可升级至 v\(checkData.buildVersion!)" : "已是最新版"
                 cell.badgeView.isHidden = !checkData.buildHaveNewVersion!
             }
             return cell
