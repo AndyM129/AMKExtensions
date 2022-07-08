@@ -1858,11 +1858,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TesterAppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 20220707203240;
+				CURRENT_PROJECT_VERSION = 20220708132121;
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				MODULE_NAME = ExampleApp;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_TESTER -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions-tester";
@@ -1881,11 +1881,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = TesterAppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 20220707203240;
+				CURRENT_PROJECT_VERSION = 20220708132121;
 				DEVELOPMENT_TEAM = TGLMB8BDP2;
 				INFOPLIST_FILE = "$(SRCROOT)/AMKExtensions/Tester/Configurations/Tester-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				MODULE_NAME = ExampleApp;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_TESTER";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions-tester";
