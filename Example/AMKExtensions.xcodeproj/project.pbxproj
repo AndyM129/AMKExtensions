@@ -1745,7 +1745,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_DEMOS -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Tester/Utilities/OCBridging/AMKExtensions_Example-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Demos/AMKExtensions_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1767,7 +1767,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DAMKE_DEMOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.github.andym129.amk-extensions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Tester/Utilities/OCBridging/AMKExtensions_Example-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AMKExtensions/Demos/AMKExtensions_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

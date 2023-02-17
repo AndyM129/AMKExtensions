@@ -29,8 +29,10 @@ extension FLEXManager {
                 var dict = [String: Any?]()
                 dict["DebugMode"] = AMTConstants.isDebugMode
                 dict["AppKey"] = AMTConstants.mtjAppKey
+                #if AMKE_TESTER
                 dict["getDeviceCuid"] = BaiduMobStat.default().getDeviceCuid()
                 dict["getTestDeviceId"] = BaiduMobStat.default().getTestDeviceId()
+                #endif
 
                 let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
                 let jsonString = String(data: jsonData ?? Data(), encoding: .utf8)

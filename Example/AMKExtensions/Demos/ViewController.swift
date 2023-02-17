@@ -42,11 +42,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         automaticallyAdjustsScrollViewInsets = false;
         view.backgroundColor = view.backgroundColor ?? UIColor.white
         tableView.reloadData()
-        
-        // Debug
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 1)) { [unowned self] in
-            navigationController?.pushViewController(AMTRootViewController(), animated: true)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

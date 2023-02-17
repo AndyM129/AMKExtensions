@@ -68,12 +68,14 @@ class AMTRootViewController: AMTTabBarController {
     // MARK: - Data & Networking
     
     func setupBaiduMobStat() {
-        DispatchQueue.amke_once(token: "\(AMTRootViewController.self).setupPgyManager()") {
+        #if AMKE_TESTER
+        DispatchQueue.amke_once(token: "\(AMTRootViewController.self).setupBaiduMobStat()") {
             BaiduMobStat.default().start(withAppId: AMTConstants.mtjAppKey)
             AMKELog.debug("[BaiduMobStat] AppKey: " + AMTConstants.mtjAppKey)
             AMKELog.debug("[BaiduMobStat] getDeviceCuid: " + BaiduMobStat.default().getDeviceCuid())
             AMKELog.debug("[BaiduMobStat] getTestDeviceId: " + BaiduMobStat.default().getTestDeviceId())
         }
+        #endif
     }
     
     func reloadData() {

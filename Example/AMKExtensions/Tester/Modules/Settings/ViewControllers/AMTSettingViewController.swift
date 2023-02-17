@@ -138,7 +138,9 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
                 cell.accessorySwitch.isOn ? FLEXManager.shared.showExplorer() : FLEXManager.shared.hideExplorer()
                 UserDefaults.standard.set(cell.accessorySwitch.isOn, forKey: AMTConstants.flexSwitchUserDefaultsKey)
                 UserDefaults.standard.synchronize()
+                #if AMKE_TESTER
                 BaiduMobStat.default().logEvent("setting_flex_switch_clicked", attributes: ["isOn": cell.accessorySwitch.isOn ? "1" : "0"])
+                #endif
             }
             return cell
         }
@@ -162,7 +164,9 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
         
         if indexPath.row == 1 {
             AMTTesterConfigManager.shared.reloadDataFromNetwork(completionHandler: nil)
+            #if AMKE_TESTER
             BaiduMobStat.default().logEvent("setting_reload_config_clicked")
+            #endif
         }
         else if indexPath.row == 2 {
             let urlString = "https://www.pgyer.com/\(AMTConstants.pgyerAppShortcut)"
@@ -171,11 +175,15 @@ class AMTSettingViewController: AMTViewController, UITableViewDataSource, UITabl
             safariViewController.preferredBarTintColor = AMTAppearance.barBackgroundColor
             safariViewController.preferredControlTintColor = AMTAppearance.selectedTintColor
             navigationController?.pushViewController(safariViewController, animated: true)
+            #if AMKE_TESTER
             BaiduMobStat.default().logEvent("setting_app_intro_clicked")
+            #endif
         }
         else if indexPath.row == 3 {
             AMTAppUpdateManager.shared.checkUpdate(silent: false)
+            #if AMKE_TESTER
             BaiduMobStat.default().logEvent("setting_update_check_clicked")
+            #endif
         }
     }
     
