@@ -29,9 +29,6 @@ end
 
 target 'AMKExtensions_Example' do
     common_pods
-    target 'AMKExtensions_Tests' do
-        inherit! :search_paths
-    end
 end
 
 target 'Weixin' do
